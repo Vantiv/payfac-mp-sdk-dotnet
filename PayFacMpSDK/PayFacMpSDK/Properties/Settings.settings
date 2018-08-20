@@ -32,5 +32,11 @@
     <Setting Name="logFile" Type="System.String" Scope="User">
       <Value Profile="(Default)">true</Value>
     </Setting>
+    <Setting Name="contentType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">application/com.vantivcnp.services-v3+xml</Value>
+    </Setting>
+    <Setting Name="accept" Type="System.String" Scope="User">
+      <Value Profile="(Default)">application/com.vantivcnp.services-v3+xml</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

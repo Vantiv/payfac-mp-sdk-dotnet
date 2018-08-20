@@ -40,9 +40,10 @@ namespace PayFacMpSDK
             _host = host;
         }
 
-        public void SetProxy(string host, int port)
+        public void SetProxy(string host, string port)
         {
-            _webProxy = new WebProxy(host, port);
+            // TODO: throw exception if port is not an int
+            _webProxy = new WebProxy(host, int.Parse(port));
         }
 
         public void SetContentType(string contentType)
