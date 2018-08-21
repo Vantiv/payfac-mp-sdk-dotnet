@@ -32,8 +32,6 @@ namespace PayFacMpSDK.Properties
             _configDictionary["neuterAccountNums"] = null;
             _configDictionary["proxyHost"] = null;
             _configDictionary["proxyPort"] = null;
-            _configDictionary["contentType"] = null;
-            _configDictionary["accept"] = null;
         }
 
         private void AddSettingToConfigDictionary(string key, string value)

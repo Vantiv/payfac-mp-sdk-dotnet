@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgreementRetrievalRequest.cs" />
+    <Compile Include="LegalEntityAgreementCreateRequest.cs" />
+    <Compile Include="LegalEntityRetrievalRequest.cs" />
+    <Compile Include="SubMerchantRetrievalRequest.cs" />
     <Compile Include="MCCRetrievalRequest.cs" />
     <Compile Include="Generated.cs" />
     <Compile Include="PayFacUtils.cs" />

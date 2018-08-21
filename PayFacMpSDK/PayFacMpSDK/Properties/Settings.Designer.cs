@@ -142,29 +142,5 @@ namespace PayFacMpSDK.Properties {
                 this["logFile"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("application/com.vantivcnp.services-v3+xml")]
-        public string contentType {
-            get {
-                return ((string)(this["contentType"]));
-            }
-            set {
-                this["contentType"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("application/com.vantivcnp.services-v3+xml")]
-        public string accept {
-            get {
-                return ((string)(this["accept"]));
-            }
-            set {
-                this["accept"] = value;
-            }
-        }
     }
 }

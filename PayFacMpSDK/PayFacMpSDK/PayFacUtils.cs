@@ -1,6 +1,8 @@
-﻿using System;
+﻿using PayFacMpSDK.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
@@ -11,6 +13,9 @@ namespace PayFacMpSDK
 
     public class PayFacUtils
     {
+
+        private const string CONTENT_TYPE = "application/com.vantivcnp.services-v13+xml";
+        private const string ACCEPT = "application/com.vantivcnp.services-v13+xml";
 
         public static string BytesToString(List<byte> bytes)
         {
@@ -49,5 +54,30 @@ namespace PayFacMpSDK
         {
             return (T) (new XmlSerializer(typeof(T))).Deserialize(new StringReader(xmlResponse));
         }
+
+        public static string SendRetrievalRequest(string urlRoute, Communication communication, Configuration configuration)
+        {
+            try
+            {
+                ConfigureCommunication(communication, configuration);
+                var xmlResponse = communication.Get(urlRoute);
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterAccountNums"));
+                return xmlResponse;
+            }
+            catch (WebException we)
+            {
+                throw new Exception();
+                // TODO throw pay fac exception
+            }
+        }
+
+
+        private static void ConfigureCommunication(Communication communication, Configuration configuration)
+        {
+            communication.SetHost(configuration.Get("url"));
+            communication.SetAuth(configuration.Get("username"), configuration.Get("password"));
+            communication.SetContentType(CONTENT_TYPE);
+            communication.SetAccept(ACCEPT);
+        } 
     }
 }

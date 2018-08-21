@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PayFacMpSDK
 {
-    class MCCRetrievalRequest
+    class AgreementRetrievalRequest
     {
         private static Communication _communication = new Communication();
         private static Configuration _configuration = new Configuration();
@@ -25,12 +25,14 @@ namespace PayFacMpSDK
             set { _communication = value; }
         }
 
-        private const string ServiceRoute = "/mcc";
+        private const string ServiceRoute = "/legalentity";
 
-        public approvedMccResponse GetMccResponse()
+        public legalEntityAgreementRetrievalResponse GetAgreementResponse(string legalEntityId)
         {
-            var xmlResponse = PayFacUtils.SendRetrievalRequest(ServiceRoute, _communication, _configuration);
-            return PayFacUtils.DeserializeResponse<approvedMccResponse>(xmlResponse);
+            var xmlResponse = PayFacUtils.SendRetrievalRequest(ServiceRoute + "/" + legalEntityId + "/agreement", _communication, _configuration);
+            return PayFacUtils.DeserializeResponse<legalEntityAgreementRetrievalResponse>(xmlResponse);
         }
+
+
     }
 }
