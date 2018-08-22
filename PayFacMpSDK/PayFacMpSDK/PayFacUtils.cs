@@ -72,6 +72,57 @@ namespace PayFacMpSDK
         }
 
 
+        public static string SendDeleteRequest(string urlRoute, Communication communication, Configuration configuration)
+        {
+            try
+            {
+                ConfigureCommunication(communication, configuration);
+                var xmlResponse = communication.Delete(urlRoute);
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterAccountNums"));
+                return xmlResponse;
+            }
+            catch (WebException we)
+            {
+                throw new Exception();
+                // TODO throw pay fac exception
+            }
+        }
+
+
+        public static string SendPostRequest(string urlRoute, string requestBody, Communication communication, Configuration configuration)
+        {
+            try
+            {
+                ConfigureCommunication(communication, configuration);
+                var xmlResponse = communication.Post(urlRoute, requestBody);
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterAccountNums"));
+                return xmlResponse;
+            }
+            catch (WebException we)
+            {
+                throw new Exception();
+                // TODO throw pay fac exception
+            }
+        }
+
+
+        public static string SendPutRequest(string urlRoute, string requestBody, Communication communication, Configuration configuration)
+        {
+            try
+            {
+                ConfigureCommunication(communication, configuration);
+                var xmlResponse = communication.Put(urlRoute, requestBody);
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterAccountNums"));
+                return xmlResponse;
+            }
+            catch (WebException we)
+            {
+                throw new Exception();
+                // TODO throw pay fac exception
+            }
+        }
+
+
         private static void ConfigureCommunication(Communication communication, Configuration configuration)
         {
             communication.SetHost(configuration.Get("url"));

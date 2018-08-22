@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PayFacMpSDK
 {
-    public class LegalEntityRetrievalRequest
+    public class principalDeleteRequest
     {
         private static Communication _communication = new Communication();
         private static Configuration _configuration = new Configuration();
@@ -25,12 +25,12 @@ namespace PayFacMpSDK
             set { _communication = value; }
         }
 
-        private const string ServiceRoute = "/legalentity/{0}";
+        private const string ServiceRoute = "/legalentity/{0}/principal/{1}";
 
-        public legalEntityRetrievalResponse GetLegalEntityRequest(string legalEntityId)
+        public principalDeleteResponse PrincipalDeleteRequest (string legalEntityId, string principalId)
         {
-            var xmlResponse = PayFacUtils.SendRetrievalRequest(String.Format(ServiceRoute,legalEntityId), _communication, _configuration);
-            return PayFacUtils.DeserializeResponse<legalEntityRetrievalResponse >(xmlResponse);
+            var xmlResponse = PayFacUtils.SendDeleteRequest(String.Format(ServiceRoute, legalEntityId, principalId), _communication, _configuration);
+            return PayFacUtils.DeserializeResponse<principalDeleteResponse>(xmlResponse);
         }
     }
 }

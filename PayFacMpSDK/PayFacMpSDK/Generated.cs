@@ -194,6 +194,7 @@ namespace PayFacMpSDK
             set
             {
                 this.manuallyEnteredField = value;
+                this.manuallyEnteredFieldSpecified = true;
             }
         }
 
@@ -345,6 +346,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.legalEntityTypeFieldSpecified = true;
                 this.legalEntityTypeField = value;
             }
         }
@@ -481,6 +483,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.dateOfBirthFieldSpecified = true;
                 this.dateOfBirthField = value;
             }
         }
@@ -625,6 +628,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.stakePercentFieldSpecified = true;
                 this.stakePercentField = value;
             }
         }
@@ -903,6 +907,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.principalIdFieldSpecified = true;
                 this.principalIdField = value;
             }
         }
@@ -1229,6 +1234,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.scoreFieldSpecified = true;
                 this.scoreField = value;
             }
         }
@@ -1285,6 +1291,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.codeFieldSpecified = true;
                 this.codeField = value;
             }
         }
@@ -1576,6 +1583,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.codeFieldSpecified = true;
                 this.codeField = value;
             }
         }
@@ -4043,6 +4051,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.annualCreditCardSalesVolumeFieldSpecified = true;
                 this.annualCreditCardSalesVolumeField = value;
             }
         }
@@ -4070,6 +4079,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.hasAcceptedCreditCardsFieldSpecified = true;
                 this.hasAcceptedCreditCardsField = value;
             }
         }
@@ -4123,6 +4133,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.legalEntityOwnershipTypeFieldSpecified = true;
                 this.legalEntityOwnershipTypeField = value;
             }
         }
@@ -4743,6 +4754,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.createCredentialsFieldSpecified = true;
                 this.createCredentialsField = value;
             }
         }
@@ -5399,6 +5411,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.maxTransactionAmountFieldSpecified = true;
                 this.maxTransactionAmountField = value;
             }
         }
@@ -5504,6 +5517,7 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.disableFieldSpecified = true;
                 this.disableField = value;
             }
         }

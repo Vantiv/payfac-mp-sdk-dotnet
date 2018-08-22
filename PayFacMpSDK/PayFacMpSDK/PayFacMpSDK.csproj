@@ -43,7 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgreementRetrievalRequest.cs" />
-    <Compile Include="LegalEntityAgreementCreateRequest.cs" />
+    <Compile Include="principalDeleteResponse .cs" />
+    <Compile Include="subMerchantUpdateRequest.cs" />
+    <Compile Include="legalEntityUpdateRequest.cs" />
+    <Compile Include="subMerchantCreateRequest.cs" />
+    <Compile Include="legalEntityPrincipalCreateRequest.cs" />
+    <Compile Include="legalEntityCreateRequest.cs" />
+    <Compile Include="legalEntityAgreementCreateRequest.cs" />
     <Compile Include="LegalEntityRetrievalRequest.cs" />
     <Compile Include="SubMerchantRetrievalRequest.cs" />
     <Compile Include="MCCRetrievalRequest.cs" />
@@ -57,6 +63,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="XMLComplexFields.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

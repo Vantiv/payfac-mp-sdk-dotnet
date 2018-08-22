@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PayFacMpSDK
 {
-    public partial class legalEntityAgreementCreateRequest
+    public partial class legalEntityPrincipalCreateRequest 
     {
         private static Communication _communication = new Communication();
         private static Configuration _configuration = new Configuration();
@@ -25,24 +25,24 @@ namespace PayFacMpSDK
             set { _communication = value; }
         }
 
-        private const string ServiceRoute = "/legalentity/{0}/agreement";
+        private const string ServiceRoute = "/legalentity/{0}/principal";
 
-        public legalEntityAgreementCreateResponse PostLegalEntityAgreementCreateRequest(string legalEntityId)
+        public principalCreateResponse PostLegalEntityPrincipalCreateRequest(string legalentityId)
         {
             string requestBody = Serialize();
-            var xmlResponse = PayFacUtils.SendPostRequest(String.Format(ServiceRoute, legalEntityId), requestBody, _communication, _configuration);
-            return PayFacUtils.DeserializeResponse<legalEntityAgreementCreateResponse>(xmlResponse);
+            var xmlResponse = PayFacUtils.SendPostRequest(String.Format(ServiceRoute,legalentityId), requestBody, _communication, _configuration);
+            return PayFacUtils.DeserializeResponse<principalCreateResponse>(xmlResponse);
         }
 
         public string Serialize()
         {
             StringBuilder xmlBuilder = new StringBuilder();
             xmlBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
-            xmlBuilder.AppendLine("<legalEntityAgreementCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
-            xmlBuilder.AppendLine("<legalEntityAgreement>");
-            legalEntityAgreement.Serialize(xmlBuilder);
-            xmlBuilder.AppendLine("</legalEntityAgreement>");
-            xmlBuilder.Append("</legalEntityAgreementCreateRequest>");
+            xmlBuilder.AppendLine("<legalEntityPrincipalCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
+            xmlBuilder.AppendLine("<principal>");
+            principal.Serialize(xmlBuilder);
+            xmlBuilder.AppendLine("</principal>");
+            xmlBuilder.Append("</legalEntityPrincipalCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();
         }

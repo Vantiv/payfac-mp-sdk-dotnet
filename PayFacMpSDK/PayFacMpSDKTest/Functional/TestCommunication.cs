@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Text.RegularExpressions;
 using PayFacMpSDK.Properties;
+using System.Globalization;
 
 namespace PayFacMpSDKTest.Functional
 {
@@ -110,6 +111,27 @@ namespace PayFacMpSDKTest.Functional
             xmlResponse = Regex.Replace(xmlResponse, @"\t|\n|\r", "");
             Console.WriteLine(xmlResponse);
             Assert.True(regex.IsMatch(xmlResponse));
+        }
+
+
+          [Test]
+        public void TestSerialize()
+        {
+            legalEntityAgreementCreateRequest legalEntityAgreementCreateRequest =
+                new legalEntityAgreementCreateRequest
+                {
+                    legalEntityAgreement = new legalEntityAgreement
+                    {
+                        legalEntityAgreementType = legalEntityAgreementType.MERCHANT_AGREEMENT,
+                        agreementVersion = "Version1",
+                        userFullName = "FullName",
+                        userSystemName = "systemUserName",
+                        userIPAddress = "127.0.0.1",
+                        manuallyEntered = true,
+                        acceptanceDateTime = DateTime.Now
+                    }
+                };
+            Console.WriteLine(legalEntityAgreementCreateRequest.Serialize());       
         }
     }
 
