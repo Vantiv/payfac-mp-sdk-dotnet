@@ -66,8 +66,7 @@ namespace PayFacMpSDK
             }
             catch (WebException we)
             {
-                throw new Exception();
-                // TODO throw pay fac exception
+                throw GetPayFacWebException(we, configuration);
             }
         }
 
@@ -83,8 +82,7 @@ namespace PayFacMpSDK
             }
             catch (WebException we)
             {
-                throw new Exception();
-                // TODO throw pay fac exception
+                throw GetPayFacWebException(we, configuration);
             }
         }
 
@@ -100,8 +98,7 @@ namespace PayFacMpSDK
             }
             catch (WebException we)
             {
-                throw new Exception();
-                // TODO throw pay fac exception
+                throw GetPayFacWebException(we, configuration);
             }
         }
 
@@ -117,8 +114,7 @@ namespace PayFacMpSDK
             }
             catch (WebException we)
             {
-                throw new Exception();
-                // TODO throw pay fac exception
+                throw GetPayFacWebException(we, configuration);
             }
         }
 
@@ -129,6 +125,28 @@ namespace PayFacMpSDK
             communication.SetAuth(configuration.Get("username"), configuration.Get("password"));
             communication.SetContentType(CONTENT_TYPE);
             communication.SetAccept(ACCEPT);
-        } 
+        }
+        
+
+        private static PayFacWebException GetPayFacWebException(WebException we, Configuration config)
+        {
+            var webErrorResponse = (HttpWebResponse) we.Response;
+            var httpStatusCode = (int) webErrorResponse.StatusCode;
+            var rawResponse = GetResponseXml(webErrorResponse);
+            if (!webErrorResponse.ContentType.Contains("application/com.vantivcnp.payfac-v13+xml"))
+                return new PayFacWebException(string.Format("Request Failed - HTTP {0} Error", httpStatusCode)
+                    , httpStatusCode, rawResponse);
+            PrintXml(rawResponse, config.Get("printXml"), config.Get("neuterAccountNums"));
+            var errorResponse = DeserializeResponse<errorResponse>(rawResponse);
+            return new PayFacWebException(string.Format("Request failed - HTTP {0} Error", httpStatusCode), httpStatusCode, rawResponse, errorResponse);
+        }
+        
+        public static string GetResponseXml(HttpWebResponse we)
+        {
+            var reader = new StreamReader(we.GetResponseStream());
+            var xmlResponse = reader.ReadToEnd().Trim();
+            reader.Close();
+            return xmlResponse;
+        }
     }
 }

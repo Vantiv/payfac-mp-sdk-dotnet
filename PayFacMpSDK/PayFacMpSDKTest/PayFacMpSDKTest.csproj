@@ -62,7 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functional\TestAgreementRetrievalRequest.cs" />
+    <Compile Include="Functional\TestLegalEntityRetrievalRequest.cs" />
+    <Compile Include="Functional\TestMCCRetrievalRequest.cs" />
     <Compile Include="Functional\TestCommunication.cs" />
+    <Compile Include="Functional\TestPrincipalDeleteRequest.cs" />
+    <Compile Include="Functional\TestSubmerchantRetrievalRequest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgreementRetrievalRequest.cs" />
+    <Compile Include="PayFacExceptions.cs" />
     <Compile Include="principalDeleteResponse .cs" />
     <Compile Include="subMerchantUpdateRequest.cs" />
     <Compile Include="legalEntityUpdateRequest.cs" />

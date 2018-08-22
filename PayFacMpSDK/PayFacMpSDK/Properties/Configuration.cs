@@ -60,8 +60,7 @@ namespace PayFacMpSDK.Properties
             {
                 if (_configDictionary[key] == null)
                 {
-                    // TODO: Throw PayFacMpSDKException with an error message
-                    throw new Exception("Missing config: " + key);
+                    throw new PayFacException(string.Format("Missing value for {0} in config", key));
                 }
             }
         }
