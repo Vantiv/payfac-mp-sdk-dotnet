@@ -41,12 +41,12 @@ namespace PayFacMpSDK
             xmlBuilder.AppendLine("<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
             xmlBuilder.AppendLine("<legalEntityName>" + legalEntityName + "</legalEntityName>");
             xmlBuilder.AppendLine("<legalEntityType>" + legalEntityType + "</legalEntityType>");
-            xmlBuilder.AppendLine("<legalEntityOwnershipType>" + legalEntityType + "</legalEntityOwnershipType>");
+            xmlBuilder.AppendLine("<legalEntityOwnershipType>" + legalEntityOwnershipType + "</legalEntityOwnershipType>");
             if (doingBusinessAs != null) xmlBuilder.AppendLine("<doingBusinessAs>" + doingBusinessAs + "</doingBusinessAs>");
             if (taxId != null) xmlBuilder.AppendLine("<taxId>" + taxId + "</taxId>");
             if (contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
             xmlBuilder.AppendLine("<annualCreditCardSalesVolume>" + annualCreditCardSalesVolume + "</annualCreditCardSalesVolume>");
-            xmlBuilder.AppendLine("<hasAcceptedCreditCards>" + hasAcceptedCreditCards + "</hasAcceptedCreditCards>");
+            xmlBuilder.AppendLine("<hasAcceptedCreditCards>" + hasAcceptedCreditCards.ToString().ToLower() + "</hasAcceptedCreditCards>");
             xmlBuilder.AppendLine("<address>");
             address.Serialize(xmlBuilder);
             xmlBuilder.AppendLine("</address>");

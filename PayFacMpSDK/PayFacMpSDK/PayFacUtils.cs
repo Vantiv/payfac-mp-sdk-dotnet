@@ -14,8 +14,8 @@ namespace PayFacMpSDK
     public class PayFacUtils
     {
 
-        private const string CONTENT_TYPE = "application/com.vantivcnp.services-v13+xml";
-        private const string ACCEPT = "application/com.vantivcnp.services-v13+xml";
+        private const string CONTENT_TYPE = "application/com.vantivcnp.payfac-v13+xml";
+        private const string ACCEPT = "application/com.vantivcnp.payfac-v13+xml";
 
         public static string BytesToString(List<byte> bytes)
         {

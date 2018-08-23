@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Functional\TestAgreementRetrievalRequest.cs" />
+    <Compile Include="Functional\TestLegalEntityAgreementCreateRequest.cs" />
+    <Compile Include="Functional\TestLegalEntityCreateRequest.cs" />
+    <Compile Include="Functional\TestLegalEntityPrincipalCreateRequest.cs" />
     <Compile Include="Functional\TestLegalEntityRetrievalRequest.cs" />
     <Compile Include="Functional\TestMCCRetrievalRequest.cs" />
     <Compile Include="Functional\TestCommunication.cs" />

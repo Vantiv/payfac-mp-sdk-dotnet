@@ -16,8 +16,8 @@ namespace PayFacMpSDK
             xmlBuilder.AppendLine("<userFullName>" + userFullName + "</userFullName>");
             xmlBuilder.AppendLine("<userSystemName>" + userSystemName + "</userSystemName>");
             xmlBuilder.AppendLine("<userIPAddress>" + userIPAddress + "</userIPAddress>");
-            if (manuallyEnteredSpecified) xmlBuilder.AppendLine("<manuallyEntered>" + manuallyEntered + "</manuallyEntered>");
-            xmlBuilder.AppendLine("<acceptanceDateTime>" + acceptanceDateTime.ToString("yyyy-mm-ddThh:mm:sszzz") + "</acceptanceDateTime>");
+            if (manuallyEnteredSpecified) xmlBuilder.AppendLine("<manuallyEntered>" + manuallyEntered.ToString().ToLower() + "</manuallyEntered>");
+            xmlBuilder.AppendLine("<acceptanceDateTime>" + acceptanceDateTime.ToString("yyyy-MM-ddThh:mm:sszzz") + "</acceptanceDateTime>");
         }
     }
 
@@ -90,7 +90,7 @@ namespace PayFacMpSDK
             if (firstName != null) xmlBuilder.AppendLine("<firstName>" + firstName + "</firstName>");
             if (lastName != null) xmlBuilder.AppendLine("<lastName>" + lastName + "</lastName>");
             if (ssn != null) xmlBuilder.AppendLine("<ssn>" + ssn + "</ssn>");
-            if (dateOfBirthSpecified) xmlBuilder.AppendLine("<dateOfBirth>" + dateOfBirth.ToString("yyyy-mm-dd") + "</dateOfBirth>");
+            if (dateOfBirthSpecified) xmlBuilder.AppendLine("<dateOfBirth>" + dateOfBirth.ToString("yyyy-MM-dd") + "</dateOfBirth>");
             if (driversLicenseState != null) xmlBuilder.AppendLine("<driversLicenseState>" + driversLicenseState + "</driversLicenseState>");
         }
     }
@@ -139,9 +139,9 @@ namespace PayFacMpSDK
             xmlBuilder.AppendLine("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
             if(streetAddress2 != null) xmlBuilder.AppendLine("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
             xmlBuilder.AppendLine("<city>" + city + "</city>");
-            xmlBuilder.AppendLine("<stateProvince>" + city + "</stateProvince>");
-            xmlBuilder.AppendLine("<postalCode>" + city + "</postalCode>");
-            xmlBuilder.AppendLine("<countryCode>" + city + "</countryCode>");
+            xmlBuilder.AppendLine("<stateProvince>" + stateProvince + "</stateProvince>");
+            xmlBuilder.AppendLine("<postalCode>" + postalCode + "</postalCode>");
+            xmlBuilder.AppendLine("<countryCode>" + countryCode + "</countryCode>");
         }
     }
 
@@ -171,7 +171,7 @@ namespace PayFacMpSDK
             if(emailAddress != null) xmlBuilder.AppendLine("<emailAddress>" + emailAddress + "</emailAddress>");
             if(ssn != null) xmlBuilder.AppendLine("<ssn>" + ssn + "</ssn>");
             if(contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
-            xmlBuilder.AppendLine("<dateOfBirth>" + dateOfBirth.ToString("yyyy-mm-dd") + "</dateOfBirth>");
+            xmlBuilder.AppendLine("<dateOfBirth>" + dateOfBirth.ToString("yyyy-MM-dd") + "</dateOfBirth>");
             if(driversLicense != null) xmlBuilder.AppendLine("<driversLicense>" + driversLicense + "</driversLicense>");
             if(driversLicenseState != null) xmlBuilder.AppendLine("<driversLicenseState>" + driversLicenseState + "</driversLicenseState>");
             if (address != null)
