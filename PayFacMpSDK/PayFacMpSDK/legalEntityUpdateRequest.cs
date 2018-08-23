@@ -48,7 +48,7 @@ namespace PayFacMpSDK
             if(contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
             if(doingBusinessAs != null) xmlBuilder.AppendLine("<doingBusinessAs>" + doingBusinessAs + "</doingBusinessAs>");
             if(annualCreditCardSalesVolumeSpecified) xmlBuilder.AppendLine("<annualCreditCardSalesVolume>" + annualCreditCardSalesVolume + "</annualCreditCardSalesVolume>");
-            if(hasAcceptedCreditCardsSpecified) xmlBuilder.AppendLine("<hasAcceptedCreditCards>" + hasAcceptedCreditCards + "</hasAcceptedCreditCards>");
+            if(hasAcceptedCreditCardsSpecified) xmlBuilder.AppendLine("<hasAcceptedCreditCards>" + hasAcceptedCreditCards.ToString().ToLower() + "</hasAcceptedCreditCards>");
             if(principal != null)
             {
                 xmlBuilder.AppendLine("<principal>");
