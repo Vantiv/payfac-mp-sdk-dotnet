@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.Text;
 
 namespace PayFacMpSDK
@@ -27,7 +28,7 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            xmlBuilder.AppendLine("<eCheckCompanyName>" + eCheckCompanyName + "</eCheckCompanyName>");
+            if(eCheckCompanyName != null) xmlBuilder.AppendLine("<eCheckCompanyName>" + eCheckCompanyName + "</eCheckCompanyName>");
             if(eCheckBillingDescriptor != null) xmlBuilder.AppendLine("<eCheckBillingDescriptor>" + eCheckBillingDescriptor + "</eCheckBillingDescriptor>");
         }
     }

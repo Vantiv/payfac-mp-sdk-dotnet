@@ -63,11 +63,11 @@ namespace PayFacMpSDK
                 xmlBuilder.AppendLine("</primaryContact>");
             }
             if(disableSpecified) xmlBuilder.AppendLine("<disable>" + disable + "</disable>");
-            if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled + "\"></fraud>");
-            if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled + "\"></amexAcquired>");
+            if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
+            if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
             if(eCheck != null)
             {
-                xmlBuilder.AppendLine("<eCheck enabled =\"" + eCheck.enabled +"\">");
+                xmlBuilder.AppendLine("<eCheck enabled =\"" + eCheck.enabled.ToString().ToLower() +"\">");
                 eCheck.Serialize(xmlBuilder);
                 xmlBuilder.AppendLine("</eCheck>");
             }
