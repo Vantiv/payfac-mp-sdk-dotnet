@@ -1,6 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using PayFacMpSDK;
+using PayFacMpSDK.Properties;
 
 namespace PayFacMpSDKTest.Unit
 {
@@ -42,7 +43,23 @@ namespace PayFacMpSDKTest.Unit
             request.Communication = communicationMock;
 
             response = request.GetLegalEntityAgreementRequest("2010001");
+            Assert.AreEqual("2010001", response.legalEntityId);
+            Assert.NotNull(response.transactionId);
+            Assert.AreEqual(1, response.agreements.Length);
+        }
+        
+        [Test]
+        public void TestGettersAndSetters()
+        {
+            // Configuration
+            var config = new Configuration();
+            request.Configuration = config;
+            Assert.AreSame(config, request.Configuration);
             
+            // Communication
+            var comm = new Communication();
+            request.Communication = comm;
+            Assert.AreSame(comm, request.Communication);
         }
     }
 }

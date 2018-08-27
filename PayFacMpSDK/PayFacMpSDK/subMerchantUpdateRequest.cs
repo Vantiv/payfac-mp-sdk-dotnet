@@ -67,7 +67,7 @@ namespace PayFacMpSDK
             if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
             if(eCheck != null)
             {
-                xmlBuilder.AppendLine("<eCheck enabled =\"" + eCheck.enabled.ToString().ToLower() +"\">");
+                xmlBuilder.AppendLine("<eCheck enabled=\"" + eCheck.enabled.ToString().ToLower() +"\">");
                 eCheck.Serialize(xmlBuilder);
                 xmlBuilder.AppendLine("</eCheck>");
             }

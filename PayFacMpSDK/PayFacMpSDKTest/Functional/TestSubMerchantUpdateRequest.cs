@@ -20,7 +20,7 @@ namespace PayFacMpSDKTest.Functional
 
 
         [Test]
-        public void TestPutLegalEntityUpdateRequestSimple()
+        public void TestPutSubMerchantUpdateRequestSimple()
         {
             legalEntityId = "201003";
             subMerchantId = "9";
@@ -71,7 +71,7 @@ namespace PayFacMpSDKTest.Functional
         }
 
         [Test]
-        public void TestPutLegalEntityUpdateRequestErrorResponse400()
+        public void TestPutSubMerchantUpdateRequestErrorResponse400()
         {
             legalEntityId = "201400";
             subMerchantId = "9";
@@ -131,7 +131,7 @@ namespace PayFacMpSDKTest.Functional
 
 
         [Test]
-        public void TestPutLegalEntityUpdateRequestErrorResponse401()
+        public void TestPutSubMerchantUpdateRequestErrorResponse401()
         {
             legalEntityId = "201401";
             subMerchantId = "9";
@@ -190,7 +190,7 @@ namespace PayFacMpSDKTest.Functional
         }
 
         [Test]
-        public void TestPutLegalEntityUpdateRequestErrorResponse500()
+        public void TestPutSubMerchantUpdateRequestErrorResponse500()
         {
             legalEntityId = "201500";
             subMerchantId = "9";
@@ -249,7 +249,7 @@ namespace PayFacMpSDKTest.Functional
         }
 
         [Test]
-        public void TestPutLegalEntityUpdateRequestErrorResponse503()
+        public void TestPutSubMerchantUpdateRequestErrorResponse503()
         {
             legalEntityId = "201503";
             subMerchantId = "9";
