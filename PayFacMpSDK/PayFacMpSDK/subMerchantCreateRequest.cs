@@ -51,6 +51,7 @@ namespace PayFacMpSDK
             if(taxAuthority != null) xmlBuilder.AppendLine("<taxAuthority>" + taxAuthority + "</taxAuthority>");
             if(taxAuthorityState != null) xmlBuilder.AppendLine("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
             xmlBuilder.AppendLine("<bankRoutingNumber>" + bankRoutingNumber + "</bankRoutingNumber>");
+            xmlBuilder.AppendLine("<bankAccountNumber>" + bankAccountNumber + "</bankAccountNumber>");
             xmlBuilder.AppendLine("<pspMerchantId>" + pspMerchantId + "</pspMerchantId>");
             if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
             if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
