@@ -30,6 +30,8 @@ namespace PayFacMpSDK
         public subMerchantCreateResponse PostSubMerchantCreateRequest(string legalEntityId)
         {
             string requestBody = Serialize();
+            Console.WriteLine("asdadddddddddddddddddddddddddddddddddddddd");
+            Console.WriteLine(requestBody);
             var xmlResponse = PayFacUtils.SendPostRequest(String.Format(ServiceRoute,legalEntityId), requestBody, _communication, _configuration);
             return PayFacUtils.DeserializeResponse<subMerchantCreateResponse>(xmlResponse);
         }
