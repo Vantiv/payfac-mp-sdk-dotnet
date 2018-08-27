@@ -41,10 +41,6 @@ namespace PayFacMpSDKTest.Functional
             Assert.AreEqual("Manual Review", response.responseDescription);
         }
 
-
-
-
-
         [Test]
         public void TestGetLegalEntityRetrievalRequestErrorResponse400()
         {
