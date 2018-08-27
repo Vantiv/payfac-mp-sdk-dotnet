@@ -51,9 +51,10 @@ namespace PayFacMpSDK
             if(taxAuthority != null) xmlBuilder.AppendLine("<taxAuthority>" + taxAuthority + "</taxAuthority>");
             if(taxAuthorityState != null) xmlBuilder.AppendLine("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
             xmlBuilder.AppendLine("<bankRoutingNumber>" + bankRoutingNumber + "</bankRoutingNumber>");
+            xmlBuilder.AppendLine("<bankAccountNumber>" + bankAccountNumber + "</bankAccountNumber>");
             xmlBuilder.AppendLine("<pspMerchantId>" + pspMerchantId + "</pspMerchantId>");
-            if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled + "\"></fraud>");
-            if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled + "\"></amexAcquired>");
+            if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
+            if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
             if(address != null)
             {
                 xmlBuilder.AppendLine("<address>");
@@ -66,16 +67,16 @@ namespace PayFacMpSDK
                 primaryContact.Serialize(xmlBuilder);
                 xmlBuilder.AppendLine("</primaryContact>");
             }
-            if(createCredentialsSpecified) xmlBuilder.AppendLine("<createCredentials>" + createCredentials + "</createCredentials>");
+            if(createCredentialsSpecified) xmlBuilder.AppendLine("<createCredentials>" + createCredentials.ToString().ToLower() + "</createCredentials>");
             if(eCheck != null)
             {
-                xmlBuilder.AppendLine("<eCheck enabled =\"" + eCheck.enabled +"\">");
+                xmlBuilder.AppendLine("<eCheck enabled =\"" + eCheck.enabled.ToString().ToLower() + "\">");
                 eCheck.Serialize(xmlBuilder);
                 xmlBuilder.AppendLine("</eCheck>");
             }
             if(subMerchantFunding != null)
             {
-                xmlBuilder.AppendLine("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled +"\">");
+                xmlBuilder.AppendLine("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled.ToString().ToLower() + "\">");
                 subMerchantFunding.Serialize(xmlBuilder);
                 xmlBuilder.AppendLine("</subMerchantFunding>");
             }
