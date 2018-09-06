@@ -5,8 +5,8 @@ notifications:
     - sdksupport@vantiv.com
 dotnet: 2.1
 install:
-  - nuget restore PayFacMpSDK.sln
+  - nuget restore PayFacMpSDK/PayFacMpSDK.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release PayFacMpSDK.sln
+  - xbuild /p:Configuration=Release PayFacMpSDK/PayFacMpSDK.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe  PayFacMpSDKTest/bin/Debug/PayFacMpSDKTest.exe
