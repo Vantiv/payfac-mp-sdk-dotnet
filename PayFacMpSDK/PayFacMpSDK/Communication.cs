@@ -42,7 +42,7 @@ namespace PayFacMpSDK
 
         public void SetProxy(string host, string port)
         {
-            if (host == null && port == null) return;
+            if (host == null && port == null || host == "" && port == "") return;
 
             try
             {
