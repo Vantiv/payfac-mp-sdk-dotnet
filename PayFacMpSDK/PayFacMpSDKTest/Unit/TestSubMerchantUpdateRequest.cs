@@ -64,46 +64,44 @@ namespace PayFacMpSDKTest.Unit
             legalEntityId = "201003";
             subMerchantId = "9";
 
-            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-                         "<subMerchantUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-                         "<amexMid>1234567890</amexMid>\n" +
-                         "<discoverConveyedMid>123456789012345</discoverConveyedMid>\n" +
-                         "<url>http://merchantUrl</url>\n" +
-                         "<customerServiceNumber>8407809000</customerServiceNumber>\n" +
-                         "<hardCodedBillingDescriptor>Descriptor</hardCodedBillingDescriptor>\n" +
-                         "<maxTransactionAmount>8400</maxTransactionAmount>\n" +
-                         "<bankRoutingNumber>840123124</bankRoutingNumber>\n" +
-                         "<bankAccountNumber>84012312415</bankAccountNumber>\n" +
-                         "<pspMerchantId>785412365</pspMerchantId>\n" +
-                         "<purchaseCurrency>USD</purchaseCurrency>\n" +
-                         "<address>\n" +
-                         "<streetAddress1>Street Address 1</streetAddress1>\n" +
-                         "<streetAddress2>Street Address 2</streetAddress2>\n" +
-                         "<city>City</city>\n" +
-                         "<stateProvince>MA</stateProvince>\n" +
-                         "<postalCode>01970</postalCode>\n" +
-                         "</address>\n" +
-                         "<primaryContact>\n" +
-                         "<firstName>John</firstName>\n" +
-                         "<lastName>Doe</lastName>\n" +
-                         "<phone>9785552222</phone>\n" +
-                         "</primaryContact>\n" +
-                         "<fraud enabled=\"true\"></fraud>\n" +
-                         "<amexAcquired enabled=\"true\"></amexAcquired>\n" +
-                         "<eCheck enabled=\"true\">\n" +
-                         "<eCheckBillingDescriptor>9785552222</eCheckBillingDescriptor>\n" +
-                         "</eCheck>\n" +
+            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+                         "<subMerchantUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+                         "<amexMid>1234567890</amexMid>" +
+                         "<discoverConveyedMid>123456789012345</discoverConveyedMid>" +
+                         "<url>http://merchantUrl</url>" +
+                         "<customerServiceNumber>8407809000</customerServiceNumber>" +
+                         "<hardCodedBillingDescriptor>Descriptor</hardCodedBillingDescriptor>" +
+                         "<maxTransactionAmount>8400</maxTransactionAmount>" +
+                         "<bankRoutingNumber>840123124</bankRoutingNumber>" +
+                         "<bankAccountNumber>84012312415</bankAccountNumber>" +
+                         "<pspMerchantId>785412365</pspMerchantId>" +
+                         "<purchaseCurrency>USD</purchaseCurrency>" +
+                         "<address>" +
+                         "<streetAddress1>Street Address 1</streetAddress1>" +
+                         "<streetAddress2>Street Address 2</streetAddress2>" +
+                         "<city>City</city>" +
+                         "<stateProvince>MA</stateProvince>" +
+                         "<postalCode>01970</postalCode>" +
+                         "</address>" +
+                         "<primaryContact>" +
+                         "<firstName>John</firstName>" +
+                         "<lastName>Doe</lastName>" +
+                         "<phone>9785552222</phone>" +
+                         "</primaryContact>" +
+                         "<fraud enabled=\"true\"></fraud>" +
+                         "<amexAcquired enabled=\"true\"></amexAcquired>" +
+                         "<eCheck enabled=\"true\">" +
+                         "<eCheckBillingDescriptor>9785552222</eCheckBillingDescriptor>" +
+                         "</eCheck>" +
                          "</subMerchantUpdateRequest>";
 
-            var expectedRequest = xmlReq.Replace("\n", "\r\n");
-            Assert.AreEqual(expectedRequest, request.Serialize());
-            var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-                                   "<response xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-                                   "    <transactionId>9766925103</transactionId>\n" +
+            var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+                                   "<response xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+                                   "    <transactionId>9766925103</transactionId>" +
                                    "</response>";
             
             var mock = new Mock<Communication>();
-            mock.Setup(Communication => Communication.Put("/legalentity/201003/submerchant/9", expectedRequest)).Returns(expectedResponse);
+            mock.Setup(Communication => Communication.Put("/legalentity/201003/submerchant/9", xmlReq)).Returns(expectedResponse);
 
             Communication communicationMock = mock.Object;
             request.Communication = communicationMock;

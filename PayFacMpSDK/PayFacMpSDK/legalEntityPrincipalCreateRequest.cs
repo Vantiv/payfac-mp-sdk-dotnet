@@ -37,11 +37,11 @@ namespace PayFacMpSDK
         public string Serialize()
         {
             StringBuilder xmlBuilder = new StringBuilder();
-            xmlBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
-            xmlBuilder.AppendLine("<legalEntityPrincipalCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
-            xmlBuilder.AppendLine("<principal>");
+            xmlBuilder.Append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
+            xmlBuilder.Append("<legalEntityPrincipalCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
+            xmlBuilder.Append("<principal>");
             principal.Serialize(xmlBuilder);
-            xmlBuilder.AppendLine("</principal>");
+            xmlBuilder.Append("</principal>");
             xmlBuilder.Append("</legalEntityPrincipalCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();

@@ -45,7 +45,7 @@ namespace PayFacMpSDK
             StringBuilder errorBuilder = new StringBuilder();
             foreach(var err in errorMessages)
             {
-                errorBuilder.AppendLine(err);
+                errorBuilder.Append(err);
             }
             return errorBuilder.ToString();
         }

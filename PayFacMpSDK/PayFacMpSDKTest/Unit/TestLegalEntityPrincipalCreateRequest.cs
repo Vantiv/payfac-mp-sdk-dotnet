@@ -44,44 +44,42 @@ namespace PayFacMpSDKTest.Unit
         public void TestPostLegalEntityPrincipalCreateRequest()
         {
             legalEntityId = "2018";
-            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-                         "<legalEntityPrincipalCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-                         "<principal>\n" +
-                         "<title>Mr.</title>\n" +
-                         "<firstName>Jon</firstName>\n" +
-                         "<lastName>Snow</lastName>\n" +
-                         "<emailAddress>abc@email.com</emailAddress>\n" +
-                         "<ssn>123450015</ssn>\n" +
-                         "<dateOfBirth>1980-10-12</dateOfBirth>\n" +
-                         "<address>\n" +
-                         "<streetAddress1>p2 street address 1</streetAddress1>\n" +
-                         "<streetAddress2>p2 street address 2</streetAddress2>\n" +
-                         "<city>Boston</city>\n" +
-                         "<stateProvince>MA</stateProvince>\n" +
-                         "<postalCode>01892</postalCode>\n" +
-                         "<countryCode>USA</countryCode>\n" +
-                         "</address>\n" +
-                         "<stakePercent>31</stakePercent>\n" +
-                         "</principal>\n" +
+            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+                         "<legalEntityPrincipalCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+                         "<principal>" +
+                         "<title>Mr.</title>" +
+                         "<firstName>Jon</firstName>" +
+                         "<lastName>Snow</lastName>" +
+                         "<emailAddress>abc@email.com</emailAddress>" +
+                         "<ssn>123450015</ssn>" +
+                         "<dateOfBirth>1980-10-12</dateOfBirth>" +
+                         "<address>" +
+                         "<streetAddress1>p2 street address 1</streetAddress1>" +
+                         "<streetAddress2>p2 street address 2</streetAddress2>" +
+                         "<city>Boston</city>" +
+                         "<stateProvince>MA</stateProvince>" +
+                         "<postalCode>01892</postalCode>" +
+                         "<countryCode>USA</countryCode>" +
+                         "</address>" +
+                         "<stakePercent>31</stakePercent>" +
+                         "</principal>" +
                          "</legalEntityPrincipalCreateRequest>";
             
-            var expectedRequest = xmlReq.Replace("\n", "\r\n");
-            
-            var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-                                   "<principalCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-                                   "    <legalEntityId>2018</legalEntityId>\n" +
-                                   "    <principal>\n" +
-                                   "        <principalId>8</principalId>\n" +
-                                   "        <firstName>Jon</firstName>\n" +
-                                   "        <lastName>Snow</lastName>\n" +
-                                   "        <responseCode>10</responseCode>\n" +
-                                   "        <responseDescription>Approved</responseDescription>\n" +
-                                   "    </principal>\n" +
-                                   "    <transactionId>9251158686</transactionId>\n" +
+            var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+                                   "<principalCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+                                   "    <legalEntityId>2018</legalEntityId>" +
+                                   "    <principal>" +
+                                   "        <principalId>8</principalId>" +
+                                   "        <firstName>Jon</firstName>" +
+                                   "        <lastName>Snow</lastName>" +
+                                   "        <responseCode>10</responseCode>" +
+                                   "        <responseDescription>Approved</responseDescription>" +
+                                   "    </principal>" +
+                                   "    <transactionId>9251158686</transactionId>" +
                                    "</principalCreateResponse>";
             
             var mock = new Mock<Communication>();
-            mock.Setup(Communication => Communication.Post("/legalentity/2018/principal", expectedRequest)).Returns(expectedResponse);
+            mock.Setup(Communication => Communication.Post("/legalentity/2018/principal", xmlReq)).Returns(expectedResponse);
 
             Communication communicationMock = mock.Object;
             request.Communication = communicationMock;

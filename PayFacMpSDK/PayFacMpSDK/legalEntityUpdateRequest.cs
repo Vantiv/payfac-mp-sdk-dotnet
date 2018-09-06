@@ -37,32 +37,32 @@ namespace PayFacMpSDK
         public string Serialize()
         {
             StringBuilder xmlBuilder = new StringBuilder();
-            xmlBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
-            xmlBuilder.AppendLine("<legalEntityUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
+            xmlBuilder.Append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
+            xmlBuilder.Append("<legalEntityUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
             if(address != null)
             {
-                xmlBuilder.AppendLine("<address>");
+                xmlBuilder.Append("<address>");
                 address.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</address>");
+                xmlBuilder.Append("</address>");
             }
-            if(contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
-            if(doingBusinessAs != null) xmlBuilder.AppendLine("<doingBusinessAs>" + doingBusinessAs + "</doingBusinessAs>");
-            if(annualCreditCardSalesVolumeSpecified) xmlBuilder.AppendLine("<annualCreditCardSalesVolume>" + annualCreditCardSalesVolume + "</annualCreditCardSalesVolume>");
-            if(hasAcceptedCreditCardsSpecified) xmlBuilder.AppendLine("<hasAcceptedCreditCards>" + hasAcceptedCreditCards.ToString().ToLower() + "</hasAcceptedCreditCards>");
+            if(contactPhone != null) xmlBuilder.Append("<contactPhone>" + contactPhone + "</contactPhone>");
+            if(doingBusinessAs != null) xmlBuilder.Append("<doingBusinessAs>" + doingBusinessAs + "</doingBusinessAs>");
+            if(annualCreditCardSalesVolumeSpecified) xmlBuilder.Append("<annualCreditCardSalesVolume>" + annualCreditCardSalesVolume + "</annualCreditCardSalesVolume>");
+            if(hasAcceptedCreditCardsSpecified) xmlBuilder.Append("<hasAcceptedCreditCards>" + hasAcceptedCreditCards.ToString().ToLower() + "</hasAcceptedCreditCards>");
             if(principal != null)
             {
-                xmlBuilder.AppendLine("<principal>");
+                xmlBuilder.Append("<principal>");
                 principal.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</principal>");
+                xmlBuilder.Append("</principal>");
             }
             if(backgroundCheckFields != null)
             {
-                xmlBuilder.AppendLine("<backgroundCheckFields>");
+                xmlBuilder.Append("<backgroundCheckFields>");
                 backgroundCheckFields.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</backgroundCheckFields>");
+                xmlBuilder.Append("</backgroundCheckFields>");
             }
-            if(legalEntityOwnershipTypeSpecified) xmlBuilder.AppendLine("<legalEntityOwnershipType>" + legalEntityOwnershipType + "</legalEntityOwnershipType>");
-            if(yearsInBusiness != null) xmlBuilder.AppendLine("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
+            if(legalEntityOwnershipTypeSpecified) xmlBuilder.Append("<legalEntityOwnershipType>" + legalEntityOwnershipType + "</legalEntityOwnershipType>");
+            if(yearsInBusiness != null) xmlBuilder.Append("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
             
             xmlBuilder.Append("</legalEntityUpdateRequest>");
             Console.WriteLine(xmlBuilder.ToString());

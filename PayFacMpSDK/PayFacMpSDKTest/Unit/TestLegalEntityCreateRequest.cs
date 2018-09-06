@@ -65,164 +65,162 @@ namespace PayFacMpSDKTest.Unit
         public void TestPostLegalEntityCreateRequest()
         {
 
-            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-        "<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-        "<legalEntityName>Legal Entity Name</legalEntityName>\n" +
-        "<legalEntityType>CORPORATION</legalEntityType>\n" +
-        "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>\n" +
-        "<doingBusinessAs>Alternate Business Name</doingBusinessAs>\n" +
-        "<taxId>123456789</taxId>\n" +
-        "<contactPhone>7817659800</contactPhone>\n" +
-        "<annualCreditCardSalesVolume>80000000</annualCreditCardSalesVolume>\n" +
-        "<hasAcceptedCreditCards>true</hasAcceptedCreditCards>\n" +
-        "<address>\n" +
-        "<streetAddress1>Street Address 1</streetAddress1>\n" +
-        "<streetAddress2>Street Address 2</streetAddress2>\n" +
-        "<city>Boston</city>\n" +
-        "<stateProvince>MA</stateProvince>\n" +
-        "<postalCode>01730</postalCode>\n" +
-        "<countryCode>USA</countryCode>\n" +
-        "</address>\n" +
-        "<principal>\n" +
-        "<title>Chief Financial Officer</title>\n" +
-        "<firstName>p first</firstName>\n" +
-        "<lastName>p last</lastName>\n" +
-        "<emailAddress>abc@email.com</emailAddress>\n" +
-        "<ssn>123459876</ssn>\n" +
-        "<contactPhone>7817659800</contactPhone>\n" +
-        "<dateOfBirth>1980-10-12</dateOfBirth>\n" +
-        "<driversLicense>892327409832</driversLicense>\n" +
-        "<address>\n" +
-        "<streetAddress1>p street address 1</streetAddress1>\n" +
-        "<streetAddress2>p street address 2</streetAddress2>\n" +
-        "<city>Boston</city>\n" +
-        "<stateProvince>MA</stateProvince>\n" +
-        "<postalCode>01890</postalCode>\n" +
-        "<countryCode>USA</countryCode>\n" +
-        "</address>\n" +
-        "<stakePercent>33</stakePercent>\n" +
-        "</principal>\n" +
-        "<yearsInBusiness>12</yearsInBusiness>\n" +
+            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+        "<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+        "<legalEntityName>Legal Entity Name</legalEntityName>" +
+        "<legalEntityType>CORPORATION</legalEntityType>" +
+        "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>" +
+        "<doingBusinessAs>Alternate Business Name</doingBusinessAs>" +
+        "<taxId>123456789</taxId>" +
+        "<contactPhone>7817659800</contactPhone>" +
+        "<annualCreditCardSalesVolume>80000000</annualCreditCardSalesVolume>" +
+        "<hasAcceptedCreditCards>true</hasAcceptedCreditCards>" +
+        "<address>" +
+        "<streetAddress1>Street Address 1</streetAddress1>" +
+        "<streetAddress2>Street Address 2</streetAddress2>" +
+        "<city>Boston</city>" +
+        "<stateProvince>MA</stateProvince>" +
+        "<postalCode>01730</postalCode>" +
+        "<countryCode>USA</countryCode>" +
+        "</address>" +
+        "<principal>" +
+        "<title>Chief Financial Officer</title>" +
+        "<firstName>p first</firstName>" +
+        "<lastName>p last</lastName>" +
+        "<emailAddress>abc@email.com</emailAddress>" +
+        "<ssn>123459876</ssn>" +
+        "<contactPhone>7817659800</contactPhone>" +
+        "<dateOfBirth>1980-10-12</dateOfBirth>" +
+        "<driversLicense>892327409832</driversLicense>" +
+        "<address>" +
+        "<streetAddress1>p street address 1</streetAddress1>" +
+        "<streetAddress2>p street address 2</streetAddress2>" +
+        "<city>Boston</city>" +
+        "<stateProvince>MA</stateProvince>" +
+        "<postalCode>01890</postalCode>" +
+        "<countryCode>USA</countryCode>" +
+        "</address>" +
+        "<stakePercent>33</stakePercent>" +
+        "</principal>" +
+        "<yearsInBusiness>12</yearsInBusiness>" +
         "</legalEntityCreateRequest>";
 
-            var expectedRequest = xmlReq.Replace("\n", "\r\n");
-
-            string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-        "<legalEntityCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-        "    <transactionId>2985335872</transactionId>\n" +
-        "    <legalEntityId>21201</legalEntityId>\n" +
-        "    <responseCode>10</responseCode>\n" +
-        "    <responseDescription>Approved</responseDescription>\n" +
-        "    <backgroundCheckResults>\n" +
-        "        <business>\n" +
-        "            <verificationResult>\n" +
-        "                <overallScore>\n" +
-        "                    <score>40</score>\n" +
-        "                    <description>Business identity is confirmed at the input address</description>\n" +
-        "                </overallScore>\n" +
-        "                <nameAddressTaxIdAssociation>\n" +
-        "                    <code>NAME_ADDRESS_TAX_ID</code>\n" +
-        "                    <description>Name, address, and Tax Id verified.</description>\n" +
-        "                </nameAddressTaxIdAssociation>\n" +
-        "                <nameAddressPhoneAssociation>\n" +
-        "                    <code>NAME_ADDRESS_PHONE</code>\n" +
-        "                    <description>Name, address, and phone verified.</description>\n" +
-        "                </nameAddressPhoneAssociation>\n" +
-        "                <verificationIndicators>\n" +
-        "                    <nameVerified>true</nameVerified>\n" +
-        "                    <addressVerified>true</addressVerified>\n" +
-        "                    <cityVerified>true</cityVerified>\n" +
-        "                    <stateVerified>true</stateVerified>\n" +
-        "                    <zipVerified>true</zipVerified>\n" +
-        "                    <phoneVerified>true</phoneVerified>\n" +
-        "                    <taxIdVerified>true</taxIdVerified>\n" +
-        "                </verificationIndicators>\n" +
-        "                <riskIndicators>\n" +
-        "                    <riskIndicator>\n" +
-        "                        <code>PHONE_NUMBER_MOBILE</code>\n" +
-        "                        <description>The submitted phone number is a mobile number.</description>\n" +
-        "                    </riskIndicator>\n" +
-        "                    <riskIndicator>\n" +
-        "                        <code>PHONE_NUMBER_MOBILE</code>\n" +
-        "                        <description>The submitted phone number is a mobile number.</description>\n" +
-        "                    </riskIndicator>\n" +
-        "                </riskIndicators>\n" +
-        "            </verificationResult>\n" +
-        "        </business>\n" +
-        "        <principal>\n" +
-        "            <verificationResult>\n" +
-        "                <overallScore>\n" +
-        "                    <score>50</score>\n" +
-        "                    <description>Full name, address, phone, and SSN verified.</description>\n" +
-        "                </overallScore>\n" +
-        "                <nameAddressSsnAssociation>\n" +
-        "                    <code>FIRST_LAST_ADDRESS_SSN</code>\n" +
-        "                    <description>First name, last name, address, and SSN verified.</description>\n" +
-        "                </nameAddressSsnAssociation>\n" +
-        "                <nameAddressPhoneAssociation>\n" +
-        "                    <code>LAST_ADDRESS_PHONE</code>\n" +
-        "                    <description>Last name, address, and phone number verified.</description>\n" +
-        "                </nameAddressPhoneAssociation>\n" +
-        "                <verificationIndicators>\n" +
-        "                    <nameVerified>true</nameVerified>\n" +
-        "                    <addressVerified>true</addressVerified>\n" +
-        "                    <phoneVerified>true</phoneVerified>\n" +
-        "                    <ssnVerified>true</ssnVerified>\n" +
-        "                    <dobVerified>true</dobVerified>\n" +
-        "                </verificationIndicators>\n" +
-        "                <riskIndicators>\n" +
-        "                    <riskIndicator>\n" +
-        "                        <code>PHONE_NUMBER_MOBILE</code>\n" +
-        "                        <description>The submitted phone number is a mobile number.</description>\n" +
-        "                    </riskIndicator>\n" +
-        "                    <riskIndicator>\n" +
-        "                        <code>PHONE_NUMBER_MOBILE</code>\n" +
-        "                        <description>The submitted phone number is a mobile number.</description>\n" +
-        "                    </riskIndicator>\n" +
-        "                </riskIndicators>\n" +
-        "            </verificationResult>\n" +
-        "        </principal>\n" +
-        "        <businessToPrincipalAssociation>\n" +
-        "            <score>20</score>\n" +
-        "            <description>Principal’s verified address matches input Business address.</description>\n" +
-        "        </businessToPrincipalAssociation>\n" +
-        "        <backgroundCheckDecisionNotes>M45UhpWmualMjGMx3PZH</backgroundCheckDecisionNotes>\n" +
-        "        <bankruptcyData>\n" +
-        "            <bankruptcyType>XrVwb</bankruptcyType>\n" +
-        "            <bankruptcyCount>5</bankruptcyCount>\n" +
-        "            <companyName>Company Name</companyName>\n" +
-        "            <streetAddress1>100 Main Street</streetAddress1>\n" +
-        "            <streetAddress2>Suite 2</streetAddress2>\n" +
-        "            <city>Boston</city>\n" +
-        "            <state>MA</state>\n" +
-        "            <zip>01150</zip>\n" +
-        "            <zip4>2202</zip4>\n" +
-        "            <filingDate>2018-08-27</filingDate>\n" +
-        "        </bankruptcyData>\n" +
-        "        <lienResult>\n" +
-        "            <lienType>0jQyxTbIErx3JmJ</lienType>\n" +
-        "            <releasedCount>7</releasedCount>\n" +
-        "            <unreleasedCount>3</unreleasedCount>\n" +
-        "            <companyName>Company Name</companyName>\n" +
-        "            <streetAddress1>100 Main Street</streetAddress1>\n" +
-        "            <streetAddress2>Suite 2</streetAddress2>\n" +
-        "            <city>Boston</city>\n" +
-        "            <state>MA</state>\n" +
-        "            <zip>01150</zip>\n" +
-        "            <zip4>2202</zip4>\n" +
-        "            <filingDate>2018-08-27</filingDate>\n" +
-        "        </lienResult>\n" +
-        "    </backgroundCheckResults>\n" +
-        "    <principal>\n" +
-        "        <principalId>59217</principalId>\n" +
-        "        <firstName>p_first</firstName>\n" +
-        "        <lastName>p_last</lastName>\n" +
-        "    </principal>\n" +
+            string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+        "<legalEntityCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+        "    <transactionId>2985335872</transactionId>" +
+        "    <legalEntityId>21201</legalEntityId>" +
+        "    <responseCode>10</responseCode>" +
+        "    <responseDescription>Approved</responseDescription>" +
+        "    <backgroundCheckResults>" +
+        "        <business>" +
+        "            <verificationResult>" +
+        "                <overallScore>" +
+        "                    <score>40</score>" +
+        "                    <description>Business identity is confirmed at the input address</description>" +
+        "                </overallScore>" +
+        "                <nameAddressTaxIdAssociation>" +
+        "                    <code>NAME_ADDRESS_TAX_ID</code>" +
+        "                    <description>Name, address, and Tax Id verified.</description>" +
+        "                </nameAddressTaxIdAssociation>" +
+        "                <nameAddressPhoneAssociation>" +
+        "                    <code>NAME_ADDRESS_PHONE</code>" +
+        "                    <description>Name, address, and phone verified.</description>" +
+        "                </nameAddressPhoneAssociation>" +
+        "                <verificationIndicators>" +
+        "                    <nameVerified>true</nameVerified>" +
+        "                    <addressVerified>true</addressVerified>" +
+        "                    <cityVerified>true</cityVerified>" +
+        "                    <stateVerified>true</stateVerified>" +
+        "                    <zipVerified>true</zipVerified>" +
+        "                    <phoneVerified>true</phoneVerified>" +
+        "                    <taxIdVerified>true</taxIdVerified>" +
+        "                </verificationIndicators>" +
+        "                <riskIndicators>" +
+        "                    <riskIndicator>" +
+        "                        <code>PHONE_NUMBER_MOBILE</code>" +
+        "                        <description>The submitted phone number is a mobile number.</description>" +
+        "                    </riskIndicator>" +
+        "                    <riskIndicator>" +
+        "                        <code>PHONE_NUMBER_MOBILE</code>" +
+        "                        <description>The submitted phone number is a mobile number.</description>" +
+        "                    </riskIndicator>" +
+        "                </riskIndicators>" +
+        "            </verificationResult>" +
+        "        </business>" +
+        "        <principal>" +
+        "            <verificationResult>" +
+        "                <overallScore>" +
+        "                    <score>50</score>" +
+        "                    <description>Full name, address, phone, and SSN verified.</description>" +
+        "                </overallScore>" +
+        "                <nameAddressSsnAssociation>" +
+        "                    <code>FIRST_LAST_ADDRESS_SSN</code>" +
+        "                    <description>First name, last name, address, and SSN verified.</description>" +
+        "                </nameAddressSsnAssociation>" +
+        "                <nameAddressPhoneAssociation>" +
+        "                    <code>LAST_ADDRESS_PHONE</code>" +
+        "                    <description>Last name, address, and phone number verified.</description>" +
+        "                </nameAddressPhoneAssociation>" +
+        "                <verificationIndicators>" +
+        "                    <nameVerified>true</nameVerified>" +
+        "                    <addressVerified>true</addressVerified>" +
+        "                    <phoneVerified>true</phoneVerified>" +
+        "                    <ssnVerified>true</ssnVerified>" +
+        "                    <dobVerified>true</dobVerified>" +
+        "                </verificationIndicators>" +
+        "                <riskIndicators>" +
+        "                    <riskIndicator>" +
+        "                        <code>PHONE_NUMBER_MOBILE</code>" +
+        "                        <description>The submitted phone number is a mobile number.</description>" +
+        "                    </riskIndicator>" +
+        "                    <riskIndicator>" +
+        "                        <code>PHONE_NUMBER_MOBILE</code>" +
+        "                        <description>The submitted phone number is a mobile number.</description>" +
+        "                    </riskIndicator>" +
+        "                </riskIndicators>" +
+        "            </verificationResult>" +
+        "        </principal>" +
+        "        <businessToPrincipalAssociation>" +
+        "            <score>20</score>" +
+        "            <description>Principal’s verified address matches input Business address.</description>" +
+        "        </businessToPrincipalAssociation>" +
+        "        <backgroundCheckDecisionNotes>M45UhpWmualMjGMx3PZH</backgroundCheckDecisionNotes>" +
+        "        <bankruptcyData>" +
+        "            <bankruptcyType>XrVwb</bankruptcyType>" +
+        "            <bankruptcyCount>5</bankruptcyCount>" +
+        "            <companyName>Company Name</companyName>" +
+        "            <streetAddress1>100 Main Street</streetAddress1>" +
+        "            <streetAddress2>Suite 2</streetAddress2>" +
+        "            <city>Boston</city>" +
+        "            <state>MA</state>" +
+        "            <zip>01150</zip>" +
+        "            <zip4>2202</zip4>" +
+        "            <filingDate>2018-08-27</filingDate>" +
+        "        </bankruptcyData>" +
+        "        <lienResult>" +
+        "            <lienType>0jQyxTbIErx3JmJ</lienType>" +
+        "            <releasedCount>7</releasedCount>" +
+        "            <unreleasedCount>3</unreleasedCount>" +
+        "            <companyName>Company Name</companyName>" +
+        "            <streetAddress1>100 Main Street</streetAddress1>" +
+        "            <streetAddress2>Suite 2</streetAddress2>" +
+        "            <city>Boston</city>" +
+        "            <state>MA</state>" +
+        "            <zip>01150</zip>" +
+        "            <zip4>2202</zip4>" +
+        "            <filingDate>2018-08-27</filingDate>" +
+        "        </lienResult>" +
+        "    </backgroundCheckResults>" +
+        "    <principal>" +
+        "        <principalId>59217</principalId>" +
+        "        <firstName>p_first</firstName>" +
+        "        <lastName>p_last</lastName>" +
+        "    </principal>" +
         "</legalEntityCreateResponse>";
 
 
             var mock = new Mock<Communication>();
-            mock.Setup(Communication => Communication.Post("/legalentity", expectedRequest)).Returns(expectedResposne);
+            mock.Setup(Communication => Communication.Post("/legalentity", xmlReq)).Returns(expectedResposne);
             Communication communicationMock = mock.Object;
             request.Communication = communicationMock;
             response = request.PostLegalEntityCreateRequest();

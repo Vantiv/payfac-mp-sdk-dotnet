@@ -12,13 +12,13 @@ namespace PayFacMpSDK
         public void Serialize(StringBuilder xmlBuilder)
         {
 
-            xmlBuilder.AppendLine("<legalEntityAgreementType>" + legalEntityAgreementType + "</legalEntityAgreementType>");
-            xmlBuilder.AppendLine("<agreementVersion>" + agreementVersion + "</agreementVersion>");
-            xmlBuilder.AppendLine("<userFullName>" + userFullName + "</userFullName>");
-            xmlBuilder.AppendLine("<userSystemName>" + userSystemName + "</userSystemName>");
-            xmlBuilder.AppendLine("<userIPAddress>" + userIPAddress + "</userIPAddress>");
-            if (manuallyEnteredSpecified) xmlBuilder.AppendLine("<manuallyEntered>" + manuallyEntered.ToString().ToLower() + "</manuallyEntered>");
-            xmlBuilder.AppendLine("<acceptanceDateTime>" + acceptanceDateTime.ToString("yyyy-MM-ddThh:mm:sszzz") + "</acceptanceDateTime>");
+            xmlBuilder.Append("<legalEntityAgreementType>" + legalEntityAgreementType + "</legalEntityAgreementType>");
+            xmlBuilder.Append("<agreementVersion>" + agreementVersion + "</agreementVersion>");
+            xmlBuilder.Append("<userFullName>" + userFullName + "</userFullName>");
+            xmlBuilder.Append("<userSystemName>" + userSystemName + "</userSystemName>");
+            xmlBuilder.Append("<userIPAddress>" + userIPAddress + "</userIPAddress>");
+            if (manuallyEnteredSpecified) xmlBuilder.Append("<manuallyEntered>" + manuallyEntered.ToString().ToLower() + "</manuallyEntered>");
+            xmlBuilder.Append("<acceptanceDateTime>" + acceptanceDateTime.ToString("yyyy-MM-ddThh:mm:sszzz") + "</acceptanceDateTime>");
         }
     }
 
@@ -28,8 +28,8 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if(eCheckCompanyName != null) xmlBuilder.AppendLine("<eCheckCompanyName>" + eCheckCompanyName + "</eCheckCompanyName>");
-            if(eCheckBillingDescriptor != null) xmlBuilder.AppendLine("<eCheckBillingDescriptor>" + eCheckBillingDescriptor + "</eCheckBillingDescriptor>");
+            if(eCheckCompanyName != null) xmlBuilder.Append("<eCheckCompanyName>" + eCheckCompanyName + "</eCheckCompanyName>");
+            if(eCheckBillingDescriptor != null) xmlBuilder.Append("<eCheckBillingDescriptor>" + eCheckBillingDescriptor + "</eCheckBillingDescriptor>");
         }
     }
 
@@ -39,8 +39,8 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if(feeProfile != null) xmlBuilder.AppendLine("<feeProfile>" + feeProfile + "</feeProfile>");
-            if(fundingSubmerchantId != null) xmlBuilder.AppendLine("<fundingSubmerchantId>" + fundingSubmerchantId + "</fundingSubmerchantId>");
+            if(feeProfile != null) xmlBuilder.Append("<feeProfile>" + feeProfile + "</feeProfile>");
+            if(fundingSubmerchantId != null) xmlBuilder.Append("<fundingSubmerchantId>" + fundingSubmerchantId + "</fundingSubmerchantId>");
         }
     }
 
@@ -49,12 +49,12 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (streetAddress1 != null) xmlBuilder.AppendLine("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
-            if (streetAddress2 != null) xmlBuilder.AppendLine("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
-            if (city != null) xmlBuilder.AppendLine("<city>" + city + "</city>");
-            if (stateProvince != null) xmlBuilder.AppendLine("<stateProvince>" + stateProvince + "</stateProvince>");
-            if (postalCode != null) xmlBuilder.AppendLine("<postalCode>" + postalCode + "</postalCode>");
-            if (countryCode != null) xmlBuilder.AppendLine("<countryCode>" + countryCode + "</countryCode>");
+            if (streetAddress1 != null) xmlBuilder.Append("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
+            if (streetAddress2 != null) xmlBuilder.Append("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
+            if (city != null) xmlBuilder.Append("<city>" + city + "</city>");
+            if (stateProvince != null) xmlBuilder.Append("<stateProvince>" + stateProvince + "</stateProvince>");
+            if (postalCode != null) xmlBuilder.Append("<postalCode>" + postalCode + "</postalCode>");
+            if (countryCode != null) xmlBuilder.Append("<countryCode>" + countryCode + "</countryCode>");
         }
     }
 
@@ -63,22 +63,22 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            xmlBuilder.AppendLine("<principalId>" + principalId + "</principalId>");
-            if (title != null) xmlBuilder.AppendLine("<title>" + title + "</title>");
-            if (emailAddress != null) xmlBuilder.AppendLine("<emailAddress>" + emailAddress + "</emailAddress>");
-            if (contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
+            xmlBuilder.Append("<principalId>" + principalId + "</principalId>");
+            if (title != null) xmlBuilder.Append("<title>" + title + "</title>");
+            if (emailAddress != null) xmlBuilder.Append("<emailAddress>" + emailAddress + "</emailAddress>");
+            if (contactPhone != null) xmlBuilder.Append("<contactPhone>" + contactPhone + "</contactPhone>");
             if (address != null)
             {
-                xmlBuilder.AppendLine("<address>");
+                xmlBuilder.Append("<address>");
                 address.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</address>");
+                xmlBuilder.Append("</address>");
             }
-            if (stakePercentSpecified) xmlBuilder.AppendLine("<stakePercent>" + stakePercent + "</stakePercent>");
+            if (stakePercentSpecified) xmlBuilder.Append("<stakePercent>" + stakePercent + "</stakePercent>");
             if (backgroundCheckFields != null)
             {
-                xmlBuilder.AppendLine("<backgroundCheckFields>");
+                xmlBuilder.Append("<backgroundCheckFields>");
                 backgroundCheckFields.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</backgroundCheckFields>");
+                xmlBuilder.Append("</backgroundCheckFields>");
             }
         }
     }
@@ -88,12 +88,12 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (firstName != null) xmlBuilder.AppendLine("<firstName>" + firstName + "</firstName>");
-            if (lastName != null) xmlBuilder.AppendLine("<lastName>" + lastName + "</lastName>");
-            if (ssn != null) xmlBuilder.AppendLine("<ssn>" + ssn + "</ssn>");
-            if (dateOfBirthSpecified) xmlBuilder.AppendLine("<dateOfBirth>" + dateOfBirth.ToString("yyyy-MM-dd") + "</dateOfBirth>");
-            if (driversLicense != null) xmlBuilder.AppendLine("<driversLicense>" + driversLicense + "</driversLicense>");
-            if (driversLicenseState != null) xmlBuilder.AppendLine("<driversLicenseState>" + driversLicenseState + "</driversLicenseState>");
+            if (firstName != null) xmlBuilder.Append("<firstName>" + firstName + "</firstName>");
+            if (lastName != null) xmlBuilder.Append("<lastName>" + lastName + "</lastName>");
+            if (ssn != null) xmlBuilder.Append("<ssn>" + ssn + "</ssn>");
+            if (dateOfBirthSpecified) xmlBuilder.Append("<dateOfBirth>" + dateOfBirth.ToString("yyyy-MM-dd") + "</dateOfBirth>");
+            if (driversLicense != null) xmlBuilder.Append("<driversLicense>" + driversLicense + "</driversLicense>");
+            if (driversLicenseState != null) xmlBuilder.Append("<driversLicenseState>" + driversLicenseState + "</driversLicenseState>");
         }
     }
 
@@ -101,9 +101,9 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (legalEntityName != null) xmlBuilder.AppendLine("<legalEntityName>" + legalEntityName + "</legalEntityName>");
-            if (legalEntityTypeSpecified) xmlBuilder.AppendLine("<legalEntityType>" + legalEntityType + "</legalEntityType>");
-            if (taxId != null) xmlBuilder.AppendLine("<taxId>" + taxId + "</taxId>");
+            if (legalEntityName != null) xmlBuilder.Append("<legalEntityName>" + legalEntityName + "</legalEntityName>");
+            if (legalEntityTypeSpecified) xmlBuilder.Append("<legalEntityType>" + legalEntityType + "</legalEntityType>");
+            if (taxId != null) xmlBuilder.Append("<taxId>" + taxId + "</taxId>");
         }
     }
 
@@ -111,10 +111,10 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (firstName != null) xmlBuilder.AppendLine("<firstName>" + firstName + "</firstName>");
-            if (lastName != null) xmlBuilder.AppendLine("<lastName>" + lastName + "</lastName>");
-            if (emailAddress != null) xmlBuilder.AppendLine("<emailAddress>" + emailAddress + "</emailAddress>");
-            if (phone != null) xmlBuilder.AppendLine("<phone>" + phone + "</phone>");
+            if (firstName != null) xmlBuilder.Append("<firstName>" + firstName + "</firstName>");
+            if (lastName != null) xmlBuilder.Append("<lastName>" + lastName + "</lastName>");
+            if (emailAddress != null) xmlBuilder.Append("<emailAddress>" + emailAddress + "</emailAddress>");
+            if (phone != null) xmlBuilder.Append("<phone>" + phone + "</phone>");
         }
     }
 
@@ -125,10 +125,10 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            xmlBuilder.AppendLine("<firstName>" + firstName + "</firstName>");
-            xmlBuilder.AppendLine("<lastName>" + lastName + "</lastName>");
-            xmlBuilder.AppendLine("<emailAddress>" + emailAddress + "</emailAddress>");
-            xmlBuilder.AppendLine("<phone>" + phone + "</phone>");
+            xmlBuilder.Append("<firstName>" + firstName + "</firstName>");
+            xmlBuilder.Append("<lastName>" + lastName + "</lastName>");
+            xmlBuilder.Append("<emailAddress>" + emailAddress + "</emailAddress>");
+            xmlBuilder.Append("<phone>" + phone + "</phone>");
 
         }
     }
@@ -138,12 +138,12 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            xmlBuilder.AppendLine("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
-            if(streetAddress2 != null) xmlBuilder.AppendLine("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
-            xmlBuilder.AppendLine("<city>" + city + "</city>");
-            xmlBuilder.AppendLine("<stateProvince>" + stateProvince + "</stateProvince>");
-            xmlBuilder.AppendLine("<postalCode>" + postalCode + "</postalCode>");
-            xmlBuilder.AppendLine("<countryCode>" + countryCode + "</countryCode>");
+            xmlBuilder.Append("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
+            if(streetAddress2 != null) xmlBuilder.Append("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
+            xmlBuilder.Append("<city>" + city + "</city>");
+            xmlBuilder.Append("<stateProvince>" + stateProvince + "</stateProvince>");
+            xmlBuilder.Append("<postalCode>" + postalCode + "</postalCode>");
+            xmlBuilder.Append("<countryCode>" + countryCode + "</countryCode>");
         }
     }
 
@@ -151,12 +151,12 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (streetAddress1 != null) xmlBuilder.AppendLine("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
-            if (streetAddress2 != null) xmlBuilder.AppendLine("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
-            if (city != null) xmlBuilder.AppendLine("<city>" + city + "</city>");
-            if (stateProvince != null) xmlBuilder.AppendLine("<stateProvince>" + stateProvince + "</stateProvince>");
-            if (postalCode != null) xmlBuilder.AppendLine("<postalCode>" + postalCode + "</postalCode>");
-            if (countryCode != null) xmlBuilder.AppendLine("<countryCode>" + countryCode + "</countryCode>");
+            if (streetAddress1 != null) xmlBuilder.Append("<streetAddress1>" + streetAddress1 + "</streetAddress1>");
+            if (streetAddress2 != null) xmlBuilder.Append("<streetAddress2>" + streetAddress2 + "</streetAddress2>");
+            if (city != null) xmlBuilder.Append("<city>" + city + "</city>");
+            if (stateProvince != null) xmlBuilder.Append("<stateProvince>" + stateProvince + "</stateProvince>");
+            if (postalCode != null) xmlBuilder.Append("<postalCode>" + postalCode + "</postalCode>");
+            if (countryCode != null) xmlBuilder.Append("<countryCode>" + countryCode + "</countryCode>");
         }
     }
 
@@ -166,28 +166,28 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if(principalIdSpecified) xmlBuilder.AppendLine("<principalId>" + principalId + "</principalId>");
-            if(title != null) xmlBuilder.AppendLine("<title>" + title + "</title>");
-            xmlBuilder.AppendLine("<firstName>" + firstName + "</firstName>");
-            xmlBuilder.AppendLine("<lastName>" + lastName + "</lastName>");
-            if(emailAddress != null) xmlBuilder.AppendLine("<emailAddress>" + emailAddress + "</emailAddress>");
-            if(ssn != null) xmlBuilder.AppendLine("<ssn>" + ssn + "</ssn>");
-            if(contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
-            xmlBuilder.AppendLine("<dateOfBirth>" + dateOfBirth.ToString("yyyy-MM-dd") + "</dateOfBirth>");
-            if(driversLicense != null) xmlBuilder.AppendLine("<driversLicense>" + driversLicense + "</driversLicense>");
-            if(driversLicenseState != null) xmlBuilder.AppendLine("<driversLicenseState>" + driversLicenseState + "</driversLicenseState>");
+            if(principalIdSpecified) xmlBuilder.Append("<principalId>" + principalId + "</principalId>");
+            if(title != null) xmlBuilder.Append("<title>" + title + "</title>");
+            xmlBuilder.Append("<firstName>" + firstName + "</firstName>");
+            xmlBuilder.Append("<lastName>" + lastName + "</lastName>");
+            if(emailAddress != null) xmlBuilder.Append("<emailAddress>" + emailAddress + "</emailAddress>");
+            if(ssn != null) xmlBuilder.Append("<ssn>" + ssn + "</ssn>");
+            if(contactPhone != null) xmlBuilder.Append("<contactPhone>" + contactPhone + "</contactPhone>");
+            xmlBuilder.Append("<dateOfBirth>" + dateOfBirth.ToString("yyyy-MM-dd") + "</dateOfBirth>");
+            if(driversLicense != null) xmlBuilder.Append("<driversLicense>" + driversLicense + "</driversLicense>");
+            if(driversLicenseState != null) xmlBuilder.Append("<driversLicenseState>" + driversLicenseState + "</driversLicenseState>");
             if (address != null)
             {
-                xmlBuilder.AppendLine("<address>");
+                xmlBuilder.Append("<address>");
                 address.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</address>");
+                xmlBuilder.Append("</address>");
             }
-            xmlBuilder.AppendLine("<stakePercent>" + stakePercent + "</stakePercent>");
+            xmlBuilder.Append("<stakePercent>" + stakePercent + "</stakePercent>");
             if (principal != null)
             {
-                xmlBuilder.AppendLine("<principal>");
+                xmlBuilder.Append("<principal>");
                 principal.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</principal>");
+                xmlBuilder.Append("</principal>");
             }
         }
 
@@ -199,11 +199,11 @@ namespace PayFacMpSDK
         {
             if (verificationResult != null)
             {
-                xmlBuilder.AppendLine("<verificationResult>");
+                xmlBuilder.Append("<verificationResult>");
                 verificationResult.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</verificationResult>");
+                xmlBuilder.Append("</verificationResult>");
             }
-            if (backgroundCheckDecisionNotes != null) xmlBuilder.AppendLine("<backgroundCheckDecisionNotes>" + backgroundCheckDecisionNotes + "</backgroundCheckDecisionNotes>");
+            if (backgroundCheckDecisionNotes != null) xmlBuilder.Append("<backgroundCheckDecisionNotes>" + backgroundCheckDecisionNotes + "</backgroundCheckDecisionNotes>");
         }
     }
 
@@ -214,39 +214,39 @@ namespace PayFacMpSDK
         {
             if (overallScore != null)
             {
-                xmlBuilder.AppendLine("<overallScore>");
+                xmlBuilder.Append("<overallScore>");
                 overallScore.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</overallScore>");
+                xmlBuilder.Append("</overallScore>");
             }
 
             if (nameAddressSsnAssociation != null)
             {
-                xmlBuilder.AppendLine("<nameAddressSsnAssociation>");
+                xmlBuilder.Append("<nameAddressSsnAssociation>");
                 nameAddressSsnAssociation.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</nameAddressSsnAssociation>");
+                xmlBuilder.Append("</nameAddressSsnAssociation>");
             }
 
             if (nameAddressPhoneAssociation != null)
             {
-                xmlBuilder.AppendLine("<nameAddressPhoneAssociation>");
+                xmlBuilder.Append("<nameAddressPhoneAssociation>");
                 nameAddressPhoneAssociation.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</nameAddressPhoneAssociation>");
+                xmlBuilder.Append("</nameAddressPhoneAssociation>");
             }
 
             if (verificationIndicators != null)
             {
-                xmlBuilder.AppendLine("<verificationIndicators>");
+                xmlBuilder.Append("<verificationIndicators>");
                 verificationIndicators.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</verificationIndicators>");
+                xmlBuilder.Append("</verificationIndicators>");
             }
 
             if (riskIndicators != null)
             {
                 foreach(var riskIndicator in riskIndicators)
                 {
-                    xmlBuilder.AppendLine("<riskIndicator>");
+                    xmlBuilder.Append("<riskIndicator>");
                     riskIndicator.Serialize(xmlBuilder);
-                    xmlBuilder.AppendLine("</riskIndicator>");
+                    xmlBuilder.Append("</riskIndicator>");
                 }
             }
         }
@@ -257,8 +257,8 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (scoreSpecified) xmlBuilder.AppendLine("<score>" + score + "</score>");
-            if (description != null) xmlBuilder.AppendLine("<description>" + description + "</description>");
+            if (scoreSpecified) xmlBuilder.Append("<score>" + score + "</score>");
+            if (description != null) xmlBuilder.Append("<description>" + description + "</description>");
         }
     }
 
@@ -266,9 +266,9 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (codeSpecified) xmlBuilder.AppendLine("<code>" + code + "</code>");
+            if (codeSpecified) xmlBuilder.Append("<code>" + code + "</code>");
 
-            if (description != null) xmlBuilder.AppendLine("<description>" + description + "</description>");
+            if (description != null) xmlBuilder.Append("<description>" + description + "</description>");
         }
     }
 
@@ -276,9 +276,9 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (codeSpecified) xmlBuilder.AppendLine("<code>" + code + "</code>");
+            if (codeSpecified) xmlBuilder.Append("<code>" + code + "</code>");
 
-            if (description != null) xmlBuilder.AppendLine("<description>" + description + "</description>");
+            if (description != null) xmlBuilder.Append("<description>" + description + "</description>");
         }
     }
 
@@ -286,8 +286,8 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (codeSpecified) xmlBuilder.AppendLine("<code>" + code + "</code>");
-            if (description != null) xmlBuilder.AppendLine("<description>" + description + "</description>");
+            if (codeSpecified) xmlBuilder.Append("<code>" + code + "</code>");
+            if (description != null) xmlBuilder.Append("<description>" + description + "</description>");
         }
     }
 
@@ -295,11 +295,11 @@ namespace PayFacMpSDK
     {
         public void Serialize(StringBuilder xmlBuilder)
         {
-            xmlBuilder.AppendLine("<nameVerified>" + nameVerified + "</nameVerified>");
-            xmlBuilder.AppendLine("<addressVerified>" + addressVerified + "</addressVerified>");
-            xmlBuilder.AppendLine("<phoneVerified>" + phoneVerified + "</phoneVerified>");
-            xmlBuilder.AppendLine("<ssnVerified>" + ssnVerified + "</ssnVerified>");
-            xmlBuilder.AppendLine("<dobVerified>" + dobVerified + "</dobVerified>");
+            xmlBuilder.Append("<nameVerified>" + nameVerified + "</nameVerified>");
+            xmlBuilder.Append("<addressVerified>" + addressVerified + "</addressVerified>");
+            xmlBuilder.Append("<phoneVerified>" + phoneVerified + "</phoneVerified>");
+            xmlBuilder.Append("<ssnVerified>" + ssnVerified + "</ssnVerified>");
+            xmlBuilder.Append("<dobVerified>" + dobVerified + "</dobVerified>");
         }
     }
 }

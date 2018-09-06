@@ -37,48 +37,48 @@ namespace PayFacMpSDK
         public string Serialize()
         {
             StringBuilder xmlBuilder = new StringBuilder();
-            xmlBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
-            xmlBuilder.AppendLine("<subMerchantUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
-            if(merchantName != null) xmlBuilder.AppendLine("<merchantName>" + merchantName + "</merchantName>");
-            if(amexMid != null) xmlBuilder.AppendLine("<amexMid>" + amexMid + "</amexMid>");
-            if(discoverConveyedMid != null) xmlBuilder.AppendLine("<discoverConveyedMid>" + discoverConveyedMid + "</discoverConveyedMid>");
-            if(url != null) xmlBuilder.AppendLine("<url>" + url + "</url>");
-            if(customerServiceNumber != null) xmlBuilder.AppendLine("<customerServiceNumber>" + customerServiceNumber + "</customerServiceNumber>");
-            if(hardCodedBillingDescriptor != null) xmlBuilder.AppendLine("<hardCodedBillingDescriptor>" + hardCodedBillingDescriptor + "</hardCodedBillingDescriptor>");
-            if(maxTransactionAmountSpecified) xmlBuilder.AppendLine("<maxTransactionAmount>" + maxTransactionAmount + "</maxTransactionAmount>");
-            if(bankRoutingNumber != null) xmlBuilder.AppendLine("<bankRoutingNumber>" + bankRoutingNumber + "</bankRoutingNumber>");
-            if(bankAccountNumber != null) xmlBuilder.AppendLine("<bankAccountNumber>" + bankAccountNumber + "</bankAccountNumber>");
-            if(pspMerchantId != null) xmlBuilder.AppendLine("<pspMerchantId>" + pspMerchantId + "</pspMerchantId>");
-            if(purchaseCurrency != null) xmlBuilder.AppendLine("<purchaseCurrency>" + purchaseCurrency + "</purchaseCurrency>");
+            xmlBuilder.Append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
+            xmlBuilder.Append("<subMerchantUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
+            if(merchantName != null) xmlBuilder.Append("<merchantName>" + merchantName + "</merchantName>");
+            if(amexMid != null) xmlBuilder.Append("<amexMid>" + amexMid + "</amexMid>");
+            if(discoverConveyedMid != null) xmlBuilder.Append("<discoverConveyedMid>" + discoverConveyedMid + "</discoverConveyedMid>");
+            if(url != null) xmlBuilder.Append("<url>" + url + "</url>");
+            if(customerServiceNumber != null) xmlBuilder.Append("<customerServiceNumber>" + customerServiceNumber + "</customerServiceNumber>");
+            if(hardCodedBillingDescriptor != null) xmlBuilder.Append("<hardCodedBillingDescriptor>" + hardCodedBillingDescriptor + "</hardCodedBillingDescriptor>");
+            if(maxTransactionAmountSpecified) xmlBuilder.Append("<maxTransactionAmount>" + maxTransactionAmount + "</maxTransactionAmount>");
+            if(bankRoutingNumber != null) xmlBuilder.Append("<bankRoutingNumber>" + bankRoutingNumber + "</bankRoutingNumber>");
+            if(bankAccountNumber != null) xmlBuilder.Append("<bankAccountNumber>" + bankAccountNumber + "</bankAccountNumber>");
+            if(pspMerchantId != null) xmlBuilder.Append("<pspMerchantId>" + pspMerchantId + "</pspMerchantId>");
+            if(purchaseCurrency != null) xmlBuilder.Append("<purchaseCurrency>" + purchaseCurrency + "</purchaseCurrency>");
             if(address != null)
             {
-                xmlBuilder.AppendLine("<address>");
+                xmlBuilder.Append("<address>");
                 address.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</address>");
+                xmlBuilder.Append("</address>");
             }
             if(primaryContact != null)
             {
-                xmlBuilder.AppendLine("<primaryContact>");
+                xmlBuilder.Append("<primaryContact>");
                 primaryContact.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</primaryContact>");
+                xmlBuilder.Append("</primaryContact>");
             }
-            if(disableSpecified) xmlBuilder.AppendLine("<disable>" + disable + "</disable>");
-            if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
-            if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
+            if(disableSpecified) xmlBuilder.Append("<disable>" + disable + "</disable>");
+            if(fraud != null) xmlBuilder.Append("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
+            if(amexAcquired != null) xmlBuilder.Append("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
             if(eCheck != null)
             {
-                xmlBuilder.AppendLine("<eCheck enabled=\"" + eCheck.enabled.ToString().ToLower() +"\">");
+                xmlBuilder.Append("<eCheck enabled=\"" + eCheck.enabled.ToString().ToLower() +"\">");
                 eCheck.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</eCheck>");
+                xmlBuilder.Append("</eCheck>");
             }
             if(subMerchantFunding != null)
             {
-                xmlBuilder.AppendLine("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled +"\">");
+                xmlBuilder.Append("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled +"\">");
                 subMerchantFunding.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</subMerchantFunding>");
+                xmlBuilder.Append("</subMerchantFunding>");
             }
-            if(taxAuthority != null) xmlBuilder.AppendLine("<taxAuthority>" + taxAuthority + "</taxAuthority>");
-            if(taxAuthorityState != null) xmlBuilder.AppendLine("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
+            if(taxAuthority != null) xmlBuilder.Append("<taxAuthority>" + taxAuthority + "</taxAuthority>");
+            if(taxAuthorityState != null) xmlBuilder.Append("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
             xmlBuilder.Append("</subMerchantUpdateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();

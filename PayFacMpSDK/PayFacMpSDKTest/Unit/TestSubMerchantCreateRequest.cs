@@ -74,74 +74,72 @@ namespace PayFacMpSDKTest.Unit
         public void TestPostSubMerchantCreateRequest()
         {
 
-            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-        "<subMerchantCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-        "<merchantName>Merchant Name</merchantName>\n" +
-        "<amexMid>12345</amexMid>\n" +
-        "<discoverConveyedMid>123456789012345</discoverConveyedMid>\n" +
-        "<url>http://merchantUrl</url>\n" +
-        "<customerServiceNumber>8407809000</customerServiceNumber>\n" +
-        "<hardCodedBillingDescriptor>billing Descriptor</hardCodedBillingDescriptor>\n" +
-        "<maxTransactionAmount>8400</maxTransactionAmount>\n" +
-        "<purchaseCurrency>USD</purchaseCurrency>\n" +
-        "<merchantCategoryCode>5964</merchantCategoryCode>\n" +
-        "<bankRoutingNumber>840123124</bankRoutingNumber>\n" +
-        "<bankAccountNumber>84012312415</bankAccountNumber>\n" +
-        "<pspMerchantId>123456</pspMerchantId>\n" +
-        "<fraud enabled=\"true\"></fraud>\n" +
-        "<amexAcquired enabled=\"false\"></amexAcquired>\n" +
-        "<address>\n" +
-        "<streetAddress1>Street Address 1</streetAddress1>\n" +
-        "<streetAddress2>Street Address 2</streetAddress2>\n" +
-        "<city>City</city>\n" +
-        "<stateProvince>MA</stateProvince>\n" +
-        "<postalCode>01970</postalCode>\n" +
-        "<countryCode>USA</countryCode>\n" +
-        "</address>\n" +
-        "<primaryContact>\n" +
-        "<firstName>Josh</firstName>\n" +
-        "<lastName>Doe</lastName>\n" +
-        "<emailAddress>John.Doe@company.com</emailAddress>\n" +
-        "<phone>9785552222</phone>\n" +
-        "</primaryContact>\n" +
-        "<createCredentials>true</createCredentials>\n" +
-        "<eCheck enabled =\"true\">\n" +
-        "<eCheckCompanyName>Company Name</eCheckCompanyName>\n" +
-        "<eCheckBillingDescriptor>9785552222</eCheckBillingDescriptor>\n" +
-        "</eCheck>\n" +
-        "<subMerchantFunding enabled =\"false\">\n" +
-        "</subMerchantFunding>\n" +
-        "<settlementCurrency>USD</settlementCurrency>\n" +
+            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+        "<subMerchantCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+        "<merchantName>Merchant Name</merchantName>" +
+        "<amexMid>12345</amexMid>" +
+        "<discoverConveyedMid>123456789012345</discoverConveyedMid>" +
+        "<url>http://merchantUrl</url>" +
+        "<customerServiceNumber>8407809000</customerServiceNumber>" +
+        "<hardCodedBillingDescriptor>billing Descriptor</hardCodedBillingDescriptor>" +
+        "<maxTransactionAmount>8400</maxTransactionAmount>" +
+        "<purchaseCurrency>USD</purchaseCurrency>" +
+        "<merchantCategoryCode>5964</merchantCategoryCode>" +
+        "<bankRoutingNumber>840123124</bankRoutingNumber>" +
+        "<bankAccountNumber>84012312415</bankAccountNumber>" +
+        "<pspMerchantId>123456</pspMerchantId>" +
+        "<fraud enabled=\"true\"></fraud>" +
+        "<amexAcquired enabled=\"false\"></amexAcquired>" +
+        "<address>" +
+        "<streetAddress1>Street Address 1</streetAddress1>" +
+        "<streetAddress2>Street Address 2</streetAddress2>" +
+        "<city>City</city>" +
+        "<stateProvince>MA</stateProvince>" +
+        "<postalCode>01970</postalCode>" +
+        "<countryCode>USA</countryCode>" +
+        "</address>" +
+        "<primaryContact>" +
+        "<firstName>Josh</firstName>" +
+        "<lastName>Doe</lastName>" +
+        "<emailAddress>John.Doe@company.com</emailAddress>" +
+        "<phone>9785552222</phone>" +
+        "</primaryContact>" +
+        "<createCredentials>true</createCredentials>" +
+        "<eCheck enabled =\"true\">" +
+        "<eCheckCompanyName>Company Name</eCheckCompanyName>" +
+        "<eCheckBillingDescriptor>9785552222</eCheckBillingDescriptor>" +
+        "</eCheck>" +
+        "<subMerchantFunding enabled =\"false\">" +
+        "</subMerchantFunding>" +
+        "<settlementCurrency>USD</settlementCurrency>" +
         "</subMerchantCreateRequest>";
 
-            var expectedRequest = xmlReq.Replace("\n", "\r\n");
-
-            string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-        "<subMerchantCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-        "    <transactionId>6939508653</transactionId>\n" +
-        "    <subMerchantId>12271</subMerchantId>\n" +
-        "    <merchantIdentString>G1XN3lxPIA</merchantIdentString>\n" +
-        "    <credentials>\n" +
-        "        <username>JDoe123</username>\n" +
-        "        <password>MyPassword</password>\n" +
-        "        <passwordExpirationDate>2016-06-30T23:59:59-05:00</passwordExpirationDate>\n" +
-        "    </credentials>\n" +
-        "    <paypageCredentials>\n" +
-        "        <paypageCredential>\n" +
-        "            <username>JDoe123</username>\n" +
-        "            <paypageId>1234567890123456</paypageId>\n" +
-        "        </paypageCredential>\n" +
-        "        <paypageCredential>\n" +
-        "            <username>JDoe123</username>\n" +
-        "            <paypageId>1234567890123456</paypageId>\n" +
-        "        </paypageCredential>\n" +
-        "    </paypageCredentials>\n" +
-        "    <amexSellerId>12345</amexSellerId>\n" +
+            string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+        "<subMerchantCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+        "    <transactionId>6939508653</transactionId>" +
+        "    <subMerchantId>12271</subMerchantId>" +
+        "    <merchantIdentString>G1XN3lxPIA</merchantIdentString>" +
+        "    <credentials>" +
+        "        <username>JDoe123</username>" +
+        "        <password>MyPassword</password>" +
+        "        <passwordExpirationDate>2016-06-30T23:59:59-05:00</passwordExpirationDate>" +
+        "    </credentials>" +
+        "    <paypageCredentials>" +
+        "        <paypageCredential>" +
+        "            <username>JDoe123</username>" +
+        "            <paypageId>1234567890123456</paypageId>" +
+        "        </paypageCredential>" +
+        "        <paypageCredential>" +
+        "            <username>JDoe123</username>" +
+        "            <paypageId>1234567890123456</paypageId>" +
+        "        </paypageCredential>" +
+        "    </paypageCredentials>" +
+        "    <amexSellerId>12345</amexSellerId>" +
         "</subMerchantCreateResponse>";
 
 
             var mock = new Mock<Communication>();
-            mock.Setup(Communication => Communication.Post("/legalentity/201003/submerchant", expectedRequest)).Returns(expectedResposne);
+            mock.Setup(Communication => Communication.Post("/legalentity/201003/submerchant", xmlReq)).Returns(expectedResposne);
             Communication communicationMock = mock.Object;
             request.Communication = communicationMock;
             response = request.PostSubMerchantCreateRequest("201003");

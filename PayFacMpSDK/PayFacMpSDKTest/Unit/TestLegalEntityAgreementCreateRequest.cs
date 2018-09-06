@@ -36,31 +36,27 @@ namespace PayFacMpSDKTest.Unit
         public void TestPostLegalEntityAgreementCreateRequest()
         {
 
-            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-        "<legalEntityAgreementCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-        "<legalEntityAgreement>\n" +
-        "<legalEntityAgreementType>MERCHANT_AGREEMENT</legalEntityAgreementType>\n" +
-        "<agreementVersion>Version1</agreementVersion>\n" +
-        "<userFullName>FullName</userFullName>\n" +
-        "<userSystemName>systemUserName</userSystemName>\n" +
-        "<userIPAddress>127.0.0.1</userIPAddress>\n" +
-        "<manuallyEntered>true</manuallyEntered>\n" +
-        "<acceptanceDateTime>" + DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz") + "</acceptanceDateTime>\n" +
-        "</legalEntityAgreement>\n" +
+            var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+        "<legalEntityAgreementCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+        "<legalEntityAgreement>" +
+        "<legalEntityAgreementType>MERCHANT_AGREEMENT</legalEntityAgreementType>" +
+        "<agreementVersion>Version1</agreementVersion>" +
+        "<userFullName>FullName</userFullName>" +
+        "<userSystemName>systemUserName</userSystemName>" +
+        "<userIPAddress>127.0.0.1</userIPAddress>" +
+        "<manuallyEntered>true</manuallyEntered>" +
+        "<acceptanceDateTime>" + DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz") + "</acceptanceDateTime>" +
+        "</legalEntityAgreement>" +
         "</legalEntityAgreementCreateRequest>";
 
-            var expectedRequest = xmlReq.Replace("\n", "\r\n");
-
-            Assert.AreEqual(expectedRequest, request.Serialize());
-
-            string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-        "<legalEntityAgreementCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\" duplicate=\"true\">\n" +
-        "    <transactionId>3529958067</transactionId>\n" +
+            string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+        "<legalEntityAgreementCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\" duplicate=\"true\">" +
+        "    <transactionId>3529958067</transactionId>" +
         "</legalEntityAgreementCreateResponse>";
 
 
             var mock = new Mock<Communication>();
-            mock.Setup(Communication => Communication.Post("/legalentity/201000/agreement", expectedRequest)).Returns(expectedResposne);
+            mock.Setup(Communication => Communication.Post("/legalentity/201000/agreement", xmlReq)).Returns(expectedResposne);
             Communication communicationMock = mock.Object;
             request.Communication = communicationMock;
             response = request.PostLegalEntityAgreementCreateRequest("201000");

@@ -29,7 +29,7 @@ namespace PayFacMpSDK
 
         public legalEntityCreateResponse PostLegalEntityCreateRequest()
         {
-            string requestBody = Serialize();
+            string requestBody = this.Serialize();
             var xmlResponse = PayFacUtils.SendPostRequest(ServiceRoute, requestBody, _communication, _configuration);
             return PayFacUtils.DeserializeResponse<legalEntityCreateResponse>(xmlResponse);
         }
@@ -37,23 +37,23 @@ namespace PayFacMpSDK
         public string Serialize()
         {
             StringBuilder xmlBuilder = new StringBuilder();
-            xmlBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
-            xmlBuilder.AppendLine("<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
-            xmlBuilder.AppendLine("<legalEntityName>" + legalEntityName + "</legalEntityName>");
-            xmlBuilder.AppendLine("<legalEntityType>" + legalEntityType + "</legalEntityType>");
-            xmlBuilder.AppendLine("<legalEntityOwnershipType>" + legalEntityOwnershipType + "</legalEntityOwnershipType>");
-            if (doingBusinessAs != null) xmlBuilder.AppendLine("<doingBusinessAs>" + doingBusinessAs + "</doingBusinessAs>");
-            if (taxId != null) xmlBuilder.AppendLine("<taxId>" + taxId + "</taxId>");
-            if (contactPhone != null) xmlBuilder.AppendLine("<contactPhone>" + contactPhone + "</contactPhone>");
-            xmlBuilder.AppendLine("<annualCreditCardSalesVolume>" + annualCreditCardSalesVolume + "</annualCreditCardSalesVolume>");
-            xmlBuilder.AppendLine("<hasAcceptedCreditCards>" + hasAcceptedCreditCards.ToString().ToLower() + "</hasAcceptedCreditCards>");
-            xmlBuilder.AppendLine("<address>");
+            xmlBuilder.Append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
+            xmlBuilder.Append("<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
+            xmlBuilder.Append("<legalEntityName>" + legalEntityName + "</legalEntityName>");
+            xmlBuilder.Append("<legalEntityType>" + legalEntityType + "</legalEntityType>");
+            xmlBuilder.Append("<legalEntityOwnershipType>" + legalEntityOwnershipType + "</legalEntityOwnershipType>");
+            if (doingBusinessAs != null) xmlBuilder.Append("<doingBusinessAs>" + doingBusinessAs + "</doingBusinessAs>");
+            if (taxId != null) xmlBuilder.Append("<taxId>" + taxId + "</taxId>");
+            if (contactPhone != null) xmlBuilder.Append("<contactPhone>" + contactPhone + "</contactPhone>");
+            xmlBuilder.Append("<annualCreditCardSalesVolume>" + annualCreditCardSalesVolume + "</annualCreditCardSalesVolume>");
+            xmlBuilder.Append("<hasAcceptedCreditCards>" + hasAcceptedCreditCards.ToString().ToLower() + "</hasAcceptedCreditCards>");
+            xmlBuilder.Append("<address>");
             address.Serialize(xmlBuilder);
-            xmlBuilder.AppendLine("</address>");
-            xmlBuilder.AppendLine("<principal>");
+            xmlBuilder.Append("</address>");
+            xmlBuilder.Append("<principal>");
             principal.Serialize(xmlBuilder);
-            xmlBuilder.AppendLine("</principal>");
-            if(yearsInBusiness != null) xmlBuilder.AppendLine("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
+            xmlBuilder.Append("</principal>");
+            if(yearsInBusiness != null) xmlBuilder.Append("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
             xmlBuilder.Append("</legalEntityCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();

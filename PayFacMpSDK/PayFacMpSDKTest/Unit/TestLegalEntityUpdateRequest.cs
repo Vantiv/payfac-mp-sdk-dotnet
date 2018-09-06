@@ -71,62 +71,61 @@ namespace PayFacMpSDKTest.Unit
         public void TestPutLegalEntityUpdateRequest()
         {
             legalEntityId = "201003";
-	        var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-	                     "<legalEntityUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-	                     "<address>\n" +
-	                     "<streetAddress1>LE Street Address 1</streetAddress1>\n" +
-	                     "<streetAddress2>LE Street Address 2</streetAddress2>\n" +
-	                     "<city>LE City</city>\n" +
-	                     "<stateProvince>MA</stateProvince>\n" +
-	                     "<postalCode>01730</postalCode>\n" +
-	                     "<countryCode>USA</countryCode>\n" +
-	                     "</address>\n" +
-	                     "<contactPhone>9785550101</contactPhone>\n" +
-	                     "<doingBusinessAs>Other Name Co.</doingBusinessAs>\n" +
-	                     "<annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume>\n" +
-	                     "<hasAcceptedCreditCards>true</hasAcceptedCreditCards>\n" +
-	                     "<principal>\n" +
-	                     "<principalId>9</principalId>\n" +
-	                     "<title>CEO</title>\n" +
-	                     "<emailAddress>jdoe@mail.net</emailAddress>\n" +
-	                     "<contactPhone>9785551234</contactPhone>\n" +
-	                     "<address>\n" +
-	                     "<streetAddress1>p street address 1</streetAddress1>\n" +
-	                     "<streetAddress2>p street address 2</streetAddress2>\n" +
-	                     "<city>Boston</city>\n" +
-	                     "<stateProvince>MA</stateProvince>\n" +
-	                     "<postalCode>01890</postalCode>\n" +
-	                     "<countryCode>USA</countryCode>\n" +
-	                     "</address>\n" +
-	                     "<backgroundCheckFields>\n" +
-	                     "<firstName>p first</firstName>\n" +
-	                     "<lastName>p last</lastName>\n" +
-	                     "<ssn>123459876</ssn>\n" +
-	                     "<dateOfBirth>1980-10-12</dateOfBirth>\n" +
-	                     "<driversLicense>892327409832</driversLicense>\n" +
-	                     "<driversLicenseState>MA</driversLicenseState>\n" +
-	                     "</backgroundCheckFields>\n" +
-	                     "</principal>\n" +
-	                     "<backgroundCheckFields>\n" +
-	                     "<legalEntityName>Company Name</legalEntityName>\n" +
-	                     "<legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType>\n" +
-	                     "<taxId>123456789</taxId>\n" +
-	                     "</backgroundCheckFields>\n" +
-	                     "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>\n" +
-	                     "<yearsInBusiness>10</yearsInBusiness>\n" +
+	        var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+	                     "<legalEntityUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+	                     "<address>" +
+	                     "<streetAddress1>LE Street Address 1</streetAddress1>" +
+	                     "<streetAddress2>LE Street Address 2</streetAddress2>" +
+	                     "<city>LE City</city>" +
+	                     "<stateProvince>MA</stateProvince>" +
+	                     "<postalCode>01730</postalCode>" +
+	                     "<countryCode>USA</countryCode>" +
+	                     "</address>" +
+	                     "<contactPhone>9785550101</contactPhone>" +
+	                     "<doingBusinessAs>Other Name Co.</doingBusinessAs>" +
+	                     "<annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume>" +
+	                     "<hasAcceptedCreditCards>true</hasAcceptedCreditCards>" +
+	                     "<principal>" +
+	                     "<principalId>9</principalId>" +
+	                     "<title>CEO</title>" +
+	                     "<emailAddress>jdoe@mail.net</emailAddress>" +
+	                     "<contactPhone>9785551234</contactPhone>" +
+	                     "<address>" +
+	                     "<streetAddress1>p street address 1</streetAddress1>" +
+	                     "<streetAddress2>p street address 2</streetAddress2>" +
+	                     "<city>Boston</city>" +
+	                     "<stateProvince>MA</stateProvince>" +
+	                     "<postalCode>01890</postalCode>" +
+	                     "<countryCode>USA</countryCode>" +
+	                     "</address>" +
+	                     "<backgroundCheckFields>" +
+	                     "<firstName>p first</firstName>" +
+	                     "<lastName>p last</lastName>" +
+	                     "<ssn>123459876</ssn>" +
+	                     "<dateOfBirth>1980-10-12</dateOfBirth>" +
+	                     "<driversLicense>892327409832</driversLicense>" +
+	                     "<driversLicenseState>MA</driversLicenseState>" +
+	                     "</backgroundCheckFields>" +
+	                     "</principal>" +
+	                     "<backgroundCheckFields>" +
+	                     "<legalEntityName>Company Name</legalEntityName>" +
+	                     "<legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType>" +
+	                     "<taxId>123456789</taxId>" +
+	                     "</backgroundCheckFields>" +
+	                     "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>" +
+	                     "<yearsInBusiness>10</yearsInBusiness>" +
 	                     "</legalEntityUpdateRequest>";
-	        var expectedRequest = xmlReq.Replace("\n", "\r\n");
-	        Assert.AreEqual(expectedRequest, request.Serialize());
-	        var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-	                               "<legalEntityResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">\n" +
-	                               "    <transactionId>6370382523</transactionId>\n" +
-	                               "    <legalEntityId>201003</legalEntityId>\n" +
-	                               "    <responseCode>10</responseCode>\n" +
-	                               "    <responseDescription>Approved</responseDescription>\n" +
+	        Assert.AreEqual(xmlReq, request.Serialize());
+	        var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+	                               "<legalEntityResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+	                               "    <transactionId>6370382523</transactionId>" +
+	                               "    <legalEntityId>201003</legalEntityId>" +
+	                               "    <responseCode>10</responseCode>" +
+	                               "    <responseDescription>Approved</responseDescription>" +
 	                               "</legalEntityResponse>";
 	        
 	        var mock = new Mock<Communication>();
-	        mock.Setup(Communication => Communication.Put("/legalentity/201003", expectedRequest)).Returns(expectedResponse);
+	        mock.Setup(Communication => Communication.Put("/legalentity/201003", xmlReq)).Returns(expectedResponse);
 
 	        Communication communicationMock = mock.Object;
 	        request.Communication = communicationMock;

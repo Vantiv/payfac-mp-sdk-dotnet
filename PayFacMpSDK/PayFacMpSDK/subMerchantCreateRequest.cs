@@ -39,50 +39,50 @@ namespace PayFacMpSDK
         public string Serialize()
         {
             StringBuilder xmlBuilder = new StringBuilder();
-            xmlBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
-            xmlBuilder.AppendLine("<subMerchantCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
-            xmlBuilder.AppendLine("<merchantName>" + merchantName + "</merchantName>");
-            if(amexMid != null) xmlBuilder.AppendLine("<amexMid>" + amexMid + "</amexMid>");
-            if(discoverConveyedMid != null) xmlBuilder.AppendLine("<discoverConveyedMid>" + discoverConveyedMid + "</discoverConveyedMid>");
-            xmlBuilder.AppendLine("<url>" + url + "</url>");
-            xmlBuilder.AppendLine("<customerServiceNumber>" + customerServiceNumber + "</customerServiceNumber>");
-            xmlBuilder.AppendLine("<hardCodedBillingDescriptor>" + hardCodedBillingDescriptor + "</hardCodedBillingDescriptor>");
-            xmlBuilder.AppendLine("<maxTransactionAmount>" + maxTransactionAmount + "</maxTransactionAmount>");
-            if(purchaseCurrency != null) xmlBuilder.AppendLine("<purchaseCurrency>" + purchaseCurrency + "</purchaseCurrency>");
-            xmlBuilder.AppendLine("<merchantCategoryCode>" + merchantCategoryCode + "</merchantCategoryCode>");
-            if(taxAuthority != null) xmlBuilder.AppendLine("<taxAuthority>" + taxAuthority + "</taxAuthority>");
-            if(taxAuthorityState != null) xmlBuilder.AppendLine("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
-            xmlBuilder.AppendLine("<bankRoutingNumber>" + bankRoutingNumber + "</bankRoutingNumber>");
-            xmlBuilder.AppendLine("<bankAccountNumber>" + bankAccountNumber + "</bankAccountNumber>");
-            xmlBuilder.AppendLine("<pspMerchantId>" + pspMerchantId + "</pspMerchantId>");
-            if(fraud != null) xmlBuilder.AppendLine("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
-            if(amexAcquired != null) xmlBuilder.AppendLine("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
+            xmlBuilder.Append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
+            xmlBuilder.Append("<subMerchantCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">");
+            xmlBuilder.Append("<merchantName>" + merchantName + "</merchantName>");
+            if(amexMid != null) xmlBuilder.Append("<amexMid>" + amexMid + "</amexMid>");
+            if(discoverConveyedMid != null) xmlBuilder.Append("<discoverConveyedMid>" + discoverConveyedMid + "</discoverConveyedMid>");
+            xmlBuilder.Append("<url>" + url + "</url>");
+            xmlBuilder.Append("<customerServiceNumber>" + customerServiceNumber + "</customerServiceNumber>");
+            xmlBuilder.Append("<hardCodedBillingDescriptor>" + hardCodedBillingDescriptor + "</hardCodedBillingDescriptor>");
+            xmlBuilder.Append("<maxTransactionAmount>" + maxTransactionAmount + "</maxTransactionAmount>");
+            if(purchaseCurrency != null) xmlBuilder.Append("<purchaseCurrency>" + purchaseCurrency + "</purchaseCurrency>");
+            xmlBuilder.Append("<merchantCategoryCode>" + merchantCategoryCode + "</merchantCategoryCode>");
+            if(taxAuthority != null) xmlBuilder.Append("<taxAuthority>" + taxAuthority + "</taxAuthority>");
+            if(taxAuthorityState != null) xmlBuilder.Append("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
+            xmlBuilder.Append("<bankRoutingNumber>" + bankRoutingNumber + "</bankRoutingNumber>");
+            xmlBuilder.Append("<bankAccountNumber>" + bankAccountNumber + "</bankAccountNumber>");
+            xmlBuilder.Append("<pspMerchantId>" + pspMerchantId + "</pspMerchantId>");
+            if(fraud != null) xmlBuilder.Append("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
+            if(amexAcquired != null) xmlBuilder.Append("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
             if(address != null)
             {
-                xmlBuilder.AppendLine("<address>");
+                xmlBuilder.Append("<address>");
                 address.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</address>");
+                xmlBuilder.Append("</address>");
             }
             if(primaryContact != null)
             {
-                xmlBuilder.AppendLine("<primaryContact>");
+                xmlBuilder.Append("<primaryContact>");
                 primaryContact.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</primaryContact>");
+                xmlBuilder.Append("</primaryContact>");
             }
-            if(createCredentialsSpecified) xmlBuilder.AppendLine("<createCredentials>" + createCredentials.ToString().ToLower() + "</createCredentials>");
+            if(createCredentialsSpecified) xmlBuilder.Append("<createCredentials>" + createCredentials.ToString().ToLower() + "</createCredentials>");
             if(eCheck != null)
             {
-                xmlBuilder.AppendLine("<eCheck enabled =\"" + eCheck.enabled.ToString().ToLower() + "\">");
+                xmlBuilder.Append("<eCheck enabled =\"" + eCheck.enabled.ToString().ToLower() + "\">");
                 eCheck.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</eCheck>");
+                xmlBuilder.Append("</eCheck>");
             }
             if(subMerchantFunding != null)
             {
-                xmlBuilder.AppendLine("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled.ToString().ToLower() + "\">");
+                xmlBuilder.Append("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled.ToString().ToLower() + "\">");
                 subMerchantFunding.Serialize(xmlBuilder);
-                xmlBuilder.AppendLine("</subMerchantFunding>");
+                xmlBuilder.Append("</subMerchantFunding>");
             }
-            xmlBuilder.AppendLine("<settlementCurrency>" + settlementCurrency + "</settlementCurrency>");
+            xmlBuilder.Append("<settlementCurrency>" + settlementCurrency + "</settlementCurrency>");
             xmlBuilder.Append("</subMerchantCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();
