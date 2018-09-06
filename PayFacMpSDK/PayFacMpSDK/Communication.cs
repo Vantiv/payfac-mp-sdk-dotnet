@@ -42,9 +42,17 @@ namespace PayFacMpSDK
 
         public void SetProxy(string host, string port)
         {
+            if (host == null && port == null) return;
+
             try
             {
-                _webProxy = new WebProxy(host, int.Parse(port));
+                if (port != null)
+                {
+                    _webProxy = new WebProxy(host, int.Parse(port));
+                } else
+                {
+                    throw new PayFacException("Invalid Port in config");
+                }
             }
             catch (FormatException ex)
             {
