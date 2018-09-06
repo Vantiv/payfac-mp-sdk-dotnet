@@ -51,12 +51,12 @@ namespace PayFacMpSDK
                     _webProxy = new WebProxy(host, int.Parse(port));
                 } else
                 {
-                    throw new PayFacException("Invalid Port in config");
+                    throw new PayFacException("Invalid Port in config with host "  + host);
                 }
             }
             catch (FormatException ex)
             {
-                throw new PayFacException("Invalid Port in config");
+                throw new PayFacException("Invalid Port in config with port " + port + " and host " + host);
             }
         }
 
