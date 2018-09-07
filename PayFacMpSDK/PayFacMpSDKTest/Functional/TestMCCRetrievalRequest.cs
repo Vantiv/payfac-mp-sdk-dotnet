@@ -10,9 +10,6 @@ namespace PayFacMpSDKTest.Functional
     [TestFixture]
     internal class TestMCCRetrievalRequest
     {
-        private Communication _communication;
-        private Configuration _config;
-
 
         [SetUp]
         public void setUp()

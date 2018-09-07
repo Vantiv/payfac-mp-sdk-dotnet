@@ -90,6 +90,7 @@
     <Compile Include="Unit\TestLegalEntityRetrievalRequest.cs" />
     <Compile Include="Unit\TestPrincipalDeleteRequest.cs" />
     <Compile Include="Unit\TestSubMerchantCreateRequest.cs" />
+    <Compile Include="Unit\TestPayFacUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

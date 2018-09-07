@@ -37,7 +37,7 @@ namespace PayFacMpSDK.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("username")]
         public string username {
             get {
                 return ((string)(this["username"]));
@@ -49,7 +49,7 @@ namespace PayFacMpSDK.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("password")]
         public string Password {
             get {
                 return ((string)(this["Password"]));
@@ -68,18 +68,6 @@ namespace PayFacMpSDK.Properties {
             }
             set {
                 this["proxyHost"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string proxyPort {
-            get {
-                return ((string)(this["proxyPort"]));
-            }
-            set {
-                this["proxyPort"] = value;
             }
         }
         
@@ -133,13 +121,25 @@ namespace PayFacMpSDK.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public string logFile {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string proxyPort {
             get {
-                return ((string)(this["logFile"]));
+                return ((string)(this["proxyPort"]));
             }
             set {
-                this["logFile"] = value;
+                this["proxyPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public string keepAlive {
+            get {
+                return ((string)(this["keepAlive"]));
+            }
+            set {
+                this["keepAlive"] = value;
             }
         }
     }

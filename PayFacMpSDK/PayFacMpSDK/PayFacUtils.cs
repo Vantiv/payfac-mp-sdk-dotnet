@@ -141,7 +141,7 @@ namespace PayFacMpSDK
             return new PayFacWebException(string.Format("Request failed - HTTP {0} Error", httpStatusCode), httpStatusCode, rawResponse, errorResponse);
         }
         
-        public static string GetResponseXml(HttpWebResponse we)
+        private static string GetResponseXml(HttpWebResponse we)
         {
             var reader = new StreamReader(we.GetResponseStream());
             var xmlResponse = reader.ReadToEnd().Trim();

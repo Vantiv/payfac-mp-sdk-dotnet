@@ -13,7 +13,6 @@ namespace PayFacMpSDK
         private HttpWebRequest _httpRequest;
         private WebHeaderCollection _headers;
         private WebProxy _webProxy;
-        private string auth;
         private string _contentType;
         private string _accept;
         private string _host;
@@ -51,12 +50,12 @@ namespace PayFacMpSDK
                     _webProxy = new WebProxy(host, int.Parse(port));
                 } else
                 {
-                    throw new PayFacException("Invalid Port in config with host "  + host);
+                    throw new PayFacException("Invalid Port in config");
                 }
             }
             catch (FormatException ex)
             {
-                throw new PayFacException("Invalid Port in config with port " + port + " and host " + host);
+                throw new PayFacException("Invalid Port in config with error : " + ex.Message);
             }
         }
 

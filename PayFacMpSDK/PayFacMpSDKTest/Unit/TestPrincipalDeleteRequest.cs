@@ -32,7 +32,7 @@ namespace PayFacMpSDKTest.Unit
 
             Communication communicationMock = mock.Object;
             request.Communication = communicationMock;
-            response = request.PrincipalDeleteRequest("2018","9");
+            response = request.PrincipalDeleteRequest("2018", "9");
             Assert.NotNull(response.transactionId);
             Assert.AreEqual("2018", response.legalEntityId);
             Assert.AreEqual(9, response.principalId);

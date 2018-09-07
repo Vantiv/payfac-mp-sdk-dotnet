@@ -6,15 +6,12 @@
       <Value Profile="(Default)">https://www.testvantivcnp.com/sandbox/payfac</Value>
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">username</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">password</Value>
     </Setting>
     <Setting Name="proxyHost" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="proxyPort" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="timeout" Type="System.String" Scope="User">
@@ -29,7 +26,10 @@
     <Setting Name="neuterAccountNums" Type="System.String" Scope="User">
       <Value Profile="(Default)">true</Value>
     </Setting>
-    <Setting Name="logFile" Type="System.String" Scope="User">
+    <Setting Name="proxyPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="keepAlive" Type="System.String" Scope="User">
       <Value Profile="(Default)">true</Value>
     </Setting>
   </Settings>

@@ -10,8 +10,6 @@ namespace PayFacMpSDKTest.Functional
     [TestFixture]
     internal class TestSubmerchantRetrievalRequest
     {
-        private Communication _communication;
-        private Configuration _config;
         private string legalEntitytId;
         private string submerchantId;
 

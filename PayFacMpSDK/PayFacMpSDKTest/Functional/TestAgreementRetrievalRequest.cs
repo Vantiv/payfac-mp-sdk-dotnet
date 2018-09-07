@@ -10,8 +10,6 @@ namespace PayFacMpSDKTest.Functional
     [TestFixture]
     internal class TestAgreementRetrievalRequest
     {
-        private Communication _communication;
-        private Configuration _config;
         private string legalEntitytId;
 
         [SetUp]
