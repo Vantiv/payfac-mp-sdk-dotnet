@@ -24,24 +24,43 @@ None.
 
 2.) You can configure it statically by adding the following section to your project's App.config
 ```
+    <?xml version="1.0" encoding="utf-8"?>
+<configuration>
     <configSections>
-        <sectionGroup name="vantivEcommerce">
-            <section name="chargebackSettings"
-                     type="System.Configuration.NameValueSectionHandler" />
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="PayFacMpSDK.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false"/>
         </sectionGroup>
     </configSections>
-    <vantivEcommerce>
-        <chargebackSettings>
-            <add key="username" value="myUsername" />
-            <add key="password" value="myPassword" />
-            <add key="merchantId" value="777777" />
-            <add key="host" value="https://www.testvantivcnp.com/sandbox/new/services" />
-            <add key="printXml" value="true" />
-            <add key="proxyHost" value="myProxyHost" />
-            <add key="proxyPort" value="7777" />
-            <add key="neuterXml" value="false" />
-        </chargebackSettings>
-    </vantivEcommerce>
+    <userSettings>
+        <PayFacMpSDK.Properties.Settings>
+            <setting name="url" serializeAs="String">
+                <value>https://www.testvantivcnp.com/sandbox/payfac</value>
+            </setting>
+            <setting name="username" serializeAs="String">
+                <value>username</value>
+            </setting>
+            <setting name="password" serializeAs="String">
+                <value>password</value>
+            </setting>
+            <setting name="proxyHost" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="timeout" serializeAs="String">
+                <value>5000</value>
+            </setting>
+            <setting name="printxml" serializeAs="String">
+                <value>true</value>
+            </setting>
+            <setting name="proxyPort" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="neuterXml" serializeAs="String">
+                <value>true</value>
+            </setting>
+        </PayFacMpSDK.Properties.Settings>
+    </userSettings>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/></startup></configuration>
+
 ```
 Also, you can use a different Configuration constructor to pass a file path to a simple configuration file that contains [key=value] settings; an example of this configuration file can be found at (https://github.com/Vantiv/cnp-chargeback-sdk-dotNet/blob/2.x/sampleConfig.txt). 
 ```
