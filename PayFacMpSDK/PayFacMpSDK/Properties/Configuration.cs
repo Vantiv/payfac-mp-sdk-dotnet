@@ -29,7 +29,7 @@ namespace PayFacMpSDK.Properties
             _configDictionary["url"] = null;
             _configDictionary["printXml"] = null;
             _configDictionary["timeout"] = null;
-            _configDictionary["neuterAccountNums"] = null;
+            _configDictionary["neuterXml"] = null;
             _configDictionary["proxyHost"] = null;
             _configDictionary["proxyPort"] = null;
         }

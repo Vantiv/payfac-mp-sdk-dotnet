@@ -50,12 +50,12 @@ namespace PayFacMpSDK.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("password")]
-        public string Password {
+        public string password {
             get {
-                return ((string)(this["Password"]));
+                return ((string)(this["password"]));
             }
             set {
-                this["Password"] = value;
+                this["password"] = value;
             }
         }
         
@@ -86,36 +86,12 @@ namespace PayFacMpSDK.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public string printXML {
+        public string printxml {
             get {
-                return ((string)(this["printXML"]));
+                return ((string)(this["printxml"]));
             }
             set {
-                this["printXML"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string knownHostsFile {
-            get {
-                return ((string)(this["knownHostsFile"]));
-            }
-            set {
-                this["knownHostsFile"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public string neuterAccountNums {
-            get {
-                return ((string)(this["neuterAccountNums"]));
-            }
-            set {
-                this["neuterAccountNums"] = value;
+                this["printxml"] = value;
             }
         }
         
@@ -134,12 +110,12 @@ namespace PayFacMpSDK.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public string keepAlive {
+        public string neuterXml {
             get {
-                return ((string)(this["keepAlive"]));
+                return ((string)(this["neuterXml"]));
             }
             set {
-                this["keepAlive"] = value;
+                this["neuterXml"] = value;
             }
         }
     }

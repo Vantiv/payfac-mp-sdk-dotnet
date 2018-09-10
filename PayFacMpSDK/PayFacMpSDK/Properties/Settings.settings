@@ -8,7 +8,7 @@
     <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)">username</Value>
     </Setting>
-    <Setting Name="Password" Type="System.String" Scope="User">
+    <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)">password</Value>
     </Setting>
     <Setting Name="proxyHost" Type="System.String" Scope="User">
@@ -17,19 +17,13 @@
     <Setting Name="timeout" Type="System.String" Scope="User">
       <Value Profile="(Default)">5000</Value>
     </Setting>
-    <Setting Name="printXML" Type="System.String" Scope="User">
-      <Value Profile="(Default)">true</Value>
-    </Setting>
-    <Setting Name="knownHostsFile" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="neuterAccountNums" Type="System.String" Scope="User">
+    <Setting Name="printxml" Type="System.String" Scope="User">
       <Value Profile="(Default)">true</Value>
     </Setting>
     <Setting Name="proxyPort" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="keepAlive" Type="System.String" Scope="User">
+    <Setting Name="neuterXml" Type="System.String" Scope="User">
       <Value Profile="(Default)">true</Value>
     </Setting>
   </Settings>
