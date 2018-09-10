@@ -33,9 +33,9 @@ namespace PayFacMpSDK
                 .GetBytes(s));
         }
 
-        public static void PrintXml(string xml, string printXml, string neuterXml)
+        public static void PrintXml(string xml, string printxml, string neuterXml)
         {
-            if (bool.Parse(printXml))
+            if (bool.Parse(printxml))
             {
                 if (bool.Parse(neuterXml))
                 {
@@ -66,7 +66,7 @@ namespace PayFacMpSDK
             {
                 ConfigureCommunication(communication, configuration);
                 var xmlResponse = communication.Get(urlRoute);
-                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterXml"));
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printxml"), configuration.Get("neuterXml"));
                 return xmlResponse;
             }
             catch (WebException we)
@@ -82,7 +82,7 @@ namespace PayFacMpSDK
             {
                 ConfigureCommunication(communication, configuration);
                 var xmlResponse = communication.Delete(urlRoute);
-                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterXml"));
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printxml"), configuration.Get("neuterXml"));
                 return xmlResponse;
             }
             catch (WebException we)
@@ -98,7 +98,7 @@ namespace PayFacMpSDK
             {
                 ConfigureCommunication(communication, configuration);
                 var xmlResponse = communication.Post(urlRoute, requestBody);
-                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterXml"));
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printxml"), configuration.Get("neuterXml"));
                 return xmlResponse;
             }
             catch (WebException we)
@@ -114,7 +114,7 @@ namespace PayFacMpSDK
             {
                 ConfigureCommunication(communication, configuration);
                 var xmlResponse = communication.Put(urlRoute, requestBody);
-                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printXml"), configuration.Get("neuterXml"));
+                PayFacUtils.PrintXml(xmlResponse, configuration.Get("printxml"), configuration.Get("neuterXml"));
                 return xmlResponse;
             }
             catch (WebException we)
@@ -141,7 +141,7 @@ namespace PayFacMpSDK
             if (!webErrorResponse.ContentType.Contains("application/com.vantivcnp.payfac-v13+xml"))
                 return new PayFacWebException(string.Format("Request Failed - HTTP {0} Error", httpStatusCode)
                     , httpStatusCode, rawResponse);
-            PrintXml(rawResponse, config.Get("printXml"), config.Get("neuterXml"));
+            PrintXml(rawResponse, config.Get("printxml"), config.Get("neuterXml"));
             var errorResponse = DeserializeResponse<errorResponse>(rawResponse);
             return new PayFacWebException(string.Format("Request failed - HTTP {0} Error", httpStatusCode), httpStatusCode, rawResponse, errorResponse);
         }
