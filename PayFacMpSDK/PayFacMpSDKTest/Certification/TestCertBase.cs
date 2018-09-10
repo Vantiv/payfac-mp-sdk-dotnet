@@ -6,6 +6,7 @@ using PayFacMpSDK.Properties;
 namespace PayFacMpSDKTest.Certification
 {
     [TestFixture]
+    [Ignore("Added for reference")]
     public class TestCertificationChargebackApi
     {
 
@@ -21,6 +22,7 @@ namespace PayFacMpSDKTest.Certification
         private Random rand;
 
         [TestFixtureSetUp]
+        [Ignore("Added for reference")]
         public void SetUp()
         {
             config = new Configuration();
