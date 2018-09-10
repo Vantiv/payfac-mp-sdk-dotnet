@@ -66,17 +66,19 @@ None.
 Also, you can use a Configuration instance to set the values of the different keys by using Set method. 
 
 Example:
+
+```
 Configuration config = new Configuration();
 config.Set(username, "myUsername");
 
+```
 The different Keys and values which chould be passed are:
 ```
     
     username = myUsername
     password = myPassword
-    merchantId = 777777
-    host = https://www.testvantivcnp.com/sandbox/new/services
-    printXml = true
+    host = https://www.testvantivcnp.com/sandbox/payfac
+    printxml = true
     neuterXml = false
     proxyHost = myProxyHost
     proxyPort = 7777
