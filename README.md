@@ -24,7 +24,7 @@ None.
 
 2.) You can configure it statically by adding the following section to your project's App.config
 ```
-    <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <configSections>
         <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -59,11 +59,19 @@ None.
             </setting>
         </PayFacMpSDK.Properties.Settings>
     </userSettings>
-<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/></startup></configuration>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/></startup>
+</configuration>
 
 ```
-Also, you can use a different Configuration constructor to pass a file path to a simple configuration file that contains [key=value] settings; an example of this configuration file can be found at (https://github.com/Vantiv/cnp-chargeback-sdk-dotNet/blob/2.x/sampleConfig.txt). 
+Also, you can use a Configuration instance to set the values of the different keys by using Set method. 
+
+Example:
+Configuration config = new Configuration();
+config.Set(username, "myUsername");
+
+The different Keys and values which chould be passed are:
 ```
+    
     username = myUsername
     password = myPassword
     merchantId = 777777
