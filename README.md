@@ -83,8 +83,6 @@ The different Keys and values which chould be passed are:
     proxyHost = myProxyHost
     proxyPort = 7777
 ```
-In addition, you can configure it dynamically by create a dictionary with required settings and call the Configuration constructor taking a dictionary.
-
 
 ### Configuration
 List of configuration parameters along with their values can be found [here](https://gist.github.com/VantivSDK/8b7dd606230ec65b36eba457df4443de).
