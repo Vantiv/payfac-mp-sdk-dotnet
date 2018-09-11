@@ -77,7 +77,7 @@ The different Keys and values which chould be passed are:
     
     username = myUsername
     password = myPassword
-    host = https://www.testvantivcnp.com/sandbox/payfac
+    url = https://www.testvantivcnp.com/sandbox/payfac
     printxml = true
     neuterXml = false
     proxyHost = myProxyHost
@@ -93,24 +93,30 @@ Let's try our SDK with the Sandbox, which doesn't require a valid username and p
 
 ```c#
 using System;
-using ChargebackSdkForNet;
 
-namespace Merchant
+namespace PayFacMpSDK
 {
     internal class Program
     {
+
         public static void Main(string[] args)
         {
-            var request = new ChargebackRetrievalRequest();
-            request.Config.Set("host", "https://www.testvantivcnp.com/sandbox/new/services");
-            var dateTime = new DateTime(2013,1,1);
-            var response = request.RetrieveByActivityDate(dateTime);
-            var cases = response.chargebackCase;
-            foreach (var c in cases)
+            string legalEntityId = "201015";
+            var request = new AgreementRetrievalRequest();
+            request.Configuration.Set("url", "https://www.testvantivcnp.com/sandbox/payfac");
+            request.Configuration.Set("printxml", "true");
+
+            var response = request.GetLegalEntityAgreementRequest(legalEntityId);
+
+            var agreements = response.agreements;
+
+            foreach(var agreement in agreements)
             {
-                Console.WriteLine("Case Id:" + c.caseId);
+                Console.WriteLine("Aggrement Type :" + agreement.legalEntityAgreementType);
+                Console.WriteLine("Aggrement Version :" + agreement.agreementVersion);
             }
-        }
+
+        } 
     }
 }
 ```
