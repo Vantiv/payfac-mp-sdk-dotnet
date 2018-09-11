@@ -131,10 +131,10 @@ For the list of changes, check out the [changelog](https://github.com/Vantiv/pay
 * [**Charmik Sheth**](https://github.com/Charmik-Sheth)
 * [**Kartik Dave**](https://github.com/davekartik24)
 
-See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-java/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-dotnet/contributors) who participated in this project.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-java/blob/13.x/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-dotnet/blob/13.x/LICENSE.md) file for details
 
 ## Examples
 More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-dotnet/tree/13.x/src/test/java/com/mp/sdk)
