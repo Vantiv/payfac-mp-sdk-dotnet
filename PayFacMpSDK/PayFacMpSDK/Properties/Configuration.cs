@@ -12,24 +12,26 @@ namespace PayFacMpSDK.Properties
 
         public Configuration()
         {
-            var settings = (NameValueCollection) ConfigurationManager.GetSection("worldpay/PayFacMpSDKSettings");
             InitializeConfig();
-            foreach (var key in settings.AllKeys)
+
+            var settings = (NameValueCollection)ConfigurationManager.GetSection("userSettings/PayFacMpSDK.Properties.Settings");
+            if (settings != null)
             {
-                AddSettingToConfigDictionary(key, settings[key]); 
+                foreach (var key in settings.AllKeys)
+                {
+                    AddSettingToConfigDictionary(key, settings[key]);
+                }
             }
-            ValidateConfigDictionary();
         }
 
         private void InitializeConfig()
         {
             _configDictionary = new Dictionary<string, string>();
-            _configDictionary["username"] = null;
-            _configDictionary["password"] = null;
-            _configDictionary["url"] = null;
-            _configDictionary["printxml"] = null;
-            _configDictionary["timeout"] = null;
-            _configDictionary["neuterXml"] = null;
+            _configDictionary["username"] = "user";
+            _configDictionary["password"] = "pass";
+            _configDictionary["url"] = "https://www.testvantivcnp.com/sandbox/payfac";
+            _configDictionary["printxml"] = "true";
+            _configDictionary["neuterXml"] = "true";
             _configDictionary["proxyHost"] = null;
             _configDictionary["proxyPort"] = null;
         }
@@ -56,13 +58,22 @@ namespace PayFacMpSDK.Properties
 
         private void ValidateConfigDictionary()
         {
-            foreach (var key in _configDictionary.Keys)
+
+            if(_configDictionary["username"] == null || _configDictionary["password"] == null)
             {
-                if (_configDictionary[key] == null)
-                {
-                    throw new PayFacException(string.Format("Missing value for {0} in config", key));
-                }
+                throw new PayFacException(string.Format("Missing value for username or password in config"));
             }
+
+            if(_configDictionary["proxyHost"] != null && _configDictionary["proxyPort"] == null || _configDictionary["proxyHost"] != "" && _configDictionary["proxyPort"] == "")
+            {
+                throw new PayFacException(string.Format("ProxyHost is present but proxyPort npt provided"));
+            }
+
+            if(_configDictionary["url"] == null || _configDictionary["url"] == "")
+            {
+                throw new PayFacException(string.Format("url is not provided in the configuration setup"));
+            }
+         
         }
     }
 }
