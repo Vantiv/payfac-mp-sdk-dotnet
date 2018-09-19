@@ -143,7 +143,7 @@ See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-dotn
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-dotnet/blob/13.x/LICENSE.md) file for details
 
 ## Examples
-More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-dotnet/tree/13.x/src/test/java/com/mp/sdk)
+More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-dotnet/tree/13.x/PayFacMpSDK/PayFacMpSDKTest)
 
 ## Support
 Please contact [Vantiv eCommerce](https://developer.vantiv.com/community/ecommerce) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  Support can also be reached at sdksupport@Vantiv.com

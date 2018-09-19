@@ -10,7 +10,10 @@ install:
 script:
   - xbuild /p:Configuration=Release PayFacMpSDK/PayFacMpSDK.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe  PayFacMpSDK/PayFacMpSDKTest/bin/Release/PayFacMpSDKTest.exe
-  - zip PayFacMpSDK-$TRAVIS_TAG.zip CHANGELOG.md LICENSE README.md PayFacMpSDK/PayFacMpSDK/bin/Release/PayFacMpSDK.dll PayFacMpSDK/PayFacMpSDK/bin/Release/PayFacMpSDK.dll.config 
+  - cp PayFacMpSDK/PayFacMpSDK/bin/Release/PayFacMpSDK.dll .
+  - cp PayFacMpSDK/PayFacMpSDK/bin/Release/PayFacMpSDK.dll.config .
+  - zip PayFacMpSDK-$TRAVIS_TAG.zip CHANGELOG.md LICENSE README.md PayFacMpSDK.dll PayFacMpSDK.dll.config 
+  - rm PayFacMpSDK.dll PayFacMpSDK.dll.config
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
