@@ -62,7 +62,7 @@ namespace PayFacMpSDK
                 primaryContact.Serialize(xmlBuilder);
                 xmlBuilder.Append("</primaryContact>");
             }
-            if(disableSpecified) xmlBuilder.Append("<disable>" + disable + "</disable>");
+            if(disableSpecified) xmlBuilder.Append("<disable>" + disable.ToString().ToLower() + "</disable>");
             if(fraud != null) xmlBuilder.Append("<fraud enabled=\"" + fraud.enabled.ToString().ToLower() + "\"></fraud>");
             if(amexAcquired != null) xmlBuilder.Append("<amexAcquired enabled=\"" + amexAcquired.enabled.ToString().ToLower() + "\"></amexAcquired>");
             if(eCheck != null)
@@ -73,7 +73,7 @@ namespace PayFacMpSDK
             }
             if(subMerchantFunding != null)
             {
-                xmlBuilder.Append("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled +"\">");
+                xmlBuilder.Append("<subMerchantFunding enabled =\"" + subMerchantFunding.enabled.ToString().ToLower() + "\">");
                 subMerchantFunding.Serialize(xmlBuilder);
                 xmlBuilder.Append("</subMerchantFunding>");
             }

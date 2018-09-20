@@ -51,6 +51,7 @@ namespace PayFacMpSDKTest.Functional
                     lastName = "Doe",
                     phone = "9785552222"
                 },
+                disable = true,
                 fraud = new subMerchantFraudFeature()
                 {
                     enabled = true
@@ -63,6 +64,11 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = true,
                     eCheckBillingDescriptor = "9785552222",
+                },
+                subMerchantFunding = new subMerchantFunding
+                {
+                    enabled = true,
+
                 }
             };
 
