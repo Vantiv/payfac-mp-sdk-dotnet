@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 13.0.2
+* **Bug Fix** Converted the boolean value from True to true while serializing 
+
 ## 13.0.1
 * **Bug Fix** Fixing loading of Configuration
 
