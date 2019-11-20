@@ -5,7 +5,7 @@ notifications:
     - sdksupport@vantiv.com
 dotnet: 3.0
 install:
-  - nuget restore CnpSdkForNet/CnpSdkForNet.sln
+  - nuget restore PayFacMpSDK/PayFacMpSDK.sln
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 script:
   - dotnet build PayFacMpSDK/
