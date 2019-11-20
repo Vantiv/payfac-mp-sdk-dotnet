@@ -1,106 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2115BE0-85AC-4969-960D-490DF6382013}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>PayFacMpSDKTest</RootNamespace>
-    <AssemblyName>PayFacMpSDKTest</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.util.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Certification\TestCertBase.cs" />
-    <Compile Include="Functional\TestSubMerchantCreateRequest.cs" />
-    <Compile Include="Functional\TestSubMerchantUpdateRequest.cs" />
-    <Compile Include="Functional\TestAgreementRetrievalRequest.cs" />
-    <Compile Include="Functional\TestLegalEntityAgreementCreateRequest.cs" />
-    <Compile Include="Functional\TestLegalEntityCreateRequest.cs" />
-    <Compile Include="Functional\TestLegalEntityPrincipalCreateRequest.cs" />
-    <Compile Include="Functional\TestLegalEntityRetrievalRequest.cs" />
-    <Compile Include="Functional\TestLegalEntityUpdateRequest.cs" />
-    <Compile Include="Functional\TestMCCRetrievalRequest.cs" />
-    <Compile Include="Functional\TestCommunication.cs" />
-    <Compile Include="Functional\TestPrincipalDeleteRequest.cs" />
-    <Compile Include="Functional\TestSubmerchantRetrievalRequest.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit\TestLegalEntityAgreementCreateRequest.cs" />
-    <Compile Include="Unit\TestLegalEntityCreateRequest.cs" />
-    <Compile Include="Unit\TestAgreementRetrievalRequest.cs" />
-    <Compile Include="Unit\TestLegalEntityPrincipalCreateRequest.cs" />
-    <Compile Include="Unit\TestLegalEntityUpdateRequest.cs" />
-    <Compile Include="Unit\TestMCCRetrievalRequest.cs" />
-    <Compile Include="Unit\TestSubMerchantRetrievalRequest.cs" />
-    <Compile Include="Unit\TestSubMerchantUpdateRequest.cs" />
-    <Compile Include="Unit\TestLegalEntityRetrievalRequest.cs" />
-    <Compile Include="Unit\TestPrincipalDeleteRequest.cs" />
-    <Compile Include="Unit\TestSubMerchantCreateRequest.cs" />
-    <Compile Include="Unit\TestPayFacUtils.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PayFacMpSDK\PayFacMpSDK.csproj">
-      <Project>{90a0e647-b235-4f12-98d2-b9b73bdd3c49}</Project>
-      <Name>PayFacMpSDK</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+      <PackageReference Include="Moq" Version="4.13.1" />
+      <PackageReference Include="NUnit" Version="3.12.0" />
+      <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PayFacMpSDK\PayFacMpSDK.csproj" />
+    </ItemGroup>
+
 </Project>

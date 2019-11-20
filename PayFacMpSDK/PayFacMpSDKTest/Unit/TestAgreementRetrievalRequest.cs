@@ -11,7 +11,7 @@ namespace PayFacMpSDKTest.Unit
         private AgreementRetrievalRequest request;
         private legalEntityAgreementRetrievalResponse response;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
             request = new AgreementRetrievalRequest();

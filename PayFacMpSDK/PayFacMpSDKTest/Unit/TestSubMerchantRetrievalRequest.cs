@@ -10,7 +10,7 @@ namespace PayFacMpSDKTest.Unit
         private SubMerchantRetrievalRequest request;
         private subMerchantRetrievalResponse response;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
             request = new SubMerchantRetrievalRequest();

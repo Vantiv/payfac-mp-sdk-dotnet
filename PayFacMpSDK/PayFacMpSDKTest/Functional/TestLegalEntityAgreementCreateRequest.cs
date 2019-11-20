@@ -11,7 +11,7 @@ namespace PayFacMpSDKTest.Functional
         private legalEntityAgreementCreateRequest request;
         private legalEntityAgreementCreateResponse response;
         
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
 

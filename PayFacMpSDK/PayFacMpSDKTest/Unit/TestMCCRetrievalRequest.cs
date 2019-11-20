@@ -11,7 +11,7 @@ namespace PayFacMpSDKTest.Unit
         private MCCRetrievalRequest request;
         private approvedMccResponse response;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
             request = new MCCRetrievalRequest();

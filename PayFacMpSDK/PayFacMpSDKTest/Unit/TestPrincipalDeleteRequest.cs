@@ -11,7 +11,7 @@ namespace PayFacMpSDKTest.Unit
         private principalDeleteRequest request;
         private principalDeleteResponse response;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
             request = new principalDeleteRequest();

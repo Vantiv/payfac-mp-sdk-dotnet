@@ -11,7 +11,7 @@ namespace PayFacMpSDKTest.Functional
         private principalCreateResponse response;
         private string legalEntityId;
         
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
 
