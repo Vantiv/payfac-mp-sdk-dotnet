@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <PackageVersion>13.0.1</PackageVersion>
+        <PackageVersion>13.0.3</PackageVersion>
         <Title>PayFacMpSDK</Title>
         <Authors>Worldpay</Authors>
         <Copyright>Copyright © Worldpay 2019</Copyright>
