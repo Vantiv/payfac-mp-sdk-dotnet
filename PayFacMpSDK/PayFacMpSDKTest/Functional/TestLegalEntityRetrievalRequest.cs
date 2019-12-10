@@ -12,7 +12,7 @@ namespace PayFacMpSDKTest.Functional
     {
         private string legalEntitytId;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
 

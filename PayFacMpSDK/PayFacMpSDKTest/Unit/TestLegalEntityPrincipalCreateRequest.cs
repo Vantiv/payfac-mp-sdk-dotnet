@@ -13,7 +13,7 @@ namespace PayFacMpSDKTest.Unit
         private principalCreateResponse response;
         private string legalEntityId;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
             request = new legalEntityPrincipalCreateRequest

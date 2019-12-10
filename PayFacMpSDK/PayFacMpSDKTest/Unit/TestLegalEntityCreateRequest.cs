@@ -12,7 +12,7 @@ namespace PayFacMpSDKTest.Unit
         private legalEntityCreateRequest request;
         private legalEntityCreateResponse response;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
 

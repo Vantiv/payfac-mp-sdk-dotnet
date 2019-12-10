@@ -12,7 +12,7 @@ namespace PayFacMpSDKTest.Unit
         private subMerchantCreateRequest request;
         private subMerchantCreateResponse response;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
 

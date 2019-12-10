@@ -33,7 +33,7 @@ namespace PayFacMpSDKTest.Certification
         private subMerchantUpdateRequest subMerchantUpdateRequest;
         private subMerchantPrimaryContactUpdatable subMerchantPrimaryContactUpdatable;
 
-       [TestFixtureSetUp]
+       [OneTimeSetUp]
        [Ignore("Added for reference")]
         public void SetUp()
         {

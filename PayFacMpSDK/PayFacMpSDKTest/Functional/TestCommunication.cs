@@ -14,7 +14,7 @@ namespace PayFacMpSDKTest.Functional
         private Configuration _config;
 
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
             _communication = new Communication();

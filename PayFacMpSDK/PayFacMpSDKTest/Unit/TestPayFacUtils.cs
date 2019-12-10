@@ -17,7 +17,7 @@ namespace PayFacMpSDKTest.Unit
         private static Configuration _configuration = new Configuration();
 
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
              

@@ -13,7 +13,7 @@ namespace PayFacMpSDKTest.Unit
         private string legalEntityId;
         private string subMerchantId;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             request = new subMerchantUpdateRequest

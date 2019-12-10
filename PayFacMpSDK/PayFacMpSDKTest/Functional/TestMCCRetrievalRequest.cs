@@ -11,7 +11,7 @@ namespace PayFacMpSDKTest.Functional
     internal class TestMCCRetrievalRequest
     {
 
-        [SetUp]
+        [OneTimeSetUp]
         public void setUp()
         {
 
