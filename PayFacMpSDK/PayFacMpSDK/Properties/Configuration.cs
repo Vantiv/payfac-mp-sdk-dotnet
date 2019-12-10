@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Configuration;
-using System.IO;
 
 namespace PayFacMpSDK.Properties
 {
@@ -14,12 +12,13 @@ namespace PayFacMpSDK.Properties
         {
             InitializeConfig();
 
-            var settings = (NameValueCollection)ConfigurationManager.GetSection("userSettings/PayFacMpSDK.Properties.Settings");
+            var settings = (ClientSettingsSection) ConfigurationManager.GetSection("userSettings/PayFacMpSDK.Properties.Settings");
             if (settings != null)
             {
-                foreach (var key in settings.AllKeys)
+                foreach (var key in settings.Settings)
                 {
-                    AddSettingToConfigDictionary(key, settings[key]);
+                    var setting = (SettingElement) key;
+                    AddSettingToConfigDictionary(setting.Name,setting.Value.ValueXml.InnerText);
                 }
             }
         }
