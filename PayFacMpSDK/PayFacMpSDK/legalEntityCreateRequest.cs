@@ -1,10 +1,6 @@
 ﻿using PayFacMpSDK.Properties;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PayFacMpSDK
 {
@@ -29,6 +25,8 @@ namespace PayFacMpSDK
 
         public legalEntityCreateResponse PostLegalEntityCreateRequest()
         {
+            _configuration.Set("proxyHost", null);
+            _configuration.Set("proxyPort", null);
             string requestBody = this.Serialize();
             var xmlResponse = PayFacUtils.SendPostRequest(ServiceRoute, requestBody, _communication, _configuration);
             return PayFacUtils.DeserializeResponse<legalEntityCreateResponse>(xmlResponse);

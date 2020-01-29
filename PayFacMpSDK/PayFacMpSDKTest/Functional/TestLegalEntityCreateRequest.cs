@@ -9,7 +9,7 @@ namespace PayFacMpSDKTest.Functional
     {
         private legalEntityCreateRequest request;
         private legalEntityCreateResponse response;
-        
+
         [OneTimeSetUp]
         public void setUp()
         {
@@ -29,7 +29,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -63,8 +64,10 @@ namespace PayFacMpSDKTest.Functional
 
             response = request.PostLegalEntityCreateRequest();
             Assert.NotNull(response.transactionId);
+            Console.WriteLine(response.legalEntityId);
             Assert.NotNull(response.legalEntityId);
             Assert.NotNull(response.principal);
+            Console.WriteLine(response.originalLegalEntityId);
             Assert.AreEqual(10, response.responseCode);
             Assert.AreEqual("Approved", response.responseDescription);
         }
@@ -83,7 +86,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -114,7 +118,7 @@ namespace PayFacMpSDKTest.Functional
                 },
                 yearsInBusiness = "12"
             };
-            
+
             response = request.PostLegalEntityCreateRequest();
             Assert.NotNull(response.transactionId);
             Assert.NotNull(response.legalEntityId);
@@ -122,8 +126,8 @@ namespace PayFacMpSDKTest.Functional
             Assert.AreEqual(20, response.responseCode);
             Assert.AreEqual("Manual Review", response.responseDescription);
         }
-        
-        
+
+
         [Test]
         public void TestPostLegalEntityCreateRequestDuplicateSimple()
         {
@@ -137,7 +141,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -168,15 +173,15 @@ namespace PayFacMpSDKTest.Functional
                 },
                 yearsInBusiness = "12"
             };
-            
+
             response = request.PostLegalEntityCreateRequest();
             Assert.AreEqual(true, response.duplicate);
             Assert.NotNull(response.transactionId);
-            Assert.NotNull(response.originallegalEntityId);
-            Assert.AreEqual("Approved", response.originallegalEntityStatus);
+            Assert.NotNull(response.originalLegalEntityId);
+            Assert.AreEqual("Approved", response.originalLegalEntityStatus);
         }
-        
-        
+
+
         [Test]
         public void TestPostLegalEntityCreateRequestDuplicateDeclined()
         {
@@ -190,7 +195,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -221,12 +227,62 @@ namespace PayFacMpSDKTest.Functional
                 },
                 yearsInBusiness = "12"
             };
-            
+
             response = request.PostLegalEntityCreateRequest();
             Assert.AreEqual(true, response.duplicate);
             Assert.NotNull(response.transactionId);
-            Assert.NotNull(response.originallegalEntityId);
-            Assert.AreEqual("Declined", response.originallegalEntityStatus);
+            Assert.NotNull(response.originalLegalEntityId);
+            Assert.AreEqual("Declined", response.originalLegalEntityStatus);
+        }
+
+        [Test]
+        public void testLegalEntityOriginal()
+        {
+            var request = new legalEntityCreateRequest
+            {
+                legalEntityName = "Yarrgh Pirate Co.",
+                legalEntityType = legalEntityType.LIMITED_LIABILITY_COMPANY,
+                legalEntityOwnershipType = legalEntityOwnershipType.PRIVATE,
+                doingBusinessAs = "Jolly Roger Services",
+                taxId = "551351516",
+                contactPhone = "5555555555",
+                annualCreditCardSalesVolume = "0",
+                hasAcceptedCreditCards = false,
+                address = new address()
+                {
+                    streetAddress1 = "2223 Executive Dr",
+                    city = "Suite 104",
+                    stateProvince = "DT",
+                    postalCode = "48201",
+                    countryCode = "USA"
+                },
+                principal = new legalEntityPrincipal
+                {
+                    firstName = "Joeya",
+                    lastName = "Schmoeya",
+                    emailAddress = "joe2a@example.com",
+                    ssn = "111111113",
+                    contactPhone = "1111111111",
+                    dateOfBirth = (new DateTime(1982, 1, 31)),
+                    address = new principalAddress()
+                    {
+                        streetAddress1 = "900 Chelmsford St",
+                        streetAddress2 = "Ste 5",
+                        city = "Royal Oak",
+                        stateProvince = "MI",
+                        postalCode = "48067",
+                        countryCode = "USA"
+                    },
+                    stakePercent = 100
+                },
+                yearsInBusiness = "0",
+            };
+            var response = request.PostLegalEntityCreateRequest();
+            if (response.legalEntityId == null)
+            {
+                Assert.NotNull(response.originalLegalEntityId);
+                Assert.NotNull(response.originalLegalEntityStatus, null);
+            }
         }
     }
 }

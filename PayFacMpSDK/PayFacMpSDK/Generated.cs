@@ -3613,9 +3613,9 @@ namespace PayFacMpSDK
 
         private string responseDescriptionField;
 
-        private string originallegalEntityIdField;
+        private string originalLegalEntityIdField;
 
-        private string originallegalEntityStatusField;
+        private string originalLegalEntityStatusField;
 
         private backgroundCheckResults backgroundCheckResultsField;
 
@@ -3677,28 +3677,28 @@ namespace PayFacMpSDK
         }
 
         /// <remarks/>
-        public string originallegalEntityId
+        public string originalLegalEntityId
         {
             get
             {
-                return this.originallegalEntityIdField;
+                return this.originalLegalEntityIdField;
             }
             set
             {
-                this.originallegalEntityIdField = value;
+                this.originalLegalEntityIdField = value;
             }
         }
 
         /// <remarks/>
-        public string originallegalEntityStatus
+        public string originalLegalEntityStatus
         {
             get
             {
-                return this.originallegalEntityStatusField;
+                return this.originalLegalEntityStatusField;
             }
             set
             {
-                this.originallegalEntityStatusField = value;
+                this.originalLegalEntityStatusField = value;
             }
         }
 
