@@ -25,8 +25,6 @@ namespace PayFacMpSDK
 
         public legalEntityCreateResponse PostLegalEntityCreateRequest()
         {
-            _configuration.Set("proxyHost", null);
-            _configuration.Set("proxyPort", null);
             string requestBody = this.Serialize();
             var xmlResponse = PayFacUtils.SendPostRequest(ServiceRoute, requestBody, _communication, _configuration);
             return PayFacUtils.DeserializeResponse<legalEntityCreateResponse>(xmlResponse);

@@ -64,10 +64,8 @@ namespace PayFacMpSDKTest.Functional
 
             response = request.PostLegalEntityCreateRequest();
             Assert.NotNull(response.transactionId);
-            Console.WriteLine(response.legalEntityId);
             Assert.NotNull(response.legalEntityId);
             Assert.NotNull(response.principal);
-            Console.WriteLine(response.originalLegalEntityId);
             Assert.AreEqual(10, response.responseCode);
             Assert.AreEqual("Approved", response.responseDescription);
         }
@@ -233,56 +231,6 @@ namespace PayFacMpSDKTest.Functional
             Assert.NotNull(response.transactionId);
             Assert.NotNull(response.originalLegalEntityId);
             Assert.AreEqual("Declined", response.originalLegalEntityStatus);
-        }
-
-        [Test]
-        public void testLegalEntityOriginal()
-        {
-            var request = new legalEntityCreateRequest
-            {
-                legalEntityName = "Yarrgh Pirate Co.",
-                legalEntityType = legalEntityType.LIMITED_LIABILITY_COMPANY,
-                legalEntityOwnershipType = legalEntityOwnershipType.PRIVATE,
-                doingBusinessAs = "Jolly Roger Services",
-                taxId = "551351516",
-                contactPhone = "5555555555",
-                annualCreditCardSalesVolume = "0",
-                hasAcceptedCreditCards = false,
-                address = new address()
-                {
-                    streetAddress1 = "2223 Executive Dr",
-                    city = "Suite 104",
-                    stateProvince = "DT",
-                    postalCode = "48201",
-                    countryCode = "USA"
-                },
-                principal = new legalEntityPrincipal
-                {
-                    firstName = "Joeya",
-                    lastName = "Schmoeya",
-                    emailAddress = "joe2a@example.com",
-                    ssn = "111111113",
-                    contactPhone = "1111111111",
-                    dateOfBirth = (new DateTime(1982, 1, 31)),
-                    address = new principalAddress()
-                    {
-                        streetAddress1 = "900 Chelmsford St",
-                        streetAddress2 = "Ste 5",
-                        city = "Royal Oak",
-                        stateProvince = "MI",
-                        postalCode = "48067",
-                        countryCode = "USA"
-                    },
-                    stakePercent = 100
-                },
-                yearsInBusiness = "0",
-            };
-            var response = request.PostLegalEntityCreateRequest();
-            if (response.legalEntityId == null)
-            {
-                Assert.NotNull(response.originalLegalEntityId);
-                Assert.NotNull(response.originalLegalEntityStatus, null);
-            }
         }
     }
 }
