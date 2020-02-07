@@ -9,7 +9,7 @@ namespace PayFacMpSDKTest.Functional
     {
         private legalEntityCreateRequest request;
         private legalEntityCreateResponse response;
-        
+
         [OneTimeSetUp]
         public void setUp()
         {
@@ -29,7 +29,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -83,7 +84,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -114,7 +116,7 @@ namespace PayFacMpSDKTest.Functional
                 },
                 yearsInBusiness = "12"
             };
-            
+
             response = request.PostLegalEntityCreateRequest();
             Assert.NotNull(response.transactionId);
             Assert.NotNull(response.legalEntityId);
@@ -122,8 +124,8 @@ namespace PayFacMpSDKTest.Functional
             Assert.AreEqual(20, response.responseCode);
             Assert.AreEqual("Manual Review", response.responseDescription);
         }
-        
-        
+
+
         [Test]
         public void TestPostLegalEntityCreateRequestDuplicateSimple()
         {
@@ -137,7 +139,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -168,15 +171,15 @@ namespace PayFacMpSDKTest.Functional
                 },
                 yearsInBusiness = "12"
             };
-            
+
             response = request.PostLegalEntityCreateRequest();
             Assert.AreEqual(true, response.duplicate);
             Assert.NotNull(response.transactionId);
-            Assert.NotNull(response.originallegalEntityId);
-            Assert.AreEqual("Approved", response.originallegalEntityStatus);
+            Assert.NotNull(response.originalLegalEntityId);
+            Assert.AreEqual("Approved", response.originalLegalEntityStatus);
         }
-        
-        
+
+
         [Test]
         public void TestPostLegalEntityCreateRequestDuplicateDeclined()
         {
@@ -190,7 +193,8 @@ namespace PayFacMpSDKTest.Functional
                 contactPhone = "7817659800",
                 annualCreditCardSalesVolume = "80000000",
                 hasAcceptedCreditCards = true,
-                address = new address{
+                address = new address
+                {
                     streetAddress1 = "Street Address 1",
                     streetAddress2 = "Street Address 2",
                     city = "Boston",
@@ -221,12 +225,12 @@ namespace PayFacMpSDKTest.Functional
                 },
                 yearsInBusiness = "12"
             };
-            
+
             response = request.PostLegalEntityCreateRequest();
             Assert.AreEqual(true, response.duplicate);
             Assert.NotNull(response.transactionId);
-            Assert.NotNull(response.originallegalEntityId);
-            Assert.AreEqual("Declined", response.originallegalEntityStatus);
+            Assert.NotNull(response.originalLegalEntityId);
+            Assert.AreEqual("Declined", response.originalLegalEntityStatus);
         }
     }
 }

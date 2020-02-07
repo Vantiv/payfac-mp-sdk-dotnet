@@ -1,5 +1,8 @@
-CHANGELOG
+CHANGELOGl
 ---------
+## 13.0.4
+* **Bug Fix** Fix camelcasing issue for original legal entity id
+
 ## 13.0.3
 * **Feature** Changed project structure from .NET Framework to .NET Standard 2.0 (.NET Framework builds will require v4.6.1 or newer).
 * **Bug Fix** Fixed casting error when using app.config
