@@ -1,5 +1,9 @@
-CHANGELOGl
+CHANGELOG
 ---------
+
+## 13.1.0
+* **Feature** Support for Payfac MP API v13.1
+
 ## 13.0.4
 * **Bug Fix** Fix camelcasing issue for original legal entity id
 
