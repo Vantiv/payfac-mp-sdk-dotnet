@@ -66,44 +66,46 @@ namespace PayFacMpSDKTest.Unit
         {
 
             var xmlReq = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-        "<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
-        "<legalEntityName>Legal Entity Name</legalEntityName>" +
-        "<legalEntityType>CORPORATION</legalEntityType>" +
-        "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>" +
-        "<doingBusinessAs>Alternate Business Name</doingBusinessAs>" +
-        "<taxId>123456789</taxId>" +
-        "<contactPhone>7817659800</contactPhone>" +
-        "<annualCreditCardSalesVolume>80000000</annualCreditCardSalesVolume>" +
-        "<hasAcceptedCreditCards>true</hasAcceptedCreditCards>" +
-        "<address>" +
-        "<streetAddress1>Street Address 1</streetAddress1>" +
-        "<streetAddress2>Street Address 2</streetAddress2>" +
-        "<city>Boston</city>" +
-        "<stateProvince>MA</stateProvince>" +
-        "<postalCode>01730</postalCode>" +
-        "<countryCode>USA</countryCode>" +
-        "</address>" +
-        "<principal>" +
-        "<title>Chief Financial Officer</title>" +
-        "<firstName>p first</firstName>" +
-        "<lastName>p last</lastName>" +
-        "<emailAddress>abc@email.com</emailAddress>" +
-        "<ssn>123459876</ssn>" +
-        "<contactPhone>7817659800</contactPhone>" +
-        "<dateOfBirth>1980-10-12</dateOfBirth>" +
-        "<driversLicense>892327409832</driversLicense>" +
-        "<address>" +
-        "<streetAddress1>p street address 1</streetAddress1>" +
-        "<streetAddress2>p street address 2</streetAddress2>" +
-        "<city>Boston</city>" +
-        "<stateProvince>MA</stateProvince>" +
-        "<postalCode>01890</postalCode>" +
-        "<countryCode>USA</countryCode>" +
-        "</address>" +
-        "<stakePercent>33</stakePercent>" +
-        "</principal>" +
-        "<yearsInBusiness>12</yearsInBusiness>" +
-        "</legalEntityCreateRequest>";
+                         "<legalEntityCreateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
+                         "<legalEntityName>Legal Entity Name</legalEntityName>" +
+                         "<legalEntityType>CORPORATION</legalEntityType>" +
+                         "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>" +
+                         "<doingBusinessAs>Alternate Business Name</doingBusinessAs>" +
+                         "<taxId>123456789</taxId>" +
+                         "<contactPhone>7817659800</contactPhone>" +
+                         "<annualCreditCardSalesVolume>80000000</annualCreditCardSalesVolume>" +
+                         "<hasAcceptedCreditCards>true</hasAcceptedCreditCards>" +
+                         "<address>" +
+                         "<streetAddress1>Street Address 1</streetAddress1>" +
+                         "<streetAddress2>Street Address 2</streetAddress2>" +
+                         "<city>Boston</city>" +
+                         "<stateProvince>MA</stateProvince>" +
+                         "<postalCode>01730</postalCode>" +
+                         "<countryCode>USA</countryCode>" +
+                         "</address>" +
+                         "<principal>" +
+                         "<title>Chief Financial Officer</title>" +
+                         "<firstName>p first</firstName>" +
+                         "<lastName>p last</lastName>" +
+                         "<emailAddress>abc@email.com</emailAddress>" +
+                         "<ssn>123459876</ssn>" +
+                         "<contactPhone>7817659800</contactPhone>" +
+                         "<dateOfBirth>1980-10-12</dateOfBirth>" +
+                         "<driversLicense>892327409832</driversLicense>" +
+                         "<address>" +
+                         "<streetAddress1>p street address 1</streetAddress1>" +
+                         "<streetAddress2>p street address 2</streetAddress2>" +
+                         "<city>Boston</city>" +
+                         "<stateProvince>MA</stateProvince>" +
+                         "<postalCode>01890</postalCode>" +
+                         "<countryCode>USA</countryCode>" +
+                         "</address>" +
+                         "<stakePercent>33</stakePercent>" +
+                         "</principal>" +
+                         "<yearsInBusiness>12</yearsInBusiness>" +
+                         "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
+                         "<language>" + Versions.LANGUAGE + "</language>" + 
+                         "</legalEntityCreateRequest>";
 
             string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
         "<legalEntityCreateResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
