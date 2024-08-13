@@ -133,6 +133,15 @@ namespace PayFacMpSDK
         }
     }
 
+    public partial class merchantCategoryTypes
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            xmlBuilder.Append("<merchantCategory>" + categoryTypeField + "</merchantCategory>");
+        }
+    }
+
     public partial class address
     {
 

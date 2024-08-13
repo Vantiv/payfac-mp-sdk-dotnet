@@ -2014,8 +2014,8 @@ namespace PayFacMpSDK
         }
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3338,10 +3338,6 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
-        private string sdkVersionField;
-
-        private string languageField;
-
         /// <remarks/>
         public string legalEntityName
         {
@@ -3482,33 +3478,6 @@ namespace PayFacMpSDK
             set
             {
                 this.yearsInBusinessField = value;
-            }
-        }
-
-        public string sdkVersion
-        {
-            get
-            {
-                return this.sdkVersionField;
-                
-            }
-            set
-            {
-                this.sdkVersionField = value;
-            }
-        }
-
-        public string language
-        {
-            get
-            {
-                return this.language;
-                
-            }
-            set
-            {
-                this.languageField = value;
-                
             }
         }
     }
@@ -4209,10 +4178,6 @@ namespace PayFacMpSDK
 
         private legalEntityPrincipal principalField;
 
-        private string sdkVersionField;
-
-        private string languageField;
-
         /// <remarks/>
         public legalEntityPrincipal principal
         {
@@ -4223,33 +4188,6 @@ namespace PayFacMpSDK
             set
             {
                 this.principalField = value;
-            }
-        }
-        
-        public string sdkVersion
-        {
-            get
-            {
-                return this.sdkVersionField;
-                
-            }
-            set
-            {
-                this.sdkVersionField = value;
-            }
-        }
-
-        public string language
-        {
-            get
-            {
-                return this.language;
-                
-            }
-            set
-            {
-                this.languageField = value;
-                
             }
         }
     }
@@ -4515,7 +4453,29 @@ namespace PayFacMpSDK
             }
         }
     }
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class merchantCategoryTypes
+    {
+        private string categoryTypeField;
 
+        public string categoryType
+        {
+            get
+            {
+                return this.categoryTypeField;
+            }
+            set
+            {
+                this.categoryTypeField = value;
+            }
+        }
+    }
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(subMerchantRetrievalResponse))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
@@ -4573,9 +4533,19 @@ namespace PayFacMpSDK
 
         private string settlementCurrencyField;
 
-        private string sdkVersionField;
+        private merchantCategoryTypes merchantCategoryTypesField;
 
-        private string languageField;
+        public merchantCategoryTypes merchantCategoryTypes
+        {
+            get
+            {
+                return this.merchantCategoryTypesField;
+            }
+            set
+            {
+                this.merchantCategoryTypesField = value;
+            }
+        }
 
         /// <remarks/>
         public string merchantName
@@ -4877,33 +4847,7 @@ namespace PayFacMpSDK
                 this.settlementCurrencyField = value;
             }
         }
-        
-        public string sdkVersion
-        {
-            get
-            {
-                return this.sdkVersionField;
-                
-            }
-            set
-            {
-                this.sdkVersionField = value;
-            }
-        }
 
-        public string language
-        {
-            get
-            {
-                return this.language;
-                
-            }
-            set
-            {
-                this.languageField = value;
-                
-            }
-        }
     }
 
     /// <remarks/>
@@ -5720,10 +5664,6 @@ namespace PayFacMpSDK
 
         private legalEntityAgreement legalEntityAgreementField;
 
-        private string sdkVersionField;
-
-        private string languageField;
-
         /// <remarks/>
         public legalEntityAgreement legalEntityAgreement
         {
@@ -5735,34 +5675,7 @@ namespace PayFacMpSDK
             {
                 this.legalEntityAgreementField = value;
             }
-        }
-        
-        public string sdkVersion
-        {
-            get
-            {
-                return this.sdkVersionField;
-                
-            }
-            set
-            {
-                this.sdkVersionField = value;
-            }
-        }
-
-        public string language
-        {
-            get
-            {
-                return this.language;
-                
-            }
-            set
-            {
-                this.languageField = value;
-                
-            }
-        }
+        } 
     }
 
     /// <remarks/>

@@ -20,8 +20,8 @@ namespace PayFacMpSDKTest.Functional
             _communication = new Communication();
             _config = new Configuration();
             _communication.SetAuth(_config.Get("username"), _config.Get("password"));
-            _communication.SetContentType("application/com.vantivcnp.payfac-v13.1+xml");
-            _communication.SetAccept("application/com.vantivcnp.payfac-v13.1+xml");
+            _communication.SetContentType("application/com.vantivcnp.payfac-v14+xml");
+            _communication.SetAccept("application/com.vantivcnp.payfac-v14+xml");
             _communication.SetHost(_config.Get("url"));
             _communication.SetProxy(_config.Get("proxyHost"), _config.Get("proxyPort"));
         }

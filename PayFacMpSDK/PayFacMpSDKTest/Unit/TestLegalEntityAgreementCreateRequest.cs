@@ -47,8 +47,6 @@ namespace PayFacMpSDKTest.Unit
         "<manuallyEntered>true</manuallyEntered>" +
         "<acceptanceDateTime>" + DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz") + "</acceptanceDateTime>" +
         "</legalEntityAgreement>" +
-        "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
-        "<language>" + Versions.LANGUAGE + "</language>" + 
         "</legalEntityAgreementCreateRequest>";
 
             string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
