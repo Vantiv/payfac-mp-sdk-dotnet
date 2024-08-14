@@ -138,7 +138,7 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            xmlBuilder.Append("<merchantCategory>" + categoryTypeField + "</merchantCategory>");
+            if (categoryType != null) xmlBuilder.Append("<merchantCategory>" + categoryType + "</merchantCategory>");
         }
     }
 

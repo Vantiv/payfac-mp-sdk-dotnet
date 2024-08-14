@@ -81,7 +81,12 @@ namespace PayFacMpSDK
                 xmlBuilder.Append("</subMerchantFunding>");
             }
             xmlBuilder.Append("<settlementCurrency>" + settlementCurrency + "</settlementCurrency>");
-            xmlBuilder.Append("<merchantCategoryTypes>" + merchantCategoryTypes + "</merchantCategoryTypes>");
+            if (merchantCategoryTypes != null)
+            {
+                xmlBuilder.Append("<merchantCategoryTypes>");
+                merchantCategoryTypes.Serialize(xmlBuilder);
+                xmlBuilder.Append("</merchantCategoryTypes>");
+            }
 
             xmlBuilder.Append("</subMerchantCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());

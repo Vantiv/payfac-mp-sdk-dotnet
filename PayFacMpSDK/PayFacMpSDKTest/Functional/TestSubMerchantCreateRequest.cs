@@ -76,7 +76,6 @@ namespace PayFacMpSDKTest.Functional
                 settlementCurrency = "USD",
                 merchantCategoryTypes = new merchantCategoryTypes
                 {
-                  
                     categoryType = "GC"
                 }
             };

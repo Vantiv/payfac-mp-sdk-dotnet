@@ -4463,10 +4463,9 @@ namespace PayFacMpSDK
     public partial class merchantCategoryTypes
     {
         private string categoryTypeField;
-
         public string categoryType
-        {
-            get
+        {        
+        get
             {
                 return this.categoryTypeField;
             }
