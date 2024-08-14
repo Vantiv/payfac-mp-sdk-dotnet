@@ -138,9 +138,36 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (categoryType != null) xmlBuilder.Append("<merchantCategory>" + categoryType + "</merchantCategory>");
+            if (categoryType != null) xmlBuilder.Append("<categoryType>" + categoryType + "</categoryType>");
         }
     }
+
+    public partial class methodOfPayments
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+
+            if (method != null)
+                {
+                    xmlBuilder.Append("<method>");
+                    method.Serialize(xmlBuilder);
+                    xmlBuilder.Append("</method>");
+                }
+        }
+    }
+
+    public partial class paymentMethod
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            if (paymentType != null) xmlBuilder.Append("<paymentType>" + paymentType + "</paymentType>");
+            if (selectedTransactionType != null) xmlBuilder.Append("<selectedTransactionType>" + selectedTransactionType + "</selectedTransactionType>");
+            if (allowedTransactionTypes != null) xmlBuilder.Append("<allowedTransactionTypes>" + allowedTransactionTypes + "</allowedTransactionTypes>");
+        }
+    }
+
 
     public partial class address
     {

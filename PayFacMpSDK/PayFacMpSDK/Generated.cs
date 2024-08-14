@@ -3393,6 +3393,7 @@ namespace PayFacMpSDK
         /// <remarks/>
         public string taxId
         {
+        {
             get
             {
                 return this.taxIdField;
@@ -4475,6 +4476,81 @@ namespace PayFacMpSDK
             }
         }
     }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class methodOfPayments
+    {
+        private method methodField;
+        public method method
+        {
+            get
+            {
+                return this.methodField;
+            }
+            set
+            {
+                this.methodField = value;
+            }
+        }
+    }
+
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class paymentMethod
+    {
+        private string paymentTypeField;
+
+        private string selectedTransactionTypeField;
+
+        private string allowedTransactionTypesField;
+
+        public string paymentType
+        {
+            get
+            {
+                return this.paymentTypeField;
+            }
+            set
+            {
+                this.paymentTypeField = value;
+            }
+        }
+
+        public string selectedTransactionType
+        {
+            get
+            {
+                return this.selectedTransactionTypeField;
+            }
+            set
+            {
+                this.selectedTransactionTypeField = value;
+            }
+        }
+
+        public string allowedTransactionTypes
+        {
+            get
+            {
+                return this.allowedTransactionTypesField;
+            }
+            set
+            {
+                this.allowedTransactionTypesField = value;
+            }
+        }
+    }
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(subMerchantRetrievalResponse))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
@@ -5359,6 +5435,20 @@ namespace PayFacMpSDK
         private string taxAuthorityField;
 
         private string taxAuthorityStateField;
+
+        private methodOfPayments methodOfPaymentsField;
+
+        public methodOfPayments methodOfPayments
+        {
+            get
+            {
+                return this.methodOfPaymentsField;
+            }
+            set
+            {
+                this.methodOfPaymentsField = value;
+            }
+        }
 
         /// <remarks/>
         public string merchantName

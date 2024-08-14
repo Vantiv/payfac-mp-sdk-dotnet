@@ -69,6 +69,10 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = true,
 
+                },
+                methodOfPayments = new methodOfPayments { 
+                   method = new method { 
+                
                 }
             };
 
