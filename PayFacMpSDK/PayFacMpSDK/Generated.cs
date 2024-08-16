@@ -3392,7 +3392,7 @@ namespace PayFacMpSDK
 
         /// <remarks/>
         public string taxId
-        {
+        
         {
             get
             {
@@ -4485,8 +4485,8 @@ namespace PayFacMpSDK
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
     public partial class methodOfPayments
     {
-        private method methodField;
-        public method method
+        private paymentMethod methodField;
+        public paymentMethod method
         {
             get
             {
@@ -5435,6 +5435,20 @@ namespace PayFacMpSDK
         private string taxAuthorityField;
 
         private string taxAuthorityStateField;
+
+        private merchantCategoryTypes merchantCategoryTypesField;
+
+        public merchantCategoryTypes merchantCategoryTypes
+        {
+            get
+            {
+                return this.merchantCategoryTypesField;
+            }
+            set
+            {
+                this.merchantCategoryTypesField = value;
+            }
+        }
 
         private methodOfPayments methodOfPaymentsField;
 

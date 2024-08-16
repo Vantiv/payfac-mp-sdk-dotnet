@@ -70,10 +70,22 @@ namespace PayFacMpSDKTest.Functional
                     enabled = true,
 
                 },
-                methodOfPayments = new methodOfPayments { 
-                   method = new method { 
-                
-                }
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryType = "GC",
+
+                },
+                methodOfPayments = new methodOfPayments
+                {
+                    method = new paymentMethod
+                    {
+                        paymentType = "VISA",
+                        selectedTransactionType = "NONE",
+
+
+                    }
+
+                }  
             };
 
             response = request.PutSubMerchantUpdateRequest(legalEntityId, subMerchantId);
