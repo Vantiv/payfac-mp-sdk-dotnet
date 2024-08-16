@@ -54,6 +54,16 @@ namespace PayFacMpSDKTest.Unit
                 {
                     enabled = true,
                     eCheckBillingDescriptor = "9785552222",
+                },
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryType = "GC",
+                },
+                methodOfPayments = new methodOfPayments { 
+                method = new paymentMethod { 
+                paymentType = "VISA",
+                selectedTransactionType = "NONE"
+                }
                 }
             };
         }
@@ -93,6 +103,15 @@ namespace PayFacMpSDKTest.Unit
                          "<eCheck enabled=\"true\">" +
                          "<eCheckBillingDescriptor>9785552222</eCheckBillingDescriptor>" +
                          "</eCheck>" +
+                         "<merchantCategoryTypes>" +
+                         "<categoryType>GC</categoryType>" +
+                         "</merchantCategoryTypes>" +
+                         "<methodOfPayments>" +
+                           "<method>" +
+                           "<paymentType>VISA</paymentType>" +
+                          "<selectedTransactionType>NONE</selectedTransactionType>" +
+                           "</method>" +
+                         "</methodOfPayments>" +
                          "</subMerchantUpdateRequest>";
 
             var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +

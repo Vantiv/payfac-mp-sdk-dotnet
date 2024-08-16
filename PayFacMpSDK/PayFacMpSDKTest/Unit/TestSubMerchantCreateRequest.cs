@@ -65,7 +65,12 @@ namespace PayFacMpSDKTest.Unit
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
+                settlementCurrency = "USD",
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryType = "GC"
+                }
+
             };
 
         }
@@ -111,7 +116,10 @@ namespace PayFacMpSDKTest.Unit
         "</eCheck>" +
         "<subMerchantFunding enabled =\"false\">" +
         "</subMerchantFunding>" +
-        "<settlementCurrency>USD</settlementCurrency>" +
+        "<settlementCurrency>USD</settlementCurrency>" + 
+        "<merchantCategoryTypes>" +
+        "<categoryType>GC</categoryType>" +
+        "</merchantCategoryTypes>" +
         "</subMerchantCreateRequest>";
 
             string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
