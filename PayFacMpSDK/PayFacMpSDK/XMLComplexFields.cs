@@ -138,7 +138,11 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (categoryType != null) xmlBuilder.Append("<categoryType>" + categoryType + "</categoryType>");
+            //  if (categoryType != null) xmlBuilder.Append("<categoryType>" + categoryType + "</categoryType>");
+            foreach (var categoryType in categoryTypeField)
+            {
+                xmlBuilder.Append("<categoryType>" + categoryType + "</categoryType>");
+            }
         }
     }
 
@@ -147,13 +151,12 @@ namespace PayFacMpSDK
 
         public void Serialize(StringBuilder xmlBuilder)
         {
-
-            if (method != null)
-                {
-                    xmlBuilder.Append("<method>");
-                    method.Serialize(xmlBuilder);
-                    xmlBuilder.Append("</method>");
-                }
+            foreach (var newMethod in methodField)
+            {
+                xmlBuilder.Append("<method>");
+                newMethod.Serialize(xmlBuilder);
+                xmlBuilder.Append("</method>");
+            }
         }
     }
 

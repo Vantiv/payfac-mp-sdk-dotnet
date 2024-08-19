@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 // 
@@ -4463,17 +4464,10 @@ namespace PayFacMpSDK
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
     public partial class merchantCategoryTypes
     {
-        private string categoryTypeField;
-        public string categoryType
-        {        
-        get
-            {
-                return this.categoryTypeField;
-            }
-            set
-            {
-                this.categoryTypeField = value;
-            }
+        public List<string> categoryTypeField;
+        public merchantCategoryTypes()
+        {
+            categoryTypeField = new List<string>();
         }
     }
 
@@ -4485,17 +4479,10 @@ namespace PayFacMpSDK
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
     public partial class methodOfPayments
     {
-        private paymentMethod methodField;
-        public paymentMethod method
+        public List<paymentMethod> methodField;
+        public methodOfPayments()
         {
-            get
-            {
-                return this.methodField;
-            }
-            set
-            {
-                this.methodField = value;
-            }
+            methodField = new List<paymentMethod>();
         }
     }
 
@@ -4509,11 +4496,11 @@ namespace PayFacMpSDK
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
     public partial class paymentMethod
     {
-        private string paymentTypeField;
+        public string paymentTypeField;
 
-        private string selectedTransactionTypeField;
+        public string selectedTransactionTypeField;
 
-        private string allowedTransactionTypesField;
+        public string allowedTransactionTypesField;
 
         public string paymentType
         {
@@ -4621,6 +4608,7 @@ namespace PayFacMpSDK
                 this.merchantCategoryTypesField = value;
             }
         }
+
 
         /// <remarks/>
         public string merchantName
