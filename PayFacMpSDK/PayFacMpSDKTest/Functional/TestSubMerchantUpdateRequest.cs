@@ -92,6 +92,7 @@ namespace PayFacMpSDKTest.Functional
             var newMethod1 = new paymentMethod();
             newMethod1.paymentType = "MASTERCARD";
             newMethod1.selectedTransactionType = "NONE";
+            newMethod1.allowedTransactionTypes = "DEPOSITS_ONLY";
 
             request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
             request.methodOfPayments.methodField.Add(newMethod);
