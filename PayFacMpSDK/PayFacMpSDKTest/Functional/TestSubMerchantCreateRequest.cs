@@ -10,7 +10,6 @@ namespace PayFacMpSDKTest.Functional
         private string legalEntityId;
         private subMerchantCreateRequest request;
         private subMerchantCreateResponse response;
-        private merchantCategoryTypes subMerchantCreateResponse;
 
         [OneTimeSetUp]
         public void setUp()
@@ -483,8 +482,7 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
-               
+                settlementCurrency = "USD"              
             };
 
             try

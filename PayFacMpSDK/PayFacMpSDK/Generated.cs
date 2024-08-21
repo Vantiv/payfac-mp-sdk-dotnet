@@ -3392,8 +3392,7 @@ namespace PayFacMpSDK
         }
 
         /// <remarks/>
-        public string taxId
-        
+        public string taxId        
         {
             get
             {
