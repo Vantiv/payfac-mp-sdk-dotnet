@@ -124,8 +124,10 @@ namespace PayFacMpSDKTest.Unit
         "<settlementCurrency>USD</settlementCurrency>" + 
         "<merchantCategoryTypes>" +
         "<categoryType>GC</categoryType>" +
-       // "<categoryType>SM</categoryType>" +
+        // "<categoryType>SM</categoryType>" +
         "</merchantCategoryTypes>" +
+        "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
+        "<language>" + Versions.LANGUAGE + "</language>" +
         "</subMerchantCreateRequest>";
 
             string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +

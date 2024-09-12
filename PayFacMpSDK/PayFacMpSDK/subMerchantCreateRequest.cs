@@ -87,6 +87,8 @@ namespace PayFacMpSDK
                 merchantCategoryTypes.Serialize(xmlBuilder);
                 xmlBuilder.Append("</merchantCategoryTypes>");
             }
+            xmlBuilder.Append("<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>");
+            xmlBuilder.Append("<language>" + Versions.LANGUAGE + "</language>");
 
             xmlBuilder.Append("</subMerchantCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());

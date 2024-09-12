@@ -42,6 +42,8 @@ namespace PayFacMpSDK
             xmlBuilder.Append("<legalEntityAgreement>");
             legalEntityAgreement.Serialize(xmlBuilder);
             xmlBuilder.Append("</legalEntityAgreement>");
+            xmlBuilder.Append("<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>");
+            xmlBuilder.Append("<language>" + Versions.LANGUAGE + "</language>");
             xmlBuilder.Append("</legalEntityAgreementCreateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();
