@@ -79,6 +79,18 @@ namespace PayFacMpSDK
             }
             if(taxAuthority != null) xmlBuilder.Append("<taxAuthority>" + taxAuthority + "</taxAuthority>");
             if(taxAuthorityState != null) xmlBuilder.Append("<taxAuthorityState>" + taxAuthorityState + "</taxAuthorityState>");
+            if (merchantCategoryTypes != null)
+            {
+                xmlBuilder.Append("<merchantCategoryTypes>");
+                merchantCategoryTypes.Serialize(xmlBuilder);
+                xmlBuilder.Append("</merchantCategoryTypes>");
+            }
+            if (methodOfPayments != null)
+            {
+                xmlBuilder.Append("<methodOfPayments>");
+                methodOfPayments.Serialize(xmlBuilder);
+                xmlBuilder.Append("</methodOfPayments>");
+            }
             xmlBuilder.Append("</subMerchantUpdateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();

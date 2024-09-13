@@ -65,8 +65,18 @@ namespace PayFacMpSDKTest.Unit
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
+                settlementCurrency = "USD",
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryTypeField = new System.Collections.Generic.List<string>()
+                }
             };
+
+            var categoryType = new string("GC");
+            var categoryType1 = new string("SM");
+
+            request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
+           // request.merchantCategoryTypes.categoryTypeField.Add(categoryType1);
 
         }
 
@@ -111,9 +121,13 @@ namespace PayFacMpSDKTest.Unit
         "</eCheck>" +
         "<subMerchantFunding enabled =\"false\">" +
         "</subMerchantFunding>" +
-        "<settlementCurrency>USD</settlementCurrency>" +
+        "<settlementCurrency>USD</settlementCurrency>" + 
+        "<merchantCategoryTypes>" +
+        "<categoryType>GC</categoryType>" +
+        // "<categoryType>SM</categoryType>" +
+        "</merchantCategoryTypes>" +
         "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
-        "<language>" + Versions.LANGUAGE + "</language>" + 
+        "<language>" + Versions.LANGUAGE + "</language>" +
         "</subMerchantCreateRequest>";
 
             string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +

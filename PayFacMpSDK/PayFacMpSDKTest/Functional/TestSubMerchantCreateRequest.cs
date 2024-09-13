@@ -72,8 +72,18 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
+                settlementCurrency = "USD",
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryTypeField = new System.Collections.Generic.List<string>()
+                }
             };
+
+            var categoryType = new string("GC");
+            var categoryType1 = new string("SM");
+
+            request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
+            request.merchantCategoryTypes.categoryTypeField.Add(categoryType1);
 
             response = request.PostSubMerchantCreateRequest(legalEntityId);
             Assert.NotNull(response.transactionId);
@@ -472,7 +482,7 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
+                settlementCurrency = "USD"              
             };
 
             try

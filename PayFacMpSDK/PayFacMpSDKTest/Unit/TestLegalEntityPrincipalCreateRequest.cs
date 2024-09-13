@@ -64,7 +64,7 @@ namespace PayFacMpSDKTest.Unit
                          "<stakePercent>31</stakePercent>" +
                          "</principal>" +
                          "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
-                         "<language>" + Versions.LANGUAGE + "</language>" + 
+                         "<language>" + Versions.LANGUAGE + "</language>" +
                          "</legalEntityPrincipalCreateRequest>";
             
             var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +

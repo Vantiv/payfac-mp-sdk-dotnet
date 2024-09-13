@@ -133,6 +133,45 @@ namespace PayFacMpSDK
         }
     }
 
+    public partial class merchantCategoryTypes
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            //  if (categoryType != null) xmlBuilder.Append("<categoryType>" + categoryType + "</categoryType>");
+            foreach (var categoryType in categoryTypeField)
+            {
+                xmlBuilder.Append("<categoryType>" + categoryType + "</categoryType>");
+            }
+        }
+    }
+
+    public partial class methodOfPayments
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            foreach (var newMethod in methodField)
+            {
+                xmlBuilder.Append("<method>");
+                newMethod.Serialize(xmlBuilder);
+                xmlBuilder.Append("</method>");
+            }
+        }
+    }
+
+    public partial class paymentMethod
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            if (paymentType != null) xmlBuilder.Append("<paymentType>" + paymentType + "</paymentType>");
+            if (selectedTransactionType != null) xmlBuilder.Append("<selectedTransactionType>" + selectedTransactionType + "</selectedTransactionType>");
+            if (allowedTransactionTypes != null) xmlBuilder.Append("<allowedTransactionTypes>" + allowedTransactionTypes + "</allowedTransactionTypes>");
+        }
+    }
+
+
     public partial class address
     {
 

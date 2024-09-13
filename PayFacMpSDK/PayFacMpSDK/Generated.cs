@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 // 
@@ -3484,13 +3485,12 @@ namespace PayFacMpSDK
                 this.yearsInBusinessField = value;
             }
         }
-
         public string sdkVersion
         {
             get
             {
                 return this.sdkVersionField;
-                
+
             }
             set
             {
@@ -3503,12 +3503,12 @@ namespace PayFacMpSDK
             get
             {
                 return this.language;
-                
+
             }
             set
             {
                 this.languageField = value;
-                
+
             }
         }
     }
@@ -4225,13 +4225,13 @@ namespace PayFacMpSDK
                 this.principalField = value;
             }
         }
-        
+
         public string sdkVersion
         {
             get
             {
                 return this.sdkVersionField;
-                
+
             }
             set
             {
@@ -4244,12 +4244,12 @@ namespace PayFacMpSDK
             get
             {
                 return this.language;
-                
+
             }
             set
             {
                 this.languageField = value;
-                
+
             }
         }
     }
@@ -4515,7 +4515,89 @@ namespace PayFacMpSDK
             }
         }
     }
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class merchantCategoryTypes
+    {
+        public List<string> categoryTypeField;
+        public merchantCategoryTypes()
+        {
+            categoryTypeField = new List<string>();
+        }
+    }
 
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class methodOfPayments
+    {
+        public List<paymentMethod> methodField;
+        public methodOfPayments()
+        {
+            methodField = new List<paymentMethod>();
+        }
+    }
+
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class paymentMethod
+    {
+        public string paymentTypeField;
+
+        public string selectedTransactionTypeField;
+
+        public string allowedTransactionTypesField;
+
+        public string paymentType
+        {
+            get
+            {
+                return this.paymentTypeField;
+            }
+            set
+            {
+                this.paymentTypeField = value;
+            }
+        }
+
+        public string selectedTransactionType
+        {
+            get
+            {
+                return this.selectedTransactionTypeField;
+            }
+            set
+            {
+                this.selectedTransactionTypeField = value;
+            }
+        }
+
+        public string allowedTransactionTypes
+        {
+            get
+            {
+                return this.allowedTransactionTypesField;
+            }
+            set
+            {
+                this.allowedTransactionTypesField = value;
+            }
+        }
+    }
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(subMerchantRetrievalResponse))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
@@ -4576,6 +4658,21 @@ namespace PayFacMpSDK
         private string sdkVersionField;
 
         private string languageField;
+
+        private merchantCategoryTypes merchantCategoryTypesField;
+
+        public merchantCategoryTypes merchantCategoryTypes
+        {
+            get
+            {
+                return this.merchantCategoryTypesField;
+            }
+            set
+            {
+                this.merchantCategoryTypesField = value;
+            }
+        }
+
 
         /// <remarks/>
         public string merchantName
@@ -4877,13 +4974,13 @@ namespace PayFacMpSDK
                 this.settlementCurrencyField = value;
             }
         }
-        
+
         public string sdkVersion
         {
             get
             {
                 return this.sdkVersionField;
-                
+
             }
             set
             {
@@ -4896,12 +4993,12 @@ namespace PayFacMpSDK
             get
             {
                 return this.language;
-                
+
             }
             set
             {
                 this.languageField = value;
-                
+
             }
         }
     }
@@ -5417,6 +5514,34 @@ namespace PayFacMpSDK
 
         private string taxAuthorityStateField;
 
+        private merchantCategoryTypes merchantCategoryTypesField;
+
+        public merchantCategoryTypes merchantCategoryTypes
+        {
+            get
+            {
+                return this.merchantCategoryTypesField;
+            }
+            set
+            {
+                this.merchantCategoryTypesField = value;
+            }
+        }
+
+        private methodOfPayments methodOfPaymentsField;
+
+        public methodOfPayments methodOfPayments
+        {
+            get
+            {
+                return this.methodOfPaymentsField;
+            }
+            set
+            {
+                this.methodOfPaymentsField = value;
+            }
+        }
+
         /// <remarks/>
         public string merchantName
         {
@@ -5735,14 +5860,15 @@ namespace PayFacMpSDK
             {
                 this.legalEntityAgreementField = value;
             }
+
         }
-        
+
         public string sdkVersion
         {
             get
             {
                 return this.sdkVersionField;
-                
+
             }
             set
             {
@@ -5755,12 +5881,12 @@ namespace PayFacMpSDK
             get
             {
                 return this.language;
-                
+
             }
             set
             {
                 this.languageField = value;
-                
+
             }
         }
     }

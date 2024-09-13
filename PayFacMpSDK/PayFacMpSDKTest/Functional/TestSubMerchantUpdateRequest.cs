@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using PayFacMpSDK;
 
@@ -69,8 +70,34 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = true,
 
+                },
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryTypeField = new System.Collections.Generic.List<string>()
+                },
+            
+                methodOfPayments = new methodOfPayments
+                {
+                    methodField = new List<paymentMethod>()
                 }
             };
+
+            var categoryType = new string("GC");
+            //var categoryType1 = new string("SM");
+            var newMethod = new paymentMethod();
+            newMethod.paymentType = "VISA";
+            newMethod.selectedTransactionType = "NONE";
+
+            //second methodOFPayment
+            var newMethod1 = new paymentMethod();
+            newMethod1.paymentType = "MASTERCARD";
+            newMethod1.selectedTransactionType = "NONE";
+            newMethod1.allowedTransactionTypes = "DEPOSITS_ONLY";
+
+            request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
+            request.methodOfPayments.methodField.Add(newMethod);
+            request.methodOfPayments.methodField.Add(newMethod1);
+            //  request.merchantCategoryTypes.categoryTypeField.Add(categoryType1);
 
             response = request.PutSubMerchantUpdateRequest(legalEntityId, subMerchantId);
             Assert.NotNull(response.transactionId);

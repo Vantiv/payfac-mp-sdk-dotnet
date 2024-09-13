@@ -104,7 +104,7 @@ namespace PayFacMpSDKTest.Unit
                          "</principal>" +
                          "<yearsInBusiness>12</yearsInBusiness>" +
                          "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
-                         "<language>" + Versions.LANGUAGE + "</language>" + 
+                         "<language>" + Versions.LANGUAGE + "</language>" +
                          "</legalEntityCreateRequest>";
 
             string expectedResposne = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
