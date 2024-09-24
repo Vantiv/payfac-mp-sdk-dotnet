@@ -4,9 +4,9 @@
 
 # payfac-mp-sdk-dotnet
 
-The PayFac Merchant Provisioner SDK is a C# implementation of the [Worldpay](https://developer.vantiv.com/community/ecommerce) PayFac Merchant Provisioner API. This SDK was created to make it as easy as possible to perform operations that allows you to create and update Legal Entities and Sub-merchants, as well as retrieve information about existing Legal Entities and Sub-merchants in near real-time. This SDK utilizes the HTTPS protocol to securely connect to Worldpay. Using the SDK requires coordination with the Vantiv eCommerce team in order to be provided with credentials for accessing our systems.
+The PayFac Merchant Provisioner SDK is a C# implementation of the [Worldpay](https://developer.worldpay.com/community/ecommerce) PayFac Merchant Provisioner API. This SDK was created to make it as easy as possible to perform operations that allows you to create and update Legal Entities and Sub-merchants, as well as retrieve information about existing Legal Entities and Sub-merchants in near real-time. This SDK utilizes the HTTPS protocol to securely connect to Worldpay. Using the SDK requires coordination with the Vantiv eCommerce team in order to be provided with credentials for accessing our systems.
 
-Each .NET SDK release supports all of the functionality present in the associated PayFac Merchant Provisioner API version (e.g., SDK v13.0.0 supports API v13.0.0). Please see our [documentation](https://developer.vantiv.com/community/ecommerce/pages/documentation) for PayFac Merchant Provisioner API to get more details on what operations are supported.
+Each .NET SDK release supports all of the functionality present in the associated PayFac Merchant Provisioner API version (e.g., SDK v14.0.0 supports API v14.0.0). Please see our [documentation](https://developer.worldpay.com/community/ecommerce/pages/documentation) for PayFac Merchant Provisioner API to get more details on what operations are supported.
 
 This SDK is implemented to support the .NET plaform, including C#, VB.NET and Managed C++ and is created by Worldpay. Its intended use is for PayFac API operations with Worldpay.
 
@@ -130,7 +130,7 @@ Compile and run this file.  You should see the following result:
 For the versions available, see the [tags on this repository](https://github.com/vantiv/payfac-mp-sdk-java/tags). 
 
 ## Changelog
-For the list of changes, check out the [changelog](https://github.com/Vantiv/payfac-mp-sdk-java/blob/13.x/CHANGELOG.md)
+For the list of changes, check out the [changelog](https://github.com/Vantiv/payfac-mp-sdk-dotnet/blob/master/CHANGELOG.md)
 
 ## Authors
 
@@ -140,10 +140,10 @@ For the list of changes, check out the [changelog](https://github.com/Vantiv/pay
 See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-dotnet/contributors) who participated in this project.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-dotnet/blob/13.x/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-dotnet/blob/master/LICENSE) file for details
 
 ## Examples
-More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-dotnet/tree/13.x/PayFacMpSDK/PayFacMpSDKTest)
+More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-dotnet/tree/master/PayFacMpSDK/PayFacMpSDKTest)
 
 ## Support
-Please contact [Vantiv eCommerce](https://developer.vantiv.com/community/ecommerce) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  Support can also be reached at sdksupport@Vantiv.com
+Please contact [Worldpay eCommerce](https://developer.worldpay.com/products/access/hosted-payment-pages/openapi/other/create) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  Support can also be reached at sdksupport@worldpay.com
