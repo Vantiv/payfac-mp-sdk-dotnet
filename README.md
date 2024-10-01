@@ -146,4 +146,5 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-dotnet/tree/master/PayFacMpSDK/PayFacMpSDKTest)
 
 ## Support
-Please contact [Worldpay eCommerce](https://developer.worldpay.com/products/access/hosted-payment-pages/openapi/other/create) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  Support can also be reached at sdksupport@worldpay.com
+Please contact [Worldpay eCommerce](mailto:PayFacEComm@worldpay.com) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way. SDK Support can also be reached at
+sdksupport@worldpay.com
