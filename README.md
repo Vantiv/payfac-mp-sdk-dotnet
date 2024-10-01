@@ -4,9 +4,9 @@
 
 # payfac-mp-sdk-dotnet
 
-The PayFac Merchant Provisioner SDK is a C# implementation of the [Worldpay](https://developer.worldpay.com/community/ecommerce) PayFac Merchant Provisioner API. This SDK was created to make it as easy as possible to perform operations that allows you to create and update Legal Entities and Sub-merchants, as well as retrieve information about existing Legal Entities and Sub-merchants in near real-time. This SDK utilizes the HTTPS protocol to securely connect to Worldpay. Using the SDK requires coordination with the Vantiv eCommerce team in order to be provided with credentials for accessing our systems.
+The PayFac Merchant Provisioner SDK is a C# implementation of the [Worldpay](https://docs.worldpay.com/assets/pdf/Worldpay_eComm_PayFac_API_Reference_Guide_APIV14.1_V4.0.pdf) PayFac Merchant Provisioner API. This SDK was created to make it as easy as possible to perform operations that allows you to create and update Legal Entities and Sub-merchants, as well as retrieve information about existing Legal Entities and Sub-merchants in near real-time. This SDK utilizes the HTTPS protocol to securely connect to Worldpay. Using the SDK requires coordination with the Vantiv eCommerce team in order to be provided with credentials for accessing our systems.
 
-Each .NET SDK release supports all of the functionality present in the associated PayFac Merchant Provisioner API version (e.g., SDK v14.0.0 supports API v14.0.0). Please see our [documentation](https://developer.worldpay.com/community/ecommerce/pages/documentation) for PayFac Merchant Provisioner API to get more details on what operations are supported.
+Each .NET SDK release supports all of the functionality present in the associated PayFac Merchant Provisioner API version (e.g., SDK v14.0.0 supports API v14.0.0). Please see our [documentation](https://docs.worldpay.com/assets/pdf/Worldpay_eComm_PayFac_API_Reference_Guide_APIV14.1_V4.0.pdf) for PayFac Merchant Provisioner API to get more details on what operations are supported.
 
 This SDK is implemented to support the .NET plaform, including C#, VB.NET and Managed C++ and is created by Worldpay. Its intended use is for PayFac API operations with Worldpay.
 
