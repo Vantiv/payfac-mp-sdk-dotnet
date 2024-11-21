@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 14.0.1
+* **Bug Fix** Fix for recursive language call.
+
 ## 14.0.0
 * **Feature** Support for PayFac MP API v14.0
 
