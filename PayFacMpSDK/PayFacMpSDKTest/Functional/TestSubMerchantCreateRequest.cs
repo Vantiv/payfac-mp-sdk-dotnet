@@ -76,6 +76,10 @@ namespace PayFacMpSDKTest.Functional
                 merchantCategoryTypes = new merchantCategoryTypes
                 {
                     categoryTypeField = new System.Collections.Generic.List<string>()
+                },
+                revenueBoost = new subMerchantRevenueBoostFeature
+                {
+                    enabled = true
                 }
             };
 
@@ -84,6 +88,7 @@ namespace PayFacMpSDKTest.Functional
 
             request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
             request.merchantCategoryTypes.categoryTypeField.Add(categoryType1);
+
 
             response = request.PostSubMerchantCreateRequest(legalEntityId);
             Assert.NotNull(response.transactionId);
@@ -144,7 +149,12 @@ namespace PayFacMpSDKTest.Functional
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
+                settlementCurrency = "USD",
+                countryOfOrigin = "USA",
+                revenueBoost = new subMerchantRevenueBoostFeature
+                {
+                    enabled = true
+                }
             };
 
             response = request.PostSubMerchantCreateRequest(legalEntityId);
@@ -200,16 +210,34 @@ namespace PayFacMpSDKTest.Functional
                 createCredentials = true,
                 eCheck = new subMerchantECheckFeature
                 {
-                    enabled = true,
-                    eCheckCompanyName = "Company Name",
-                    eCheckBillingDescriptor = "9785552222"
+                    enabled = false,
+                   // eCheckCompanyName = "Company Name",
+                   // eCheckBillingDescriptor = "9785552222"
                 },
                 subMerchantFunding = new subMerchantFunding
                 {
                     enabled = false
                 },
-                settlementCurrency = "USD"
+                settlementCurrency = "USD",
+                countryOfOrigin = "USA",
+                revenueBoost = new subMerchantRevenueBoostFeature
+                {
+                    enabled = true
+                },
+                complianceProducts = new complianceProducts
+                {
+                    productField = new System.Collections.Generic.List<complianceProductsList>()
+                }
             };
+
+
+            var newMethod = new complianceProductsList();
+            newMethod.code = complianceProductCode.SAFERPAYMENT;
+            newMethod.name = "Doe";
+            newMethod.active = false;
+           
+
+            request.complianceProducts.productField.Add(newMethod);
 
             response = request.PostSubMerchantCreateRequest(legalEntityId);
             Assert.AreEqual(true, response.duplicate);

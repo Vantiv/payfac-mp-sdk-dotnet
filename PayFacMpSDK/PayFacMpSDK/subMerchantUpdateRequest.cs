@@ -91,6 +91,16 @@ namespace PayFacMpSDK
                 methodOfPayments.Serialize(xmlBuilder);
                 xmlBuilder.Append("</methodOfPayments>");
             }
+
+            xmlBuilder.Append("<countryOfOrigin>" + countryOfOrigin + "</countryOfOrigin>");
+            xmlBuilder.Append("<revenueBoost enabled =\"" + revenueBoost.enabled.ToString().ToLower() + "\">");
+            xmlBuilder.Append("</revenueBoost>");
+            if (complianceProducts != null)
+            {
+                xmlBuilder.Append("<complianceProducts>");
+                complianceProducts.Serialize(xmlBuilder);
+                xmlBuilder.Append("</complianceProducts>");
+            }
             xmlBuilder.Append("</subMerchantUpdateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();

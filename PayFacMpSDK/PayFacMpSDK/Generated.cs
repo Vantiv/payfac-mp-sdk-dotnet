@@ -2071,7 +2071,33 @@ namespace PayFacMpSDK
         }
     }
 
-    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    public partial class subMerchantRevenueBoostFeature
+    {
+
+        private bool enabledField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+
+        public bool enabled
+        {
+            get
+            {
+                return this.enabledField;
+            }
+            set
+            {
+                this.enabledField = value;
+            }
+        }
+    }
+
+        /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3339,6 +3365,8 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
+        private pciLevelScore pciLevelField;
+
         private string sdkVersionField;
 
         private string languageField;
@@ -3511,6 +3539,18 @@ namespace PayFacMpSDK
 
             }
         }
+
+        public pciLevelScore pciLevel
+        {
+            get
+            {
+                return this.pciLevelField;
+            }
+            set
+            {
+                this.pciLevelField = value;
+            }
+        }
     }
 
     /// <remarks/>
@@ -3526,6 +3566,40 @@ namespace PayFacMpSDK
         /// <remarks/>
         PRIVATE,
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    public enum pciLevelScore
+    {
+
+        /// <remarks/>
+        ONE,
+
+        /// <remarks/>
+        TWO,
+        /// <remarks/>
+        YU,
+        /// <remarks/>
+        IO,
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    public enum complianceProductCode
+    {
+
+        /// <remarks/>
+        SAFERPAYMENT,
+
+        /// <remarks/>
+        OTHER,
+       
+    }
+
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
@@ -4034,6 +4108,9 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
+        private pciLevelScore pciLevelField;
+
+
         /// <remarks/>
         public addressUpdatable address
         {
@@ -4193,6 +4270,18 @@ namespace PayFacMpSDK
             set
             {
                 this.yearsInBusinessField = value;
+            }
+        }
+
+        public pciLevelScore pciLevel
+        {
+            get
+            {
+                return this.pciLevelField;
+            }
+            set
+            {
+                this.pciLevelField = value;
             }
         }
     }
@@ -4546,6 +4635,131 @@ namespace PayFacMpSDK
         }
     }
 
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    public partial class complianceProducts
+    {
+        public List<complianceProductsList> productField;
+        public complianceProducts()
+        {
+            productField = new List<complianceProductsList>();
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    public partial class complianceProductsList
+    {
+        public complianceProductCode codeField;
+
+        public string nameField;
+
+        public bool activeField;
+
+        public System.DateTime activationDateField;
+
+        public System.DateTime deActivationDateField;
+
+        public string complienceStatusField;
+
+        public System.DateTime complienceStatusDateField;
+
+        public complianceProductCode code
+        {
+            get
+            {
+                return this.codeField;
+            }
+            set
+            {
+                this.codeField = value;
+            }
+        }
+
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+      
+        /// remark
+      
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+
+        public bool active
+        {
+            get
+            {
+                return this.activeField;
+            }
+            set
+            {
+                this.activeField = value;
+            }
+        }
+
+        public System.DateTime activationDate
+        {
+            get
+            {
+                return this.activationDateField;
+            }
+            set
+            {
+                this.activationDateField = value;
+            }
+        }
+
+        public System.DateTime deActivationDate
+        {
+            get
+            {
+                return this.deActivationDateField;
+            }
+            set
+            {
+                this.deActivationDateField = value;
+            }
+        }
+
+        public string complienceStatus
+        {
+            get
+            {
+                return this.complienceStatusField;
+            }
+            set
+            {
+                this.complienceStatusField = value;
+            }
+        }
+
+        public System.DateTime complienceStatusDate
+        {
+            get
+            {
+                return this.complienceStatusDateField;
+            }
+            set
+            {
+                this.complienceStatusDateField = value;
+            }
+        }
+    }
+
 
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
@@ -4656,6 +4870,35 @@ namespace PayFacMpSDK
         private string settlementCurrencyField;
 
         private string sdkVersionField;
+
+        private string countryOfOriginField;
+        private subMerchantRevenueBoostFeature revenueBoostField;
+        public subMerchantRevenueBoostFeature revenueBoost
+        {
+            get
+            {
+                return this.revenueBoostField;
+            }
+            set
+            {
+                this.revenueBoostField = value;
+            }
+        }
+
+        private complianceProducts complianceProductsFields;
+
+        public complianceProducts complianceProducts
+        {
+            get
+            {
+                return this.complianceProductsFields;
+            }
+            set
+            {
+                this.complianceProductsFields = value;
+            }
+        }
+
 
         private string languageField;
 
@@ -5001,6 +5244,20 @@ namespace PayFacMpSDK
 
             }
         }
+
+        public string countryOfOrigin
+        {
+            get
+            {
+                return this.countryOfOriginField;
+
+            }
+            set
+            {
+                this.countryOfOriginField = value;
+            }
+        }
+
     }
 
     /// <remarks/>
@@ -5541,6 +5798,50 @@ namespace PayFacMpSDK
                 this.methodOfPaymentsField = value;
             }
         }
+
+        private string countryOfOriginField;
+
+
+        public string countryOfOrigin
+        {
+            get
+            {
+                return this.countryOfOriginField;
+
+            }
+            set
+            {
+                this.countryOfOriginField = value;
+            }
+        }
+
+        private subMerchantRevenueBoostFeature revenueBoostField;
+        public subMerchantRevenueBoostFeature revenueBoost
+        {
+            get
+            {
+                return this.revenueBoostField;
+            }
+            set
+            {
+                this.revenueBoostField = value;
+            }
+        }
+
+        private complianceProducts complianceProductsFields;
+
+        public complianceProducts complianceProducts
+        {
+            get
+            {
+                return this.complianceProductsFields;
+            }
+            set
+            {
+                this.complianceProductsFields = value;
+            }
+        }
+
 
         /// <remarks/>
         public string merchantName

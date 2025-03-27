@@ -45,6 +45,7 @@ namespace PayFacMpSDK
     }
 
 
+
     public partial class addressUpdatable
     {
         public void Serialize(StringBuilder xmlBuilder)
@@ -170,6 +171,37 @@ namespace PayFacMpSDK
             if (allowedTransactionTypes != null) xmlBuilder.Append("<allowedTransactionTypes>" + allowedTransactionTypes + "</allowedTransactionTypes>");
         }
     }
+
+    public partial class complianceProducts
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            foreach (var newMethod in productField)
+            {
+                xmlBuilder.Append("<product>");
+                newMethod.Serialize(xmlBuilder);
+                xmlBuilder.Append("</product>");
+            }
+        }
+    }
+
+    public partial class complianceProductsList
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            if (code != null) xmlBuilder.Append("<code>" + code + "</code>");
+            if (name != null) xmlBuilder.Append("<name>" + name + "</name>");
+            if (active != null) xmlBuilder.Append("<active>" + active + "</active>");
+            if (activationDate != null) xmlBuilder.Append("<activationDate>" + activationDate + "</activationDate>");
+            if (deActivationDate != null) xmlBuilder.Append("<deActivationDate>" + deActivationDate + "</deActivationDate>");
+            if (complienceStatus != null) xmlBuilder.Append("<complienceStatus>" + complienceStatus + "</complienceStatus>");
+            if (complienceStatusDate != null) xmlBuilder.Append("<complienceStatusDate>" + complienceStatusDate + "</complienceStatusDate>");
+
+        }
+    }
+
 
 
     public partial class address

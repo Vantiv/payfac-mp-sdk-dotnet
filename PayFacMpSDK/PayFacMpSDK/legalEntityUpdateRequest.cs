@@ -63,7 +63,8 @@ namespace PayFacMpSDK
             }
             if(legalEntityOwnershipTypeSpecified) xmlBuilder.Append("<legalEntityOwnershipType>" + legalEntityOwnershipType + "</legalEntityOwnershipType>");
             if(yearsInBusiness != null) xmlBuilder.Append("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
-            
+            xmlBuilder.Append("<pciLevel>" + pciLevel + "</pciLevel>");
+
             xmlBuilder.Append("</legalEntityUpdateRequest>");
             Console.WriteLine(xmlBuilder.ToString());
             return xmlBuilder.ToString();

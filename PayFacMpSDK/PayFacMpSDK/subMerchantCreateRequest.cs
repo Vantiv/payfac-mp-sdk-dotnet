@@ -87,6 +87,15 @@ namespace PayFacMpSDK
                 merchantCategoryTypes.Serialize(xmlBuilder);
                 xmlBuilder.Append("</merchantCategoryTypes>");
             }
+            xmlBuilder.Append("<countryOfOrigin>" + countryOfOrigin + "</countryOfOrigin>");
+            xmlBuilder.Append("<revenueBoost enabled =\"" + revenueBoost.enabled.ToString().ToLower() + "\">");
+            xmlBuilder.Append("</revenueBoost>");
+            if (complianceProducts != null)
+            {
+                xmlBuilder.Append("<complianceProducts>");
+                complianceProducts.Serialize(xmlBuilder);
+                xmlBuilder.Append("</complianceProducts>");
+            }
             xmlBuilder.Append("<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>");
             xmlBuilder.Append("<language>" + Versions.LANGUAGE + "</language>");
 
