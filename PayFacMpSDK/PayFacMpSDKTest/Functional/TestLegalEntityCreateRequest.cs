@@ -60,7 +60,7 @@ namespace PayFacMpSDKTest.Functional
                     stakePercent = 33
                 },
                 yearsInBusiness = "12",
-                pciLevel = pciLevelScore.IO
+                pciLevel = 9
             };
 
             response = request.PostLegalEntityCreateRequest();

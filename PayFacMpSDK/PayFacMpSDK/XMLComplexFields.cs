@@ -171,7 +171,7 @@ namespace PayFacMpSDK
             if (allowedTransactionTypes != null) xmlBuilder.Append("<allowedTransactionTypes>" + allowedTransactionTypes + "</allowedTransactionTypes>");
         }
     }
-
+    
     public partial class complianceProducts
     {
 
@@ -193,7 +193,7 @@ namespace PayFacMpSDK
         {
             if (code != null) xmlBuilder.Append("<code>" + code + "</code>");
             if (name != null) xmlBuilder.Append("<name>" + name + "</name>");
-            if (active != null) xmlBuilder.Append("<active>" + active + "</active>");
+            if (active != null) xmlBuilder.Append("<active>" + active.ToString().ToLower() + "</active>");
             if (activationDate != null) xmlBuilder.Append("<activationDate>" + activationDate + "</activationDate>");
             if (deActivationDate != null) xmlBuilder.Append("<deActivationDate>" + deActivationDate + "</deActivationDate>");
             if (complienceStatus != null) xmlBuilder.Append("<complienceStatus>" + complienceStatus + "</complienceStatus>");

@@ -62,12 +62,12 @@ namespace PayFacMpSDKTest.Functional
                     phone = "9785552222"
                 },
                 createCredentials = true,
-                eCheck = new subMerchantECheckFeature
-                {
-                    enabled = true,
-                    eCheckCompanyName = "Company Name",
-                    eCheckBillingDescriptor = "9785552222"
-                },
+                //eCheck = new subMerchantECheckFeature
+                //{
+                //    enabled = true,
+                //    eCheckCompanyName = "Company Name",
+                //    eCheckBillingDescriptor = "9785552222"
+                //},
                 subMerchantFunding = new subMerchantFunding
                 {
                     enabled = false
@@ -77,11 +77,27 @@ namespace PayFacMpSDKTest.Functional
                 {
                     categoryTypeField = new System.Collections.Generic.List<string>()
                 },
+                
                 revenueBoost = new subMerchantRevenueBoostFeature
                 {
                     enabled = true
+                },
+                complianceProducts = new complianceProducts
+                {
+                    productField = new System.Collections.Generic.List<complianceProductsList>()
                 }
             };
+
+
+            var newProduct = new complianceProductsList();
+            newProduct.code = complianceProductCode.SAFERPAYMENT;
+            newProduct.name = "Doe";
+            newProduct.active = true;
+           //newMethod.activationDate= DateTime.Now;
+           
+
+
+            request.complianceProducts.productField.Add(newProduct);
 
             var categoryType = new string("GC");
             var categoryType1 = new string("SM");
@@ -211,8 +227,8 @@ namespace PayFacMpSDKTest.Functional
                 eCheck = new subMerchantECheckFeature
                 {
                     enabled = false,
-                   // eCheckCompanyName = "Company Name",
-                   // eCheckBillingDescriptor = "9785552222"
+                    // eCheckCompanyName = "Company Name",
+                    // eCheckBillingDescriptor = "9785552222"
                 },
                 subMerchantFunding = new subMerchantFunding
                 {
@@ -220,24 +236,7 @@ namespace PayFacMpSDKTest.Functional
                 },
                 settlementCurrency = "USD",
                 countryOfOrigin = "USA",
-                revenueBoost = new subMerchantRevenueBoostFeature
-                {
-                    enabled = true
-                },
-                complianceProducts = new complianceProducts
-                {
-                    productField = new System.Collections.Generic.List<complianceProductsList>()
-                }
             };
-
-
-            var newMethod = new complianceProductsList();
-            newMethod.code = complianceProductCode.SAFERPAYMENT;
-            newMethod.name = "Doe";
-            newMethod.active = false;
-           
-
-            request.complianceProducts.productField.Add(newMethod);
 
             response = request.PostSubMerchantCreateRequest(legalEntityId);
             Assert.AreEqual(true, response.duplicate);

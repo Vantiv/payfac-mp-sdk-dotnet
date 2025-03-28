@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -2078,12 +2079,9 @@ namespace PayFacMpSDK
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
     public partial class subMerchantRevenueBoostFeature
     {
-
         private bool enabledField;
 
-        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-
         public bool enabled
         {
             get
@@ -3365,7 +3363,7 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
-        private pciLevelScore pciLevelField;
+        private int pciLevelField;
 
         private string sdkVersionField;
 
@@ -3540,7 +3538,7 @@ namespace PayFacMpSDK
             }
         }
 
-        public pciLevelScore pciLevel
+        public int pciLevel
         {
             get
             {
@@ -3548,7 +3546,9 @@ namespace PayFacMpSDK
             }
             set
             {
-                this.pciLevelField = value;
+                
+                    this.pciLevelField = value;
+                    
             }
         }
     }
@@ -3574,15 +3574,13 @@ namespace PayFacMpSDK
     public enum pciLevelScore
     {
 
-        /// <remarks/>
-        ONE,
+       
+       one=1,
 
-        /// <remarks/>
-        TWO,
-        /// <remarks/>
-        YU,
-        /// <remarks/>
-        IO,
+        
+         two=2
+        
+       
     }
 
     /// <remarks/>
@@ -4640,6 +4638,7 @@ namespace PayFacMpSDK
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
     public partial class complianceProducts
     {
         public List<complianceProductsList> productField;
@@ -4648,7 +4647,6 @@ namespace PayFacMpSDK
             productField = new List<complianceProductsList>();
         }
     }
-
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
@@ -4661,15 +4659,17 @@ namespace PayFacMpSDK
 
         public string nameField;
 
-        public bool activeField;
+        public bool? activeField;
 
-        public System.DateTime activationDateField;
+        public bool activeFieldSpecified;
 
-        public System.DateTime deActivationDateField;
+        public DateTime? activationDateField;
+
+        public DateTime? deActivationDateField;
 
         public string complienceStatusField;
 
-        public System.DateTime complienceStatusDateField;
+        public DateTime? complienceStatusDateField;
 
         public complianceProductCode code
         {
@@ -4696,10 +4696,7 @@ namespace PayFacMpSDK
         }
       
         /// remark
-      
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-
-        public bool active
+        public bool? active
         {
             get
             {
@@ -4707,11 +4704,12 @@ namespace PayFacMpSDK
             }
             set
             {
+                //this.activeSpecified = true;
                 this.activeField = value;
             }
         }
 
-        public System.DateTime activationDate
+        public System.DateTime? activationDate
         {
             get
             {
@@ -4723,7 +4721,7 @@ namespace PayFacMpSDK
             }
         }
 
-        public System.DateTime deActivationDate
+        public DateTime? deActivationDate
         {
             get
             {
@@ -4747,7 +4745,7 @@ namespace PayFacMpSDK
             }
         }
 
-        public System.DateTime complienceStatusDate
+        public DateTime? complienceStatusDate
         {
             get
             {
@@ -4872,6 +4870,7 @@ namespace PayFacMpSDK
         private string sdkVersionField;
 
         private string countryOfOriginField;
+
         private subMerchantRevenueBoostFeature revenueBoostField;
         public subMerchantRevenueBoostFeature revenueBoost
         {
