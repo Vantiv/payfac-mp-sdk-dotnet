@@ -93,7 +93,8 @@ namespace PayFacMpSDKTest.Functional
             newProduct.code = complianceProductCode.SAFERPAYMENT;
             newProduct.name = "Doe";
             newProduct.active = true;
-           //newMethod.activationDate= DateTime.Now;
+            //newProduct.activationDate= DateTime.Now;
+           // newProduct.deActivationDate = DateTime.Now;
            
 
 

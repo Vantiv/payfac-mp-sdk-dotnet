@@ -413,6 +413,21 @@ namespace PayFacMpSDK
         GOVERNMENT_AGENCY,
     }
 
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    public enum pciLevelScore
+    {
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Level1 = 1,
+        [System.Xml.Serialization.XmlEnumAttribute("2")]
+        Level2 = 2,
+        [System.Xml.Serialization.XmlEnumAttribute("3")]
+        Level3 = 3,
+        [System.Xml.Serialization.XmlEnumAttribute("4")]
+        Level4 = 4
+    }
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
@@ -3363,7 +3378,7 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
-        private int pciLevelField;
+        private pciLevelScore pciLevelField;
 
         private string sdkVersionField;
 
@@ -3537,18 +3552,29 @@ namespace PayFacMpSDK
 
             }
         }
-
-        public int pciLevel
+        
+        public pciLevelScore pciLevel
         {
             get
             {
                 return this.pciLevelField;
             }
             set
-            {
-                
+            {                
                     this.pciLevelField = value;
-                    
+                    this.pciLevelIntValue = (int)value;
+            }
+        }
+        [System.Xml.Serialization.XmlIgnore]
+        public int? pciLevelIntValue
+        {
+            get
+            {
+                return (int)this.pciLevelField;
+            }
+            set
+            {
+                this.pciLevelField = (pciLevelScore)value;
             }
         }
     }
@@ -3565,22 +3591,6 @@ namespace PayFacMpSDK
 
         /// <remarks/>
         PRIVATE,
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
-    public enum pciLevelScore
-    {
-
-       
-       one=1,
-
-        
-         two=2
-        
-       
     }
 
     /// <remarks/>
@@ -4280,6 +4290,19 @@ namespace PayFacMpSDK
             set
             {
                 this.pciLevelField = value;
+                this.pciLevelIntValue = (int)value;
+            }
+        }
+        [System.Xml.Serialization.XmlIgnore]
+        public int? pciLevelIntValue
+        {
+            get
+            {
+                return (int)this.pciLevelField;
+            }
+            set
+            {
+                this.pciLevelField = (pciLevelScore)value;
             }
         }
     }
@@ -4661,15 +4684,19 @@ namespace PayFacMpSDK
 
         public bool? activeField;
 
-        public bool activeFieldSpecified;
+        public DateTime activationDateField;
 
-        public DateTime? activationDateField;
-
-        public DateTime? deActivationDateField;
+        public DateTime deActivationDateField;
 
         public string complienceStatusField;
 
-        public DateTime? complienceStatusDateField;
+        public DateTime complienceStatusDateField;
+
+        public bool activationDateFieldSpecified;
+
+        public bool deActivationDateFieldSpecified;
+
+        public bool complienceStatusDateFieldSpecified;
 
         public complianceProductCode code
         {
@@ -4704,12 +4731,12 @@ namespace PayFacMpSDK
             }
             set
             {
-                //this.activeSpecified = true;
+             
                 this.activeField = value;
             }
         }
 
-        public System.DateTime? activationDate
+        public DateTime activationDate
         {
             get
             {
@@ -4717,11 +4744,24 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.activationDateFieldSpecified = true;
                 this.activationDateField = value;
             }
         }
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool activationDateSpecified
+        {
+            get
+            {
+                return this.activationDateFieldSpecified;
+            }
+            set
+            {
+                this.activationDateFieldSpecified = value;
+            }
+        }
 
-        public DateTime? deActivationDate
+        public DateTime deActivationDate
         {
             get
             {
@@ -4729,7 +4769,22 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.deActivationDateFieldSpecified = true;
+
                 this.deActivationDateField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool deActivationDateSpecified
+        {
+            get
+            {
+                return this.deActivationDateFieldSpecified;
+            }
+            set
+            {
+                this.deActivationDateFieldSpecified = value;
             }
         }
 
@@ -4745,7 +4800,7 @@ namespace PayFacMpSDK
             }
         }
 
-        public DateTime? complienceStatusDate
+        public DateTime complienceStatusDate
         {
             get
             {
@@ -4753,7 +4808,21 @@ namespace PayFacMpSDK
             }
             set
             {
+                this.complienceStatusDateFieldSpecified = true;
                 this.complienceStatusDateField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool complienceStatusDateSpecified
+        {
+            get
+            {
+                return this.complienceStatusDateFieldSpecified;
+            }
+            set
+            {
+                this.complienceStatusDateFieldSpecified = value;
             }
         }
     }

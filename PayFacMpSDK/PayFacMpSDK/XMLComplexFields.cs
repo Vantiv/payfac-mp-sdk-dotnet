@@ -188,20 +188,17 @@ namespace PayFacMpSDK
 
     public partial class complianceProductsList
     {
-
         public void Serialize(StringBuilder xmlBuilder)
         {
-            if (code != null) xmlBuilder.Append("<code>" + code + "</code>");
+            xmlBuilder.Append("<code>" + code + "</code>");
             if (name != null) xmlBuilder.Append("<name>" + name + "</name>");
             if (active != null) xmlBuilder.Append("<active>" + active.ToString().ToLower() + "</active>");
-            if (activationDate != null) xmlBuilder.Append("<activationDate>" + activationDate + "</activationDate>");
-            if (deActivationDate != null) xmlBuilder.Append("<deActivationDate>" + deActivationDate + "</deActivationDate>");
-            if (complienceStatus != null) xmlBuilder.Append("<complienceStatus>" + complienceStatus + "</complienceStatus>");
-            if (complienceStatusDate != null) xmlBuilder.Append("<complienceStatusDate>" + complienceStatusDate + "</complienceStatusDate>");
-
+            if (activationDateSpecified) xmlBuilder.Append("<activationDate>" + activationDate.ToString("yyyy-MM-dd") + "</activationDate>");
+            if (deActivationDateSpecified) xmlBuilder.Append("<deActivationDate>" + deActivationDate.ToString("yyyy-MM-dd") + "</deActivationDate>");
+            if (complienceStatus != null) xmlBuilder.Append("<complianceStatus>" + complienceStatus + "</complianceStatus>");
+            if (complienceStatusDateSpecified) xmlBuilder.Append("<complianceStatusDate>" + complienceStatusDate.ToString("yyyy-MM-dd") + "</complianceStatusDate>");
         }
     }
-
 
 
     public partial class address
