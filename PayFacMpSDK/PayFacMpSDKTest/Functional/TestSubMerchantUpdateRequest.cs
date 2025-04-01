@@ -80,6 +80,7 @@ namespace PayFacMpSDKTest.Functional
                 {
                     methodField = new List<paymentMethod>()
                 },
+                countryOfOrigin = "USA",
                 revenueBoost = new subMerchantRevenueBoostFeature
                 {
                     enabled = true

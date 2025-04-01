@@ -63,8 +63,9 @@ namespace PayFacMpSDKTest.Unit
                     taxId = "123456789"
                 },
                 legalEntityOwnershipType = legalEntityOwnershipType.PUBLIC,
-                yearsInBusiness = "10"
-            };
+                yearsInBusiness = "10",
+				pciLevel = pciLevelScore.Level4
+			};
         }
         
         [Test]
@@ -114,7 +115,8 @@ namespace PayFacMpSDKTest.Unit
 	                     "</backgroundCheckFields>" +
 	                     "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>" +
 	                     "<yearsInBusiness>10</yearsInBusiness>" +
-	                     "</legalEntityUpdateRequest>";
+						 "<pciLevel>4</pciLevel>" +
+						 "</legalEntityUpdateRequest>";
 	        var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
 	                               "<legalEntityResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">" +
 	                               "    <transactionId>6370382523</transactionId>" +

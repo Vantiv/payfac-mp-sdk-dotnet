@@ -56,7 +56,9 @@ namespace PayFacMpSDKTest.Unit
                     },
                     stakePercent = 33
                 },
-                yearsInBusiness = "12"
+                yearsInBusiness = "12",
+                pciLevel = pciLevelScore.Level4
+
             };
 
         }
@@ -103,6 +105,7 @@ namespace PayFacMpSDKTest.Unit
                          "<stakePercent>33</stakePercent>" +
                          "</principal>" +
                          "<yearsInBusiness>12</yearsInBusiness>" +
+                         "<pciLevel>4</pciLevel>"+
                          "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
                          "<language>" + Versions.LANGUAGE + "</language>" +
                          "</legalEntityCreateRequest>";

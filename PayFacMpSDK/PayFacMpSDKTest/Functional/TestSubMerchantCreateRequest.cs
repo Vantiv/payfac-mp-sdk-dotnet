@@ -77,7 +77,7 @@ namespace PayFacMpSDKTest.Functional
                 {
                     categoryTypeField = new System.Collections.Generic.List<string>()
                 },
-                
+                countryOfOrigin = "USA",
                 revenueBoost = new subMerchantRevenueBoostFeature
                 {
                     enabled = true
@@ -93,8 +93,8 @@ namespace PayFacMpSDKTest.Functional
             newProduct.code = complianceProductCode.SAFERPAYMENT;
             newProduct.name = "Doe";
             newProduct.active = true;
-            //newProduct.activationDate= DateTime.Now;
-           // newProduct.deActivationDate = DateTime.Now;
+            newProduct.activationDate= DateTime.Now;
+            newProduct.deActivationDate = DateTime.Now;
            
 
 

@@ -69,11 +69,30 @@ namespace PayFacMpSDKTest.Unit
                 merchantCategoryTypes = new merchantCategoryTypes
                 {
                     categoryTypeField = new System.Collections.Generic.List<string>()
+                },
+                countryOfOrigin= "USA",
+                revenueBoost = new subMerchantRevenueBoostFeature { 
+                enabled = true,
+                },
+                complianceProducts = new complianceProducts
+                {
+                    productField = new System.Collections.Generic.List<complianceProductsList>()
                 }
             };
 
+
+            var newProduct = new complianceProductsList();
+            newProduct.code = complianceProductCode.SAFERPAYMENT;
+            newProduct.name = "Doe";
+            newProduct.active = true;
+            newProduct.activationDate = DateTime.Now;
+            newProduct.deActivationDate = DateTime.Now;
+
+
             var categoryType = new string("GC");
             var categoryType1 = new string("SM");
+
+            request.complianceProducts.productField.Add(newProduct);
 
             request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
            // request.merchantCategoryTypes.categoryTypeField.Add(categoryType1);
@@ -126,6 +145,17 @@ namespace PayFacMpSDKTest.Unit
         "<categoryType>GC</categoryType>" +
         // "<categoryType>SM</categoryType>" +
         "</merchantCategoryTypes>" +
+        "<countryOfOrigin>USA</countryOfOrigin>"+
+        "<revenueBoost enabled =\"true\"></revenueBoost>"+
+        "<complianceProducts>"+
+        "<product>"+
+            "<code>SAFERPAYMENT</code>"+
+            "<name>Doe</name>"+
+            "<active>true</active>"+
+            "<activationDate>2025-04-01</activationDate>"+
+            "<deActivationDate>2025-04-01</deActivationDate>" +
+        "</product>" +
+    "</complianceProducts>"+
         "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
         "<language>" + Versions.LANGUAGE + "</language>" +
         "</subMerchantCreateRequest>";
