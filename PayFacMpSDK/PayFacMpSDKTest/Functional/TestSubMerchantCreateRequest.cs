@@ -206,9 +206,9 @@ namespace PayFacMpSDKTest.Functional
                 createCredentials = true,
                 eCheck = new subMerchantECheckFeature
                 {
-                    enabled = false,
-                    // eCheckCompanyName = "Company Name",
-                    // eCheckBillingDescriptor = "9785552222"
+                    enabled = true,
+                    eCheckCompanyName = "Company Name",
+                    eCheckBillingDescriptor = "9785552222"
                 },
                 subMerchantFunding = new subMerchantFunding
                 {
