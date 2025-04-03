@@ -81,8 +81,8 @@ namespace PayFacMpSDKTest.Unit
             newProduct.code = complianceProductCode.SAFERPAYMENT;
             newProduct.name = "Doe";
             newProduct.active = true;
-            newProduct.activationDate = System.DateTime.Now;
-            newProduct.deActivationDate = System.DateTime.Now;
+            newProduct.activationDate = System.DateTime.Parse("2025 - 04 - 03");
+            newProduct.deActivationDate = System.DateTime.Parse("2025 - 04 - 03");
 
             request.complianceProducts.productField.Add(newProduct);
 
@@ -158,8 +158,8 @@ namespace PayFacMpSDKTest.Unit
                              "<code>SAFERPAYMENT</code>" +
                              "<name>Doe</name>" +
                              "<active>true</active>" +
-                             "<activationDate>2025-04-01</activationDate>" +
-                             "<deActivationDate>2025-04-01</deActivationDate>" +
+                             "<activationDate>2025-04-03</activationDate>" +
+                             "<deActivationDate>2025-04-03</deActivationDate>" +
                              "</product>" +
                          "</complianceProducts>" +
 

@@ -85,12 +85,12 @@ namespace PayFacMpSDKTest.Unit
             newProduct.code = complianceProductCode.SAFERPAYMENT;
             newProduct.name = "Doe";
             newProduct.active = true;
-            newProduct.activationDate = DateTime.Now;
-            newProduct.deActivationDate = DateTime.Now;
+            newProduct.activationDate = DateTime.Parse("2025 - 04 - 02");
+            newProduct.deActivationDate = DateTime.Parse("2025 - 04 - 02");
 
 
             var categoryType = new string("GC");
-            var categoryType1 = new string("SM");
+            //var categoryType1 = new string("SM");
 
             request.complianceProducts.productField.Add(newProduct);
 
@@ -152,8 +152,8 @@ namespace PayFacMpSDKTest.Unit
             "<code>SAFERPAYMENT</code>"+
             "<name>Doe</name>"+
             "<active>true</active>"+
-            "<activationDate>2025-04-01</activationDate>"+
-            "<deActivationDate>2025-04-01</deActivationDate>" +
+            "<activationDate>2025-04-02</activationDate>"+
+            "<deActivationDate>2025-04-02</deActivationDate>" +
         "</product>" +
     "</complianceProducts>"+
         "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
