@@ -62,12 +62,12 @@ namespace PayFacMpSDKTest.Functional
                     phone = "9785552222"
                 },
                 createCredentials = true,
-                //eCheck = new subMerchantECheckFeature
-                //{
-                //    enabled = true,
-                //    eCheckCompanyName = "Company Name",
-                //    eCheckBillingDescriptor = "9785552222"
-                //},
+                eCheck = new subMerchantECheckFeature
+                {
+                    enabled = true,
+                    eCheckCompanyName = "Company Name",
+                    eCheckBillingDescriptor = "9785552222"
+                },
                 subMerchantFunding = new subMerchantFunding
                 {
                     enabled = false
@@ -77,28 +77,7 @@ namespace PayFacMpSDKTest.Functional
                 {
                     categoryTypeField = new System.Collections.Generic.List<string>()
                 },
-                countryOfOrigin = "USA",
-                revenueBoost = new subMerchantRevenueBoostFeature
-                {
-                    enabled = true
-                },
-                complianceProducts = new complianceProducts
-                {
-                    productField = new System.Collections.Generic.List<complianceProductsList>()
-                }
             };
-
-
-            var newProduct = new complianceProductsList();
-            newProduct.code = complianceProductCode.SAFERPAYMENT;
-            newProduct.name = "Doe";
-            newProduct.active = true;
-            newProduct.activationDate= DateTime.Now;
-            newProduct.deActivationDate = DateTime.Now;
-           
-
-
-            request.complianceProducts.productField.Add(newProduct);
 
             var categoryType = new string("GC");
             var categoryType1 = new string("SM");
@@ -525,5 +504,94 @@ namespace PayFacMpSDKTest.Functional
                 Assert.AreEqual("Service was unavailable.", errorResponse.errors[0]);
             }
         }
+
+        [Test]
+        public void TestPostSubMerchantCreateRequestForVersion15()
+        {
+            legalEntityId = "201003";
+
+            request = new subMerchantCreateRequest
+            {
+                merchantName = "Merchant Name",
+                amexMid = "12345",
+                discoverConveyedMid = "123456789012345",
+                url = "http://merchantUrl",
+                customerServiceNumber = "8407809000",
+                hardCodedBillingDescriptor = "billing Descriptor",
+                maxTransactionAmount = 8400,
+                purchaseCurrency = "USD",
+                merchantCategoryCode = "9222",
+                bankRoutingNumber = "840123124",
+                bankAccountNumber = "84012312415",
+                pspMerchantId = "123456",
+                fraud = new subMerchantFraudFeature
+                {
+                    enabled = true
+                },
+                amexAcquired = new subMerchantAmexAcquiredFeature
+                {
+                    enabled = false
+                },
+                address = new address
+                {
+                    streetAddress1 = "Street Address 1",
+                    streetAddress2 = "Street Address 2",
+                    city = "City",
+                    stateProvince = "MA",
+                    postalCode = "01970",
+                    countryCode = "USA"
+                },
+                primaryContact = new subMerchantPrimaryContact
+                {
+                    firstName = "Josh",
+                    lastName = "Doe",
+                    emailAddress = "John.Doe@company.com",
+                    phone = "9785552222"
+                },
+                createCredentials = true,
+                subMerchantFunding = new subMerchantFunding
+                {
+                    enabled = false
+                },
+                settlementCurrency = "USD",
+                merchantCategoryTypes = new merchantCategoryTypes
+                {
+                    categoryTypeField = new System.Collections.Generic.List<string>()
+                },
+                countryOfOrigin = "CAN",
+                revenueBoost = new subMerchantRevenueBoostFeature
+                {
+                    enabled = true
+                },
+                complianceProducts = new complianceProducts
+                {
+                    productField = new System.Collections.Generic.List<complianceProductsList>()
+                }
+            };
+
+
+            var newProduct = new complianceProductsList();
+            newProduct.code = complianceProductCode.SAFERPAYMENT;
+            newProduct.name = "Doe";
+            newProduct.active = true;
+            newProduct.activationDate = DateTime.Now;
+            newProduct.deActivationDate = DateTime.Now;
+
+
+
+            request.complianceProducts.productField.Add(newProduct);
+
+            var categoryType = new string("GC");
+            //var categoryType1 = new string("SM");
+
+            request.merchantCategoryTypes.categoryTypeField.Add(categoryType);
+           // request.merchantCategoryTypes.categoryTypeField.Add(categoryType1);
+
+
+            response = request.PostSubMerchantCreateRequest(legalEntityId);
+            Assert.NotNull(response.transactionId);
+        }
+
+
     }
 }
