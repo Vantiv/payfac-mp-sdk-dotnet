@@ -45,6 +45,7 @@ namespace PayFacMpSDK
     }
 
 
+
     public partial class addressUpdatable
     {
         public void Serialize(StringBuilder xmlBuilder)
@@ -168,6 +169,34 @@ namespace PayFacMpSDK
             if (paymentType != null) xmlBuilder.Append("<paymentType>" + paymentType + "</paymentType>");
             if (selectedTransactionType != null) xmlBuilder.Append("<selectedTransactionType>" + selectedTransactionType + "</selectedTransactionType>");
             if (allowedTransactionTypes != null) xmlBuilder.Append("<allowedTransactionTypes>" + allowedTransactionTypes + "</allowedTransactionTypes>");
+        }
+    }
+    
+    public partial class complianceProducts
+    {
+
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            foreach (var newMethod in productField)
+            {
+                xmlBuilder.Append("<product>");
+                newMethod.Serialize(xmlBuilder);
+                xmlBuilder.Append("</product>");
+            }
+        }
+    }
+
+    public partial class complianceProductsList
+    {
+        public void Serialize(StringBuilder xmlBuilder)
+        {
+            xmlBuilder.Append("<code>" + code + "</code>");
+            if (name != null) xmlBuilder.Append("<name>" + name + "</name>");
+            if (active != null) xmlBuilder.Append("<active>" + active.ToString().ToLower() + "</active>");
+            if (activationDateSpecified) xmlBuilder.Append("<activationDate>" + activationDate.ToString("yyyy-MM-dd") + "</activationDate>");
+            if (deActivationDateSpecified) xmlBuilder.Append("<deActivationDate>" + deActivationDate.ToString("yyyy-MM-dd") + "</deActivationDate>");
+            if (complienceStatus != null) xmlBuilder.Append("<complianceStatus>" + complienceStatus + "</complianceStatus>");
+            if (complienceStatusDateSpecified) xmlBuilder.Append("<complianceStatusDate>" + complienceStatusDate.ToString("yyyy-MM-dd") + "</complianceStatusDate>");
         }
     }
 

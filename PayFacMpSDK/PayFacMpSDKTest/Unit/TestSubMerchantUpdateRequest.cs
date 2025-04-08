@@ -63,9 +63,29 @@ namespace PayFacMpSDKTest.Unit
                 methodOfPayments = new methodOfPayments
                 {
                     methodField = new List<paymentMethod>()
-                }
+                },
 
-        };
+                countryOfOrigin = "USA",
+                revenueBoost = new subMerchantRevenueBoostFeature
+                {
+                    enabled = true
+                },
+                complianceProducts = new complianceProducts
+                {
+                    productField = new System.Collections.Generic.List<complianceProductsList>()
+                }
+            };
+
+
+            var newProduct = new complianceProductsList();
+            newProduct.code = complianceProductCode.SAFERPAYMENT;
+            newProduct.name = "Doe";
+            newProduct.active = true;
+            newProduct.activationDate = System.DateTime.Parse("2025 - 04 - 03");
+            newProduct.deActivationDate = System.DateTime.Parse("2025 - 04 - 03");
+
+            request.complianceProducts.productField.Add(newProduct);
+
             var categoryType = new string("GC");
             //var categoryType1 = new string("SM");
             var newMethod = new paymentMethod();
@@ -131,6 +151,18 @@ namespace PayFacMpSDKTest.Unit
                           "<selectedTransactionType>NONE</selectedTransactionType>" +
                            "</method>" +
                          "</methodOfPayments>" +
+                                "<countryOfOrigin>USA</countryOfOrigin>" +
+                         "<revenueBoost enabled =\"true\"></revenueBoost>" +
+                         "<complianceProducts>" +
+                         "<product>" +
+                             "<code>SAFERPAYMENT</code>" +
+                             "<name>Doe</name>" +
+                             "<active>true</active>" +
+                             "<activationDate>2025-04-03</activationDate>" +
+                             "<deActivationDate>2025-04-03</deActivationDate>" +
+                             "</product>" +
+                         "</complianceProducts>" +
+
                          "</subMerchantUpdateRequest>";
 
             var expectedResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +

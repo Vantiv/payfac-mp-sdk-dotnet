@@ -79,8 +79,27 @@ namespace PayFacMpSDKTest.Functional
                 methodOfPayments = new methodOfPayments
                 {
                     methodField = new List<paymentMethod>()
+                },
+                countryOfOrigin = "USA",
+                revenueBoost = new subMerchantRevenueBoostFeature
+                {
+                    enabled = true
+                },
+                complianceProducts = new complianceProducts
+                {
+                    productField = new System.Collections.Generic.List<complianceProductsList>()
                 }
             };
+
+
+            var newProduct = new complianceProductsList();
+            newProduct.code = complianceProductCode.SAFERPAYMENT;
+            newProduct.name = "Doe";
+            newProduct.active = true;
+            
+
+            request.complianceProducts.productField.Add(newProduct);
+
 
             var categoryType = new string("GC");
             //var categoryType1 = new string("SM");

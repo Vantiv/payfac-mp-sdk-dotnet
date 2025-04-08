@@ -14,8 +14,8 @@ namespace PayFacMpSDK
     public class PayFacUtils
     {
 
-        private const string CONTENT_TYPE = "application/com.vantivcnp.payfac-v14+xml";
-        private const string ACCEPT = "application/com.vantivcnp.payfac-v14+xml";
+        private const string CONTENT_TYPE = "application/com.vantivcnp.payfac-v15+xml";
+        private const string ACCEPT = "application/com.vantivcnp.payfac-v15+xml";
 
         public static string BytesToString(List<byte> bytes)
         {
@@ -138,7 +138,7 @@ namespace PayFacMpSDK
             var webErrorResponse = (HttpWebResponse) we.Response;
             var httpStatusCode = (int) webErrorResponse.StatusCode;
             var rawResponse = GetResponseXml(webErrorResponse);
-            if (!webErrorResponse.ContentType.Contains("application/com.vantivcnp.payfac-v14+xml"))
+            if (!webErrorResponse.ContentType.Contains("application/com.vantivcnp.payfac-v15+xml"))
                 return new PayFacWebException(string.Format("Request Failed - HTTP {0} Error", httpStatusCode)
                     , httpStatusCode, rawResponse);
             PrintXml(rawResponse, config.Get("printxml"), config.Get("neuterXml"));

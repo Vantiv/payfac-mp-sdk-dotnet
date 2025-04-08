@@ -50,6 +50,7 @@ namespace PayFacMpSDK
             principal.Serialize(xmlBuilder);
             xmlBuilder.Append("</principal>");
             if(yearsInBusiness != null) xmlBuilder.Append("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
+            if(pciLevelIntValue != 0) xmlBuilder.Append("<pciLevel>" + pciLevelIntValue + "</pciLevel>");
             xmlBuilder.Append("<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>");
             xmlBuilder.Append("<language>" + Versions.LANGUAGE + "</language>");
             xmlBuilder.Append("</legalEntityCreateRequest>");

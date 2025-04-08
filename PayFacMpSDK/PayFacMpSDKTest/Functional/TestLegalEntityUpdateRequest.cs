@@ -69,7 +69,8 @@ namespace PayFacMpSDKTest.Functional
                     taxId = "123456789"
                 },
                 legalEntityOwnershipType = legalEntityOwnershipType.PUBLIC,
-                yearsInBusiness = "10"
+                yearsInBusiness = "10",
+                pciLevel = pciLevelScore.Level4
             };
 
             response = request.PutLegalEntityUpdateRequest(legalEntityId);
