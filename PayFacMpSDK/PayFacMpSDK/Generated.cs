@@ -3353,7 +3353,7 @@ namespace PayFacMpSDK
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
-    public partial class legalEntityCreateRequest
+    public partial class legalEntityCreateRequestBase
     {
 
         private string legalEntityNameField;
@@ -3373,8 +3373,6 @@ namespace PayFacMpSDK
         private bool hasAcceptedCreditCardsField;
 
         private address addressField;
-
-        private legalEntityPrincipal principalField;
 
         private string yearsInBusinessField;
 
@@ -3502,19 +3500,6 @@ namespace PayFacMpSDK
         }
 
         /// <remarks/>
-        public legalEntityPrincipal principal
-        {
-            get
-            {
-                return this.principalField;
-            }
-            set
-            {
-                this.principalField = value;
-            }
-        }
-
-        /// <remarks/>
         public string yearsInBusiness
         {
             get
@@ -3552,7 +3537,7 @@ namespace PayFacMpSDK
 
             }
         }
-        
+
         public pciLevelScore pciLevel
         {
             get
@@ -3560,9 +3545,9 @@ namespace PayFacMpSDK
                 return this.pciLevelField;
             }
             set
-            {                
-                    this.pciLevelField = value;
-                    this.pciLevelIntValue = (int)value;
+            {
+                this.pciLevelField = value;
+                this.pciLevelIntValue = (int)value;
             }
         }
         [System.Xml.Serialization.XmlIgnore]
@@ -3577,6 +3562,33 @@ namespace PayFacMpSDK
                 this.pciLevelField = (pciLevelScore)value;
             }
         }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
+    public partial class legalEntityCreateRequest : legalEntityCreateRequestBase
+    {
+        private legalEntityPrincipal principalField;
+
+
+        /// <remarks/>
+        public legalEntityPrincipal principal
+        {
+            get
+            {
+                return this.principalField;
+            }
+            set
+            {
+                this.principalField = value;
+            }
+        }
+
     }
 
     /// <remarks/>
@@ -3864,10 +3876,10 @@ namespace PayFacMpSDK
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://payfac.vantivcnp.com/api/merchant/onboard", IsNullable = false)]
-    public partial class legalEntityRetrievalResponse : legalEntityCreateRequest
+    public partial class legalEntityRetrievalResponse : legalEntityCreateRequestBase
     {
 
-        private legalEntityPrincipal legalEntityPrincipalField;
+        private legalEntityPrincipal[] legalEntityPrincipalField;
 
         private string legalEntityIdField;
 
@@ -3896,7 +3908,8 @@ namespace PayFacMpSDK
         private string overallStatusField;
 
         /// <remarks/>
-        public legalEntityPrincipal legalEntityPrincipal
+        [XmlElement("principal")]
+        public legalEntityPrincipal[] principal
         {
             get
             {
