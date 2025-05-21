@@ -26,8 +26,23 @@ namespace PayFacMpSDKTest.Functional
             Assert.AreEqual(legalEntitytId, response.legalEntityId);
             Assert.AreEqual(10, response.responseCode);
             Assert.AreEqual("Approved", response.responseDescription);
+            //Testing the first principal
+            Assert.AreEqual(1, response.principal[0].principalId);
+            //Testing the second principal that is not present in the response
+            Assert.Throws<IndexOutOfRangeException>(() => { var _ = response.principal[1].principalId; });
         }
 
+        [Test]
+        public void TestGetLegalEntityRetrievalRequestPrincipleCheck()
+        {
+            legalEntitytId = "201008";
+            legalEntityRetrievalResponse response = new LegalEntityRetrievalRequest().GetLegalEntityRequest(legalEntitytId);
+            Assert.AreEqual(legalEntitytId, response.legalEntityId);
+            Assert.AreEqual(1, response.principal[0].principalId);
+            Assert.AreEqual(2, response.principal[1].principalId);
+            Assert.AreEqual(10, response.responseCode);
+            Assert.AreEqual("Approved", response.responseDescription);
+        }
 
         [Test]
         public void TestGetLegalEntityRetrievalRequestManualReview()
