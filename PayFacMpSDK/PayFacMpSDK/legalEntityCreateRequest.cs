@@ -51,6 +51,7 @@ namespace PayFacMpSDK
             xmlBuilder.Append("</principal>");
             if(yearsInBusiness != null) xmlBuilder.Append("<yearsInBusiness>" + yearsInBusiness + "</yearsInBusiness>");
             if(pciLevelIntValue != 0) xmlBuilder.Append("<pciLevel>" + pciLevelIntValue + "</pciLevel>");
+            if (merchantCategoryCode != null) xmlBuilder.Append("<merchantCategoryCode>" + merchantCategoryCode + "</merchantCategoryCode>");
             xmlBuilder.Append("<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>");
             xmlBuilder.Append("<language>" + Versions.LANGUAGE + "</language>");
             xmlBuilder.Append("</legalEntityCreateRequest>");

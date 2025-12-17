@@ -3378,6 +3378,8 @@ namespace PayFacMpSDK
 
         private pciLevelScore pciLevelField;
 
+        private string merchantCategoryCodeField;
+
         private string sdkVersionField;
 
         private string languageField;
@@ -3509,6 +3511,19 @@ namespace PayFacMpSDK
             set
             {
                 this.yearsInBusinessField = value;
+            }
+        }
+        public string merchantCategoryCode
+        {
+            get
+            {
+                return this.merchantCategoryCodeField;
+
+            }
+            set
+            {
+                this.merchantCategoryCodeField = value;
+
             }
         }
         public string sdkVersion
