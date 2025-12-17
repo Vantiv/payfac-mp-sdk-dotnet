@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 15.0.2
+* **Feature** MPAPI SDK Update for MerchantCategoryCode Schema Change.
+
 ## 15.0.1
 * **Bug Fix** Fix for returning principal list in legalEntityRetrievalResponse.
 
