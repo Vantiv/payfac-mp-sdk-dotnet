@@ -1,5 +1,7 @@
 CHANGELOG
 ---------
+## 13.1.1
+* **Feature** MPAPI SDK Update for MerchantCategoryCode Schema Change.
 
 ## 13.1.0
 * **Feature** Support for Payfac MP API v13.1

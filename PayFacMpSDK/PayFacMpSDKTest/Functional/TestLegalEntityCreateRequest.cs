@@ -175,8 +175,8 @@ namespace PayFacMpSDKTest.Functional
             response = request.PostLegalEntityCreateRequest();
             Assert.AreEqual(true, response.duplicate);
             Assert.NotNull(response.transactionId);
-            Assert.NotNull(response.originalLegalEntityId);
-            Assert.AreEqual("Approved", response.originalLegalEntityStatus);
+            Assert.NotNull(response.originallegalEntityId);
+            Assert.AreEqual("Approved", response.originallegalEntityStatus);
         }
 
 
@@ -229,8 +229,60 @@ namespace PayFacMpSDKTest.Functional
             response = request.PostLegalEntityCreateRequest();
             Assert.AreEqual(true, response.duplicate);
             Assert.NotNull(response.transactionId);
-            Assert.NotNull(response.originalLegalEntityId);
-            Assert.AreEqual("Declined", response.originalLegalEntityStatus);
+            Assert.NotNull(response.originallegalEntityId);
+            Assert.AreEqual("Declined", response.originallegalEntityStatus);
+        }
+
+        [Test]
+        public void TestPostLegalEntityCreateRequestSimpleForMcc()
+        {
+            request = new legalEntityCreateRequest
+            {
+                legalEntityName = "Legal Entity Name",
+                legalEntityType = legalEntityType.CORPORATION,
+                legalEntityOwnershipType = legalEntityOwnershipType.PUBLIC,
+                doingBusinessAs = "Alternate Business Name",
+                taxId = "123456789",
+                contactPhone = "7817659800",
+                annualCreditCardSalesVolume = "80000000",
+                hasAcceptedCreditCards = true,
+                address = new address
+                {
+                    streetAddress1 = "Street Address 1",
+                    streetAddress2 = "Street Address 2",
+                    city = "Boston",
+                    stateProvince = "MA",
+                    postalCode = "01730",
+                    countryCode = "USA"
+                },
+                principal = new legalEntityPrincipal
+                {
+                    title = "Chief Financial Officer",
+                    firstName = "p first",
+                    lastName = "p last",
+                    emailAddress = "abc@email.com",
+                    ssn = "123459876",
+                    contactPhone = "7817659800",
+                    dateOfBirth = new DateTime(1980, 10, 12),
+                    driversLicense = "892327409832",
+                    address = new principalAddress
+                    {
+                        streetAddress1 = "p street address 1",
+                        streetAddress2 = "p street address 2",
+                        city = "Boston",
+                        stateProvince = "MA",
+                        postalCode = "01890",
+                        countryCode = "USA"
+                    },
+                    stakePercent = 33
+                },
+                yearsInBusiness = "12",
+                merchantCategoryCode = "asd"
+            };
+
+            Assert.Throws<PayFacWebException>(() => {
+                response = request.PostLegalEntityCreateRequest();
+            });
         }
     }
 }
