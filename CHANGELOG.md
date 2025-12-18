@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 14.0.2
+* **Feature** MPAPI SDK Update for MerchantCategoryCode Schema Change.
+
 ## 14.0.1
 * **Bug Fix** Fix for recursive language call.
 

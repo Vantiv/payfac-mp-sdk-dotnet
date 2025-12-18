@@ -56,7 +56,8 @@ namespace PayFacMpSDKTest.Unit
                     },
                     stakePercent = 33
                 },
-                yearsInBusiness = "12"
+                yearsInBusiness = "12",
+                merchantCategoryCode = "1234"
             };
 
         }
@@ -103,6 +104,7 @@ namespace PayFacMpSDKTest.Unit
                          "<stakePercent>33</stakePercent>" +
                          "</principal>" +
                          "<yearsInBusiness>12</yearsInBusiness>" +
+                         "<merchantCategoryCode>1234</merchantCategoryCode>" +
                          "<sdkVersion>" + Versions.SDK_VERSION + "</sdkVersion>" +
                          "<language>" + Versions.LANGUAGE + "</language>" +
                          "</legalEntityCreateRequest>";
