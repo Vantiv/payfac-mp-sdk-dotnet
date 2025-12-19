@@ -3338,6 +3338,8 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
+        private string merchantCategoryCodeField;
+
         private string sdkVersionField;
 
         private string languageField;
@@ -3482,6 +3484,20 @@ namespace PayFacMpSDK
             set
             {
                 this.yearsInBusinessField = value;
+            }
+        }
+
+        public string merchantCategoryCode
+        {
+            get
+            {
+                return this.merchantCategoryCodeField;
+
+            }
+            set
+            {
+                this.merchantCategoryCodeField = value;
+
             }
         }
 
@@ -3644,7 +3660,7 @@ namespace PayFacMpSDK
 
         private string responseDescriptionField;
 
-        private string originalLegalEntityIdField;
+        private string originallegalEntityIdField;
 
         private string originalLegalEntityStatusField;
 
@@ -3708,20 +3724,20 @@ namespace PayFacMpSDK
         }
 
         /// <remarks/>
-        public string originalLegalEntityId
+        public string originallegalEntityId
         {
             get
             {
-                return this.originalLegalEntityIdField;
+                return this.originallegalEntityIdField;
             }
             set
             {
-                this.originalLegalEntityIdField = value;
+                this.originallegalEntityIdField = value;
             }
         }
 
         /// <remarks/>
-        public string originalLegalEntityStatus
+        public string originallegalEntityStatus
         {
             get
             {
