@@ -3339,6 +3339,8 @@ namespace PayFacMpSDK
 
         private string yearsInBusinessField;
 
+        private string merchantCategoryCodeField;
+
         private string sdkVersionField;
 
         private string languageField;
@@ -3485,6 +3487,21 @@ namespace PayFacMpSDK
                 this.yearsInBusinessField = value;
             }
         }
+
+        public string merchantCategoryCode
+        {
+            get
+            {
+                return this.merchantCategoryCodeField;
+
+            }
+            set
+            {
+                this.merchantCategoryCodeField = value;
+
+            }
+        }
+
         public string sdkVersion
         {
             get
