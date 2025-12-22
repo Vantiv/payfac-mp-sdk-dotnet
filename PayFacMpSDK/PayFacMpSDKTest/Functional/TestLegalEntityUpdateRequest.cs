@@ -345,5 +345,67 @@ Assert.NotNull(errorResponse.transactionId);
                 Assert.AreEqual("Service was unavailable.", errorResponse.errors[0]);
             }
         }
+
+        [Test]
+        public void TestPutLegalEntityUpdateRequestSimpleForMcc()
+        {
+            legalEntityId = "201003";
+            request = new legalEntityUpdateRequest
+            {
+                address = new addressUpdatable
+                {
+                    streetAddress1 = "LE Street Address 1",
+                    streetAddress2 = "LE Street Address 2",
+                    city = "LE City",
+                    stateProvince = "MA",
+                    postalCode = "01730",
+                    countryCode = "USA",
+                },
+                contactPhone = "9785550101",
+                doingBusinessAs = "Other Name Co.",
+                annualCreditCardSalesVolume = 10000000,
+                hasAcceptedCreditCards = true,
+                principal = new legalEntityPrincipalUpdatable
+                {
+                    principalId = 9,
+                    title = "CEO",
+                    emailAddress = "jdoe@mail.net",
+                    contactPhone = "9785551234",
+                    address = new principalAddress
+                    {
+                        streetAddress1 = "p street address 1",
+                        streetAddress2 = "p street address 2",
+                        city = "Boston",
+                        stateProvince = "MA",
+                        postalCode = "01890",
+                        countryCode = "USA",
+                    },
+                    backgroundCheckFields = new principalBackgroundCheckFields
+                    {
+                        firstName = "p first",
+                        lastName = "p last",
+                        ssn = "123459876",
+                        dateOfBirth = new DateTime(1980, 10, 12),
+                        driversLicense = "892327409832",
+                        driversLicenseState = "MA"
+                    },
+                },
+                backgroundCheckFields = new legalEntityBackgroundCheckFields
+                {
+                    legalEntityName = "Company Name",
+                    legalEntityType = legalEntityType.INDIVIDUAL_SOLE_PROPRIETORSHIP,
+                    taxId = "123456789",
+                    merchantCategoryCode = "asd"
+                },
+                legalEntityOwnershipType = legalEntityOwnershipType.PUBLIC,
+                yearsInBusiness = "10",
+                pciLevel = pciLevelScore.Level4
+            };
+
+            Assert.Throws<PayFacWebException>(() => {
+                response = request.PutLegalEntityUpdateRequest(legalEntityId);
+            });
+
+        }
     }
 }
