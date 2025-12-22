@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## 14.0.2
+## 14.0.3
 * **Feature** MPAPI SDK Update for MerchantCategoryCode Schema Change.
 
 ## 14.0.1

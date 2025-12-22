@@ -60,7 +60,8 @@ namespace PayFacMpSDKTest.Unit
                 {
                     legalEntityName = "Company Name",
                     legalEntityType = legalEntityType.INDIVIDUAL_SOLE_PROPRIETORSHIP,
-                    taxId = "123456789"
+                    taxId = "123456789",
+                    merchantCategoryCode = "1234"
                 },
                 legalEntityOwnershipType = legalEntityOwnershipType.PUBLIC,
                 yearsInBusiness = "10"
@@ -111,7 +112,8 @@ namespace PayFacMpSDKTest.Unit
 	                     "<legalEntityName>Company Name</legalEntityName>" +
 	                     "<legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType>" +
 	                     "<taxId>123456789</taxId>" +
-	                     "</backgroundCheckFields>" +
+						 "<merchantCategoryCode>1234</merchantCategoryCode>" +                        
+                         "</backgroundCheckFields>" +
 	                     "<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>" +
 	                     "<yearsInBusiness>10</yearsInBusiness>" +
 	                     "</legalEntityUpdateRequest>";

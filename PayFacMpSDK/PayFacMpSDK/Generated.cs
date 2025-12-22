@@ -325,6 +325,7 @@ namespace PayFacMpSDK
 
         private string taxIdField;
 
+        private string merchantCategoryCodeField;
         /// <remarks/>
         public string legalEntityName
         {
@@ -376,6 +377,20 @@ namespace PayFacMpSDK
             set
             {
                 this.taxIdField = value;
+            }
+        }
+
+        public string merchantCategoryCode
+        {
+            get
+            {
+                return this.merchantCategoryCodeField;
+
+            }
+            set
+            {
+                this.merchantCategoryCodeField = value;
+
             }
         }
     }
