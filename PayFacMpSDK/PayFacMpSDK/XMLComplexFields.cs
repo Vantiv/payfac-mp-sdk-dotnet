@@ -104,6 +104,7 @@ namespace PayFacMpSDK
             if (legalEntityName != null) xmlBuilder.Append("<legalEntityName>" + legalEntityName + "</legalEntityName>");
             if (legalEntityTypeSpecified) xmlBuilder.Append("<legalEntityType>" + legalEntityType + "</legalEntityType>");
             if (taxId != null) xmlBuilder.Append("<taxId>" + taxId + "</taxId>");
+            if (merchantCategoryCode != null) xmlBuilder.Append("<merchantCategoryCode>" + merchantCategoryCode + "</merchantCategoryCode>");
         }
     }
 
